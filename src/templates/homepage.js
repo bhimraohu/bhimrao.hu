@@ -2,106 +2,67 @@ import React from 'react';
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout/layout"
-import SliceZone from "../components/sliceZone"
+// import SliceZone from "../components/sliceZone"
 
 export const query = graphql`
 query homepageQuery($lang: String) {
   prismic {
-    allHomepages (lang: $lang) {
+    allHeader_topbars (lang: $lang) {
       edges {
         node {
-          body {
-            ... on PRISMIC_HomepageBodyHero {
-              type
-              primary {
-                hero_title
-                hero_content
-                background_image
-              }
+          _meta {
+            lang
+            alternateLanguages {
+              lang
             }
-            ... on PRISMIC_HomepageBodyCall_to_action_grid {
-              type
-              primary {
-                section_title
-              }
-              fields {
-                button_destination {
-                  ... on PRISMIC_Page {
-                    page_title
-                    content
-                    _meta {
-                      uid
-                    }
-                  }
-                }
-                button_label
-                call_to_action_title
-                content
-                featured_image
-              }
-            }
-            ... on PRISMIC_HomepageBodyPrice_list {
-              type
-              primary {
-                title
-              }
-              fields {
-                price_list_title
-                price_list_description
-                price_per_month
-                price_type
+          }
+          language_main
+          language_second
+          search_placeholder
+          social_links {
+            icon
+            tooltip
+            alt_text
+            link {
+              ... on PRISMIC__ExternalLink {
+                url
               }
             }
           }
         }
       }
     }
-    allNavigations (lang: $lang) {
+    allHeader_navbars (lang: $lang) {
       edges {
         node {
+          brand_logo_image
           branding
-          _meta {
-            lang
-            type
-            alternateLanguages {
-              lang
-            }
-          }
           navigation_links {
             label
             link {
-              ... on PRISMIC_Page {
+              ... on PRISMIC_About_us {
                 _meta {
                   uid
-                  type
-                  lang
+                }
+              }
+              ... on PRISMIC_News {
+                _meta {
+                  uid
                 }
               }
               ... on PRISMIC_Contact_page {
                 _meta {
                   uid
-                  type
-                  lang
                 }
               }
-            }
-          }
-        }
-      }
-    }
-    allSubNavigations (lang: $lang) {
-      edges {
-        node {
-          parent
-          sub_navigation {
-            label
-            parent
-            link {
+              ... on PRISMIC_Help_us {
+                _meta {
+                  uid
+                }
+              }
               ... on PRISMIC_Projects {
                 _meta {
                   uid
-                  type
-                  lang
                 }
               }
             }
@@ -115,15 +76,23 @@ query homepageQuery($lang: String) {
 
 class Homepage extends React.Component {
 
-  navigationData = {
-    allNavigations: this.props.data.prismic.allNavigations,
-    allSubNavigations: this.props.data.prismic.allSubNavigations,
+  getNavigationData = (_props) => {
+    return {
+      allHeader_topbars: _props.data?.prismic?.allHeader_topbars.edges[0].node,
+      allHeader_navbars: _props.data?.prismic?.allHeader_navbars.edges[0].node,
+      // allSubNavigations: _props.data.prismic.allSubNavigations.edges[0].node,
+    }
   };
 
   render() {
+    const navigationData = this.getNavigationData(this.props);
+
     return (
-      <Layout navigationData={this.navigationData}>
-        <SliceZone body={this.props.data.prismic.allHomepages.edges[0].node.body} />
+      <Layout navigationData={navigationData}>
+        <div>
+          Homepage
+        </div>
+        {/* <SliceZone body={this.props.data.prismic.allHomepages.edges[0].node.body} /> */}
       </Layout >
     );
   }
