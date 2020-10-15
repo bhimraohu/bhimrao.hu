@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 const TopBarWrapper = styled.div`
-  padding: 1.05rem;
+  padding: 1rem 0;
   background-color: #1D1D3C;
   
   div {
@@ -25,24 +25,26 @@ const TopBarWrapper = styled.div`
     .search {
       padding-right: 50px;
     }
-
-    .language {
-      padding-left: 50px;
+    
+    li:last-child {
+      padding-right: 16px;
     }
   }
+
+  
 `;
 
 const Search = styled.input`
 `;
 
 const Button = styled.div`
-  padding: 10px 7px;
+  padding: 10px 0 10px 36px;
   color: white;
   background-color: transparent;
   border: none;
 
   &:hover {
-    background-color: red;
+    color: red;
     cursor: pointer;
   }
 `;
