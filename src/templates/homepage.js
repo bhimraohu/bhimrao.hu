@@ -22,7 +22,7 @@ query homepageQuery($lang: String) {
           social_links {
             icon
             tooltip
-            alt_text
+            alt_text  
             link {
               ... on PRISMIC__ExternalLink {
                 url
@@ -43,26 +43,36 @@ query homepageQuery($lang: String) {
               ... on PRISMIC_About_us {
                 _meta {
                   uid
+                  type
+                  lang
                 }
               }
               ... on PRISMIC_News {
                 _meta {
                   uid
+                  type
+                  lang
                 }
               }
               ... on PRISMIC_Contact_page {
                 _meta {
                   uid
+                  type
+                  lang
                 }
               }
               ... on PRISMIC_Help_us {
                 _meta {
                   uid
+                  type
+                  lang
                 }
               }
               ... on PRISMIC_Projects {
                 _meta {
                   uid
+                  type
+                  lang
                 }
               }
             }
