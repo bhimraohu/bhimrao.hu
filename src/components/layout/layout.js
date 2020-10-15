@@ -2,9 +2,10 @@ import React from "react"
 // import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "../header/header"
-import "./layout.css"
+import "../../../static/styles/layout.css"
 
 const Layout = ({ children, navigationData }) => {
+  console.log(navigationData)
 
   // const data = useStaticQuery(graphql`
   //   query SiteTitleQuery {
