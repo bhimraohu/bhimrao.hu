@@ -4,12 +4,17 @@ import styled from "styled-components"
 const IconWrapper = styled.span`
   i {
     padding: 5px;
+
+    &:before {
+      color: ${(props) => props.color};
+      vertical-align: ${(props) => props.color ? 'middle' : 'inherit'};
+    }
   }
 `;
 
 const Icon = (props) => {
   return (
-    <IconWrapper>
+    <IconWrapper color={props.color}>
       <i className={props.icon_class} />
     </IconWrapper>
   )
