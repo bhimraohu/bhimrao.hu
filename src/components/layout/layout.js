@@ -2,6 +2,9 @@ import React from "react"
 // import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "../header/header"
+
+import "../../../static/styles/common.css"
+import "../../../static/styles/Glyphter.css"
 import "../../../static/styles/layout.css"
 
 const Layout = ({ children, navigationData }) => {
