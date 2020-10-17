@@ -4,6 +4,32 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 // import SliceZone from "../components/sliceZone"
 
+class Homepage extends React.Component {
+
+  getNavigationData = (_props) => {
+    return {
+      allHeader_topbars: _props.data?.prismic?.allHeader_topbars.edges[0].node,
+      allHeader_navbars: _props.data?.prismic?.allHeader_navbars.edges[0].node,
+      // allSubNavigations: _props.data.prismic.allSubNavigations.edges[0].node,
+    }
+  };
+
+  render() {
+    const navigationData = this.getNavigationData(this.props);
+
+    return (
+      <Layout navigationData={navigationData}>
+        <div>
+          Homepage
+        </div>
+        {/* <SliceZone body={this.props.data.prismic.allHomepages.edges[0].node.body} /> */}
+      </Layout >
+    );
+  }
+}
+
+export default Homepage;
+
 export const query = graphql`
 query homepageQuery($lang: String) {
   prismic {
@@ -83,29 +109,3 @@ query homepageQuery($lang: String) {
   }
 }
 `;
-
-class Homepage extends React.Component {
-
-  getNavigationData = (_props) => {
-    return {
-      allHeader_topbars: _props.data?.prismic?.allHeader_topbars.edges[0].node,
-      allHeader_navbars: _props.data?.prismic?.allHeader_navbars.edges[0].node,
-      // allSubNavigations: _props.data.prismic.allSubNavigations.edges[0].node,
-    }
-  };
-
-  render() {
-    const navigationData = this.getNavigationData(this.props);
-
-    return (
-      <Layout navigationData={navigationData}>
-        <div>
-          Homepage
-        </div>
-        {/* <SliceZone body={this.props.data.prismic.allHomepages.edges[0].node.body} /> */}
-      </Layout >
-    );
-  }
-}
-
-export default Homepage;
