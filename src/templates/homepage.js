@@ -20,7 +20,7 @@ query homepageQuery($lang: String) {
           language_second
           search_placeholder
           social_links {
-            icon
+            icon_class
             tooltip
             alt_text  
             link {
