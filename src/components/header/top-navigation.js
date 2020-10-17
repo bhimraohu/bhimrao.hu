@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { linkResolverBase } from '../../utils/linkResolverBase';
 import { Colors } from "../../utils/constants";
 import Icon from "../common/icon";
+import BrandingWrapper from "./branding";
 
 const NavLinks = styled.ul`
   margin-left: auto;
@@ -75,16 +76,6 @@ const SubNavLinks = styled.ul`
   }
 `;
 
-const Branding = styled.div`
-  a {
-    text-decoration: none;
-    color: ${Colors.main};
-    font-size: 20 px;
-    font-weight: bold;
-    line-height: 64px;
-  }
-`;
-
 const TopNavigationWrapper = styled.div`
   margin: 0 auto;
   max-width: 960px;
@@ -93,12 +84,7 @@ const TopNavigationWrapper = styled.div`
 
 const TopNavigation = ({ navigationData }) => (
   <TopNavigationWrapper>
-    <Branding>
-      <Link to="/">
-        {/* <img className="logo" src={logo} alt="Site logo" /> */}
-        {navigationData.allHeader_navbars.branding}
-      </Link>
-    </Branding>
+    <BrandingWrapper navigationData={navigationData} />
     <NavLinks>
       {
         navigationData.allHeader_navbars.navigation_links.map(
