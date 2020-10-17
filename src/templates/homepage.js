@@ -10,7 +10,7 @@ class Homepage extends React.Component {
     return {
       allHeader_topbars: _props.data?.prismic?.allHeader_topbars.edges[0].node,
       allHeader_navbars: _props.data?.prismic?.allHeader_navbars.edges[0].node,
-      // allSubNavigations: _props.data.prismic.allSubNavigations.edges[0].node,
+      allHeader_navigation_submenus: _props.data?.prismic?.allHeader_navigation_submenus,
     }
   };
 
@@ -58,6 +58,7 @@ query homepageQuery($lang: String) {
         }
       }
     }
+
     allHeader_navbars (lang: $lang) {
       edges {
         node {
@@ -65,6 +66,7 @@ query homepageQuery($lang: String) {
           branding
           navigation_links {
             label
+            submenu
             link {
               ... on PRISMIC_About_us {
                 _meta {
@@ -95,6 +97,26 @@ query homepageQuery($lang: String) {
                 }
               }
               ... on PRISMIC_Projects {
+                _meta {
+                  uid
+                  type
+                  lang
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    allHeader_navigation_submenus(lang: $lang) {
+      edges {
+        node {
+          parent
+          sub_navigation_links {
+            label
+            link {
+              ... on PRISMIC_Project {
                 _meta {
                   uid
                   type
