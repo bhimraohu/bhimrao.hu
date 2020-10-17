@@ -3,12 +3,13 @@ import React from "react"
 import styled from 'styled-components';
 
 import { linkResolverBase } from '../../utils/linkResolverBase';
+import { Colors } from "../../utils/constants";
 
 const NavLink = styled.li`
   margin: auto 0;
 
   a {
-    color: #1D1D3C;
+    color: ${Colors.main};
     text-decoration: none;
     padding: 0 16px;
     font-weight: bold;
@@ -16,7 +17,7 @@ const NavLink = styled.li`
     line-height: 66px;
     
     &:hover{
-      color: red;
+      color: ${Colors.red};
     }
   }
 
@@ -50,7 +51,7 @@ const SubNavLinks = styled.ul`
 const Branding = styled.div`
   a {
     text-decoration: none;
-    color: #1D1D3C;
+    color: ${Colors.main};
     font-size: 20 px;
     font-weight: bold;
     line-height: 64px;
@@ -60,7 +61,6 @@ const Branding = styled.div`
 const TopNavigationWrapper = styled.div`
   margin: 0 auto;
   max-width: 960px;
-  /* padding: 1.05rem 1.05rem; */
   display: flex;
 `;
 
