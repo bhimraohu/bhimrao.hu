@@ -4,9 +4,26 @@ import styled from 'styled-components';
 
 import { linkResolverBase } from '../../utils/linkResolverBase';
 import { Colors } from "../../utils/constants";
+import Icon from "../common/icon";
+
+const NavLinks = styled.ul`
+  margin-left: auto;
+  display: flex;
+  list-style-type: none;
+  margin-bottom: 0; 
+  height: 66px;
+`;
 
 const NavLink = styled.li`
   margin: auto 0;
+
+  /* Set the width of the menu item with submenu per language*/
+  &.projects.hu {
+    width: 165px;
+  }
+  &.projects.en-us {
+    width: 165px;
+  }
 
   a {
     color: ${Colors.main};
@@ -19,6 +36,16 @@ const NavLink = styled.li`
     &:hover{
       color: ${Colors.red};
     }
+
+    /* Rotate the caret if needed */
+    /* span i::before {
+      transform: rotate(0deg);
+      transition: transform .5s;
+    }
+    &:hover span i::before {
+      transform: rotate(180deg);
+      transition: transform .5s;
+    } */
   }
 
   &:hover{
@@ -26,7 +53,6 @@ const NavLink = styled.li`
     ul {
       display: flex;
       flex-flow: column wrap;
-      position: absolute;
       list-style-type: none;
       right: 0%;
       min-width: 100px;
@@ -34,18 +60,19 @@ const NavLink = styled.li`
   }
 `;
 
-const NavLinks = styled.ul`
-  margin-left: auto;
-  display: flex;
-  list-style-type: none;
-  margin-bottom: 0; 
-`;
-
 const SubNavLinks = styled.ul`
   display: none;
   position: relative;
   height: auto;
-  background: black;
+  box-shadow: 1px 4px 3px 0px black;
+
+  /* Set the width of the submenu per language*/
+  &.projects.hu {
+    width: 200px;
+  }
+  &.projects.en-us {
+    width: 100px;
+  }
 `;
 
 const Branding = styled.div`
@@ -77,10 +104,9 @@ const TopNavigation = ({ navigationData }) => (
         navigationData.allHeader_navbars.navigation_links.map(
           (link) => {
             // check if sub nav exists here
-            // const subNav = navigationData.allSubNavigations.edges.find(edge => {
-            //   return edge.node.parent === link.label;
-            // });
-            let subNav
+            const subNav = navigationData.allHeader_navigation_submenus.edges.find(edge => {
+              return edge.node.parent === link.submenu;
+            });
             if (subNav) {
               return getMainAndSubNav(link, subNav);
             }
@@ -103,21 +129,22 @@ const getMainNav = (link) => {
 
 const getMainAndSubNav = (link, subNav) => {
   return (
-    <NavLink key={link.link._meta.uid}>
+    <NavLink key={link.link._meta.uid} className={`${link.submenu} ${link.link._meta.lang}`}>
       <Link to={linkResolverBase(link.link._meta)}>
         {link.label}
-        <SubNavLinks>
-          {
-            subNav.node.sub_navigation.map(subLink => {
-              return (
-                <NavLink key={subLink.link._meta.uid}>
-                  <Link to={linkResolverBase(subLink.link._meta)}>{subLink.label}</Link>
-                </NavLink>
-              )
-            })
-          }
-        </SubNavLinks>
+        <Icon icon_class={'icon-down'} color={Colors.red} />
       </Link>
+      <SubNavLinks className={`${link.submenu} ${link.link._meta.lang}`}>
+        {
+          subNav.node.sub_navigation_links.map(subLink => {
+            return (
+              <NavLink key={subLink.link._meta.uid}>
+                <Link to={linkResolverBase(subLink.link._meta)}>{subLink.label}</Link>
+              </NavLink>
+            )
+          })
+        }
+      </SubNavLinks>
     </NavLink>
   );
 }
