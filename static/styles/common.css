@@ -1,0 +1,23 @@
+/* Use the same values in src/utils/constants Colors */
+:root {
+  --main-color: #1d1d3c;
+  --secondary-color: #d44f3b;
+  --third-color: #eeeeee;
+}
+
+.icon-search:before {
+  color: var(--main-color);
+}
+
+.icon-twitter:before,
+.icon-facebook:before,
+.icon-flickr:before,
+.icon-youtube:before,
+.icon-vimeo:before {
+  color: var(--third-color);
+}
+
+/* [class*="icon-"]:before {
+  width: 24px;
+  height: 24px;
+} */
