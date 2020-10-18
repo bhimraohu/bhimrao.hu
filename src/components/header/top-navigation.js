@@ -18,6 +18,15 @@ const NavLinks = styled.ul`
 const NavLink = styled.li`
   margin: auto 0;
 
+  span i::before {
+    transform: rotate(0deg);
+    transition: transform .5s;
+  }
+  &:hover span i::before {
+    transform: rotate(180deg);
+    transition: transform .5s;
+  }
+
   /* Set the width of the menu item with submenu per language*/
   &.projects.hu {
     width: 165px;
@@ -38,15 +47,7 @@ const NavLink = styled.li`
       color: ${Colors.red};
     }
 
-    /* Rotate the caret if needed */
-    /* span i::before {
-      transform: rotate(0deg);
-      transition: transform .5s;
-    }
-    &:hover span i::before {
-      transform: rotate(180deg);
-      transition: transform .5s;
-    } */
+    
   }
 
   &:hover{
