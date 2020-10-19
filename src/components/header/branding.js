@@ -10,6 +10,7 @@ const BrandingWrapper = styled.div`
     color: ${Colors.main};
     font-size: 20px;
     font-weight: bold;
+    height: 66px;
   }
 
   .logo {
