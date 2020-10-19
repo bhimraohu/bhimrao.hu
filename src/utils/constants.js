@@ -6,3 +6,8 @@ export const Colors = {
   textColor: '#5D5D73',
   headerColor: '#343450',
 }
+
+export const DesignSettings = {
+  outerWidth: '1200px',
+  innerWidth: '1000px',
+}
