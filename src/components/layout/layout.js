@@ -2,6 +2,7 @@ import React from "react"
 // import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "../header/header"
+import Footer from "../footer/footer"
 
 import "../../../static/styles/common.css"
 import "../../../static/styles/Glyphter.css"
@@ -27,18 +28,12 @@ const Layout = ({ children, navigationData }) => {
         style={{
           margin: `0 auto`,
           maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          padding: `1.0875rem 0`,
         }}
       >
         <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
       </div>
+      <Footer data={navigationData.allFooters} />
     </>
   )
 }
