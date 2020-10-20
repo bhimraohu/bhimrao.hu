@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from "gatsby"
 
-import Layout from "../components/layout/layout"
+import Layout from "../components/layout/Layout"
 // import SliceZone from "../components/sliceZone"
 
 class Team extends React.Component {
