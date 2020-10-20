@@ -12,6 +12,7 @@ export const linkResolverBase = (properties) => {
     || properties.type === 'news'
     || properties.type === 'projects'
     || properties.type === 'contact_page'
+    || properties.type === 'team'
     || properties.type === 'help_us'
   ) {
     return properties.lang === defaultLanguage
@@ -21,11 +22,11 @@ export const linkResolverBase = (properties) => {
 
   if (properties.type === 'project') {
     return properties.lang === defaultLanguage
-      ? `/projects/${properties.uid}`
-      : `/${properties.lang}/projects/${properties.uid}`
+      ? `/project/${properties.uid}`
+      : `/${properties.lang}/project/${properties.uid}`
   }
 
-  return properties.lang === defaultLanguage
-    ? `/`
-    : `/${properties.lang}`;
+  // return properties.lang === defaultLanguage
+  //   ? `/`
+  //   : `/${properties.lang}`;
 };
