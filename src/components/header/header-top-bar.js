@@ -22,8 +22,8 @@ const HeaderTopBar = ({ topbarsData }) => {
   return (
     <TopBarWrapper>
       <TopBarContainer>
-        <Search search_placeholder={topbarsData.search_placeholder} />
         <SocialLinks links={topbarsData.social_links} />
+        <Search search_placeholder={topbarsData.search_placeholder} />
         {
           topbarsData.multilanguage_enabled
             ? <LanguageSelector data={topbarsData} />
