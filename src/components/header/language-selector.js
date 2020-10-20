@@ -1,13 +1,15 @@
 import React from "react"
 import styled from "styled-components"
+import { navigate } from 'gatsby'
 
 import { Colors } from "../../utils/constants";
+import { defaultLanguage, langs } from '../../../prismic-config'
 
 const LanguageSelectorWrapper = styled.div`
   display: flex;
 `;
 
-const Button = styled.div`
+const Button = styled.button`
   padding: 10px 16px;
   color: ${Colors.dirtyWhite};
   background-color: transparent;
@@ -17,32 +19,48 @@ const Button = styled.div`
     color: ${Colors.red};
     cursor: pointer;
   }
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 const onClickHandler = (meta, targetLanguage) => {
-  console.log(meta);
-  if (targetLanguage === meta.alternateLanguages[0].lang) {
-    if (window.location.pathname.indexOf(meta.alternateLanguages[0].lang) === -1) {
-      // add lang to path
-      window.location.href = `/${meta.alternateLanguages[0].lang}${window.location.pathname}`;
-    }
+  languageChange(meta, targetLanguage);
+}
+
+const languageChange = (meta, targetLanguage) => {
+  if (targetLanguage === meta.lang) {
+    return;
+  }
+
+  // TODO 1. query the navigation data (both language)
+  // TODO 2. find the current path
+  // TODO 3. find the same index in the other language
+  if (targetLanguage === defaultLanguage) {
+    navigate(window.location.pathname.replace(`/${langs[1]}`, ''));
   }
   else {
-    if (window.location.pathname.indexOf(meta.alternateLanguages[0].lang) === 0) {
-      window.location.href = window.location.pathname.replace(`/${meta.alternateLanguages[0].lang}`, '');
-    }
+    navigate(`/${targetLanguage}${window.location.pathname}`);
   }
 }
 
 const LanguageSelector = ({ data }) => {
+  const currentLang = data._meta.lang
+
   return (
     <LanguageSelectorWrapper>
-      <div onClick={onClickHandler.bind(this, data._meta, data.lang)}>
-        <Button>{data.language_main}</Button>
-      </div>
-      <div onClick={onClickHandler.bind(this, data._meta, data._meta.alternateLanguages[0].lang)}>
-        <Button>{data.language_second}</Button>
-      </div>
+      {
+        currentLang !== defaultLanguage
+          ?
+          <Button onClick={onClickHandler.bind(this, data._meta, langs[0])}>
+            {data.language_main}
+          </Button>
+          :
+          <Button onClick={onClickHandler.bind(this, data._meta, langs[1])}>
+            {data.language_second}
+          </Button>
+      }
     </LanguageSelectorWrapper >
   )
 };
