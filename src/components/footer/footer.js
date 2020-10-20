@@ -82,9 +82,9 @@ const Footer = ({ data }) => {
             <Column>
               <RichTextCustom render={data.first_section_title} />
               {
-                data.first_section_links.map((link) => {
+                data.first_section_links.map((link, idx) => {
                   return (
-                    <a className="documents-links" href={link.link.url} target="_blank" alt={link.label} rel="noreferrer">{link.label}</a>
+                    <a key={idx} className="documents-links" href={link.link.url} target="_blank" alt={link.label} rel="noreferrer">{link.label}</a>
                   )
                 })
               }
