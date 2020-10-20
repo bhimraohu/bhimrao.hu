@@ -61,7 +61,7 @@ const NavLink = styled.li`
     width: 165px;
   }
   &.projects.en-us {
-    width: 165px;
+    width: 145px;
   }
 
   &:hover a {
@@ -110,7 +110,7 @@ const SubNavLinks = styled.ul`
     width: 200px;
   }
   &.projects.en-us {
-    width: 100px;
+    width: 200px;
   }
 `;
 
