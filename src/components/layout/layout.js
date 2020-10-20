@@ -9,8 +9,6 @@ import "../../../static/styles/Glyphter.css"
 import "../../../static/styles/layout.css"
 
 const Layout = ({ children, navigationData }) => {
-  console.log(navigationData)
-
   // const data = useStaticQuery(graphql`
   //   query SiteTitleQuery {
   //     site {
