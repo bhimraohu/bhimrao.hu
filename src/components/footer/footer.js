@@ -92,7 +92,7 @@ const Footer = ({ data }) => {
     <FooterWrapper>
       <FooterContainer>
         <div className="text-container">
-          <div className="columns">
+          <div className="columns h1-border-bottom">
             <Column>
               <RichTextCustom render={data.first_section_title} />
               {
