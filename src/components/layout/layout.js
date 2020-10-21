@@ -22,13 +22,7 @@ const Layout = ({ children, navigationData }) => {
   return (
     <>
       <Header navigationData={navigationData} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `1.0875rem 0`,
-        }}
-      >
+      <div style={{ margin: `0 auto` }}>
         <main>{children}</main>
       </div>
       <Footer data={navigationData.allFooters} />
