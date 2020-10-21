@@ -3,9 +3,10 @@ import styled from "styled-components"
 
 const IconWrapper = styled.span`
   i {
-    padding: 5px;
+    padding: .5rem;
 
     &:before {
+      font-size: 1.5rem;
       color: ${(props) => props.color};
       vertical-align: ${(props) => props.color ? 'middle' : 'inherit'};
     }

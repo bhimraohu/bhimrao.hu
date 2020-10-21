@@ -9,12 +9,12 @@ const SocialLinksWrapper = styled.ul`
   list-style-type: none;
   margin: 0;
   align-items: center;
-  padding: 0 10px;
-  
+  padding: 0 1rem;
+
   li {
-    padding-left: 4px;
-    padding-right: 4px;
     margin-bottom: 0;
+    width: 3rem;
+    height: 1.5rem;
   }
 `;
 

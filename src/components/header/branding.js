@@ -8,13 +8,13 @@ const BrandingWrapper = styled.div`
   a {
     text-decoration: none;
     color: ${Colors.main};
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: bold;
-    height: 66px;
+    height: 6.6rem;
   }
 
   .logo {
-    height: 66px;
+    height: 6.6rem;
   }
 `;
 

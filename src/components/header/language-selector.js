@@ -10,10 +10,11 @@ const LanguageSelectorWrapper = styled.div`
 `;
 
 const Button = styled.button`
-  padding: 10px 16px;
+  padding: 1rem 1.6rem;
   color: ${Colors.dirtyWhite};
   background-color: transparent;
   border: none;
+  font-size: 1.6rem;
 
   &:hover {
     color: ${Colors.red};

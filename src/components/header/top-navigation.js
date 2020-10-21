@@ -11,12 +11,12 @@ const TopNavigationWrapper = styled.div`
   margin: 0 auto;
   max-width: ${DesignSettings.outerWidth};
   display: flex;
-  padding: 5px 0;
+  padding: .5rem 0;
 
   .button-cta {
-    border: 1px solid ${Colors.red};
+    border: .1rem solid ${Colors.red};
     background-color: ${Colors.red};
-    line-height: 45px;
+    line-height: 4.5rem;
 
     a {
       color: ${Colors.dirtyWhite};
@@ -24,7 +24,7 @@ const TopNavigationWrapper = styled.div`
 
     &:hover {
       color: ${Colors.red};
-      border: 1px solid ${Colors.red};
+      border: .1rem solid ${Colors.red};
       background-color: ${Colors.dirtyWhite};
 
       a {
@@ -39,12 +39,12 @@ const NavLinks = styled.ul`
   display: flex;
   list-style-type: none;
   margin-bottom: 0; 
-  height: 66px;
+  height: 6.6rem;
 `;
 
 const NavLink = styled.li`
   margin: auto 0;
-  height: 45px;
+  height: 4.5rem;
   cursor: pointer;
 
   span i::before {
@@ -58,10 +58,10 @@ const NavLink = styled.li`
 
   /* Set the width of the menu item with submenu per language*/
   &.projects.hu {
-    width: 165px;
+    width: 16.5rem;
   }
   &.projects.en-us {
-    width: 145px;
+    width: 14.5rem;
   }
 
   &:hover a {
@@ -71,10 +71,10 @@ const NavLink = styled.li`
   a {
     color: ${Colors.main};
     text-decoration: none;
-    padding: 0 16px;
+    padding: 0 1.6rem;
     font-weight: bold;
-    font-size: 16px;
-    line-height: 45px;
+    font-size: 1.6rem;
+    line-height: 4.5rem;
     display: inline-block;
   }
 
@@ -85,7 +85,8 @@ const NavLink = styled.li`
       flex-flow: column wrap;
       list-style-type: none;
       right: 0%;
-      min-width: 100px;
+      min-width: 10rem;
+      z-index: 2;
 
       a {
         color: ${Colors.main};
@@ -107,10 +108,10 @@ const SubNavLinks = styled.ul`
 
   /* Set the width of the submenu per language*/
   &.projects.hu {
-    width: 200px;
+    width: 20rem;
   }
   &.projects.en-us {
-    width: 200px;
+    width: 20rem;
   }
 `;
 

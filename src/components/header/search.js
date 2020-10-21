@@ -8,21 +8,22 @@ const SearchWrapper = styled.div`
   display: flex;
   align-items: center;
   background: white;
-  width: 300px;
-  margin-right: 16px;
-  padding-left: 10px;
-  padding-right: 10px;
+  width: 30rem;
+  margin-right: 1.6rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
   input {
-    padding: 5px;
+    padding: .5rem;
     border: none;
-    width: 300px;
+    width: 30rem;
+    font-size: 1.4rem;
     color: ${Colors.main};
   }
 `;
 
 const SearchInput = styled.input`
-  line-height: 1.4rem;
+  line-height: 2.2rem;
 
   &:focus {
     outline: none;

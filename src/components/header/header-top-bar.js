@@ -7,7 +7,7 @@ import SocialLinks from "./social-links";
 import Search from "./search";
 
 const TopBarWrapper = styled.div`
-  padding: 1rem 0;
+  padding: 1.6rem 0;
   background-color: ${Colors.main};
 `;
 
