@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout/Layout"
-import SliceZone from "../components/slices/SliceZone"
+import SliceZone from "../components/homepage-slices/SliceZone"
 
 class Homepage extends React.Component {
 
