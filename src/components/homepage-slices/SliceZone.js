@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Hero from './Hero';
+import IntroText from './IntroText';
 
 const SliceZone = ({ body }) => (
   <div>
@@ -21,7 +22,11 @@ const SliceZone = ({ body }) => (
             )
           case "intro_text":
             return (
-              <div key={idx}>intro_text</div>
+              <IntroText
+                key={idx}
+                title={bodyContent.primary.intro_title}
+                text={bodyContent.primary.intro_text}
+              />
             )
           case "activities_row":
             return (
