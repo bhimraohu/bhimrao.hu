@@ -10,11 +10,11 @@ const FooterWrapper = styled.footer`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 300px;
+  height: 30rem;
 
   .emmi-logo {
-    width: 200px;
-    margin-bottom: 1rem;
+    width: 20rem;
+    margin-bottom: 1.6rem;
   }
 
   .eu-logo {
@@ -38,6 +38,11 @@ const FooterContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+
+    .copyright-text {
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
   }
   .columns {
     display: flex;
@@ -47,11 +52,16 @@ const FooterContainer = styled.div`
   .documents-links {
     color: ${Colors.dirtyWhite};
     text-decoration: none;
-    line-height: 1.5rem;
+    line-height: 2.4rem;
+    font-size: 1.8rem;
 
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  .tax-number {
+    font-size: 1.8rem;
   }
 `;
 
@@ -60,15 +70,19 @@ const Column = styled.div`
   flex-direction: column;
 
   &:nth-child(1) {
-    width: 250px;
-    margin-right: 32px;
+    width: 25rem;
+    margin-right: 3.2rem;
   }
   &:nth-child(2) {
-    width: 125px;
-    margin-right: 32px;
+    width: 12.5rem;
+    margin-right: 3.2rem;
   }
   &:nth-child(3) {
-    width: 300px;
+    width: 30rem;
+  }
+
+  .supporter-text {
+    font-size: 1.4rem;
   }
 `;
 
@@ -91,15 +105,21 @@ const Footer = ({ data }) => {
             </Column>
             <Column>
               <RichTextCustom render={data.second_section_title} />
-              <RichTextCustom render={data.second_section_field} />
+              <p className="tax-number">
+                <RichTextCustom render={data.second_section_field} />
+              </p>
             </Column>
             <Column>
               <RichTextCustom render={data.third_section_title} />
               <img className="emmi-logo" src={data.supporter_logo.url} alt="Emmi logo" />
-              <RichTextCustom render={data.supporter_text} className="supporter-text" />
+              <p className="supporter-text">
+                <RichTextCustom render={data.supporter_text} />
+              </p>
             </Column>
           </div>
-          <RichTextCustom className="copyright-text" render={data.copyright_text} />
+          <p className="copyright-text">
+            <RichTextCustom render={data.copyright_text} />
+          </p>
         </div>
       </FooterContainer>
       <img className="eu-logo" src={data.eu_logo.url} alt="EU logo" />
