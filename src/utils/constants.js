@@ -5,6 +5,8 @@ export const Colors = {
   dirtyWhite: '#EEEEEE',
   textColor: '#5D5D73',
   headerColor: '#343450',
+  imageRowBackground: '#FAFAF6',
+  imageRowBackground2: '#F5F5F5',
 }
 
 export const DesignSettings = {
