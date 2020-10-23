@@ -17,10 +17,10 @@
   color: var(--third-color);
 }
 
-.h1-border-bottom h1 {
+.h1-border-bottom > h1 {
   display: inline-block;
 }
-.h1-border-bottom h1::after {
+.h1-border-bottom > h1::after {
   content: "";
   display: block;
   margin: 0 auto 0 0;
