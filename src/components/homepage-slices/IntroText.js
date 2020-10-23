@@ -7,6 +7,15 @@ import { DesignSettings } from "../../utils/constants";
 const IntroTextWrapper = styled.section`
   margin: 5rem auto;
   width: ${DesignSettings.innerWidth};
+
+  > .h1-border-bottom > h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+  }
+
+> .h1-border-bottom > p {
+  font-size: 2rem;
+}
 `;
 
 const IntroText = ({ title, text }) => {
