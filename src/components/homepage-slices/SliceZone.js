@@ -3,6 +3,7 @@ import React from 'react';
 import Hero from './Hero';
 import IntroText from './IntroText';
 import ActivitiesRow from './ActivitiesRow';
+import TopNews from './TopNews';
 
 const SliceZone = ({ body }) => (
   <div>
@@ -38,7 +39,11 @@ const SliceZone = ({ body }) => (
             )
           case "top_news":
             return (
-              <div key={idx}>top_news</div>
+              <TopNews
+                key={idx}
+                title={bodyContent.primary.title}
+                news={bodyContent.fields}
+              />
             )
           case "supporters":
             return (
