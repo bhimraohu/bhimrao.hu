@@ -52,9 +52,9 @@ const ActivitiesRow = ({ fields }) => {
   return (
     <ActivitiesRowWrapper>
       {
-        fields.map((field) => {
+        fields.map((field, idx) => {
           return (
-            <div className="item">
+            <div key={idx} className="item">
               <img className="item-icon" src={field.activity_icon.url} alt={field.activity_label} />
               <span className="item-text" >{field.activity_label}</span>
             </div>
