@@ -105,21 +105,21 @@ const Footer = ({ data }) => {
             </Column>
             <Column>
               <RichTextCustom render={data.second_section_title} />
-              <p className="tax-number">
+              <div className="tax-number">
                 <RichTextCustom render={data.second_section_field} />
-              </p>
+              </div>
             </Column>
             <Column>
               <RichTextCustom render={data.third_section_title} />
               <img className="emmi-logo" src={data.supporter_logo.url} alt="Emmi logo" />
-              <p className="supporter-text">
+              <div className="supporter-text">
                 <RichTextCustom render={data.supporter_text} />
-              </p>
+              </div>
             </Column>
           </div>
-          <p className="copyright-text">
+          <div className="copyright-text">
             <RichTextCustom render={data.copyright_text} />
-          </p>
+          </div>
         </div>
       </FooterContainer>
       <img className="eu-logo" src={data.eu_logo.url} alt="EU logo" />
