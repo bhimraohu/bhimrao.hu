@@ -71,11 +71,11 @@ const Column = styled.div`
 
   &:nth-child(1) {
     width: 25rem;
-    margin-right: 3.2rem;
+    margin-right: 4rem;
   }
   &:nth-child(2) {
     width: 12.5rem;
-    margin-right: 3.2rem;
+    margin-right: 4rem;
   }
   &:nth-child(3) {
     width: 30rem;
@@ -84,10 +84,14 @@ const Column = styled.div`
   .supporter-text {
     font-size: 1.4rem;
   }
+
+  > h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
 `;
 
 const Footer = ({ data }) => {
-
   return (
     <FooterWrapper>
       <FooterContainer>
@@ -103,12 +107,14 @@ const Footer = ({ data }) => {
                 })
               }
             </Column>
+
             <Column>
               <RichTextCustom render={data.second_section_title} />
               <div className="tax-number">
                 <RichTextCustom render={data.second_section_field} />
               </div>
             </Column>
+
             <Column>
               <RichTextCustom render={data.third_section_title} />
               <img className="emmi-logo" src={data.supporter_logo.url} alt="Emmi logo" />
