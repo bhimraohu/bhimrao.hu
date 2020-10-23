@@ -21,7 +21,10 @@ class Homepage extends React.Component {
     console.log(this.props.data.prismic.allHomepages.edges[0].node.body)
     return (
       <Layout navigationData={navigationData}>
-        <SliceZone body={this.props.data.prismic.allHomepages.edges[0].node.body} />
+        <SliceZone
+          body={this.props.data.prismic.allHomepages.edges[0].node.body}
+          news={this.props.data.prismic.allNews_items.edges}
+        />
       </Layout >
     );
   }
@@ -64,12 +67,6 @@ query homepageQuery($lang: String) {
               primary {
                 title
               }
-              fields {
-                image
-                date
-                title
-                content
-              }
             }
             ... on PRISMIC_HomepageBodySupporters {
               type
@@ -88,6 +85,23 @@ query homepageQuery($lang: String) {
                 hero_bottom_image
               }
             }
+          }
+        }
+      }
+    }
+
+    allNews_items(sortBy: date_DESC, first: 3) {
+      edges {
+        node {
+          button_label
+          content
+          date
+          title
+          image
+          _meta {
+            uid
+            type
+            lang
           }
         }
       }
