@@ -5,7 +5,7 @@ import RichTextCustom from '../common/richtext';
 import { DesignSettings } from "../../utils/constants";
 
 const IntroTextWrapper = styled.section`
-  margin: 0 auto;
+  margin: 5rem auto;
   width: ${DesignSettings.innerWidth};
 `;
 
