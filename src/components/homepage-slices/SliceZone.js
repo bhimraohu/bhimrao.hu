@@ -5,12 +5,10 @@ import IntroText from './IntroText';
 import ActivitiesRow from './ActivitiesRow';
 import TopNews from './TopNews';
 
-const SliceZone = ({ body }) => (
+const SliceZone = ({ body, news }) => (
   <div>
     {
       body.map((bodyContent, idx) => {
-        console.log(bodyContent.type)
-
         switch (bodyContent.type) {
           case "hero_image":
             return (
@@ -42,7 +40,7 @@ const SliceZone = ({ body }) => (
               <TopNews
                 key={idx}
                 title={bodyContent.primary.title}
-                news={bodyContent.fields}
+                news={news}
               />
             )
           case "supporters":
