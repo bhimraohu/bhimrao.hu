@@ -80,7 +80,7 @@ query homepageQuery($lang: String) {
             ... on PRISMIC_HomepageBodyBottom_hero {
               type
               primary {
-                hero_bottom_title
+                hero_bottom_icon
                 hero_bottom_content
                 hero_bottom_image
               }
@@ -130,6 +130,9 @@ query homepageQuery($lang: String) {
               }
             }
           }
+          address
+          address_label
+          address_maps_link
         }
       }
     }
