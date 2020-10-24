@@ -45,6 +45,7 @@ const HeroWrapper = styled.section`
     height: 100%;
     z-index: 1;
     margin-bottom: 4rem;
+    display: flex;
   }
   
   .hero-text-container {
