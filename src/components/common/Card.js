@@ -12,6 +12,10 @@ const CardWrapper = styled.span`
 
   .card-content-wrapper {
     margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
   }
 
   .date {
@@ -48,12 +52,14 @@ const Card = ({ news }) => {
     <CardWrapper>
       <img src={news.image.url} alt={news.image.alt} />
       <div className="card-content-wrapper">
-        <p className="date">{news.date}</p>
-        <div className="card-title">
-          <RichTextCustom render={news.title} />
-        </div>
-        <div className="text">
-          <RichTextCustom render={news.content} />
+        <div className="content-container">
+          <p className="date">{news.date}</p>
+          <div className="card-title">
+            <RichTextCustom render={news.title} />
+          </div>
+          <div className="text">
+            <RichTextCustom render={news.content} />
+          </div>
         </div>
         <div className="button-container">
           <button className="button">{news.button_label}></button>
