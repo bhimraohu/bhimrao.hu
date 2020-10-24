@@ -31,6 +31,10 @@ const TopNavigationWrapper = styled.div`
         color: ${Colors.red};
       }
     }
+
+    a.selected {
+      color: ${Colors.dirtyWhite};
+    }
   }
 `;
 
@@ -76,6 +80,10 @@ const NavLink = styled.li`
     font-size: 1.6rem;
     line-height: 4.5rem;
     display: inline-block;
+  }
+
+  a.selected {
+    color: ${Colors.red};
   }
 
   &:hover{
@@ -139,7 +147,10 @@ const TopNavigation = ({ navigationData }) => (
 const getMainNav = (link) => {
   return (
     <NavLink key={link.link._meta.uid} className={link.is_cta ? 'button-cta' : ''}>
-      <Link to={linkResolverBase(link.link._meta)}>
+      <Link
+        to={linkResolverBase(link.link._meta)}
+        className={getSelectedClassName(link.link._meta)}
+      >
         {link.label}
       </Link>
     </NavLink>
@@ -149,7 +160,10 @@ const getMainNav = (link) => {
 const getMainAndSubNav = (link, subNav) => {
   return (
     <NavLink key={link.link._meta.uid} className={`${link.submenu} ${link.link._meta.lang}`}>
-      <Link to={linkResolverBase(link.link._meta)}>
+      <Link
+        to={linkResolverBase(link.link._meta)}
+        className={getSelectedClassName(link.link._meta)}
+      >
         {link.label}
         <Icon icon_class={'icon-down'} color={Colors.red} />
       </Link>
@@ -168,4 +182,7 @@ const getMainAndSubNav = (link, subNav) => {
   );
 }
 
+const getSelectedClassName = (meta) => {
+  return window.location.pathname.indexOf(linkResolverBase(meta)) > -1 ? 'selected' : '';
+}
 export default TopNavigation;
