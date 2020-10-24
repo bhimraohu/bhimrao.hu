@@ -30,13 +30,24 @@ const SearchInput = styled.input`
   }
 `;
 
-const Search = ({ search_placeholder }) => {
-  return (
-    <SearchWrapper>
-      <SearchInput type="text" placeholder={search_placeholder} />
-      <Icon icon_class={'icon-search'} />
-    </SearchWrapper>
-  )
+class Search extends React.Component {
+  componentDidMount() {
+    this.searchInput.focus();
+  }
+
+  render() {
+    return (
+      <SearchWrapper>
+        <SearchInput
+          type="text"
+          placeholder={this.props.search_placeholder}
+          onBlur={this.props.onBlur}
+          ref={inputEl => (this.searchInput = inputEl)}
+        />
+        <Icon icon_class={'icon-search'} />
+      </SearchWrapper>
+    )
+  }
 };
 
 export default Search;
