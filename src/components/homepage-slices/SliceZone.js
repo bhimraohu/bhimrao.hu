@@ -4,6 +4,8 @@ import Hero from './Hero';
 import IntroText from './IntroText';
 import ActivitiesRow from './ActivitiesRow';
 import TopNews from './TopNews';
+import BottomHero from './BottomHero';
+import SupportersRow from './SupportersRow';
 
 const SliceZone = ({ body, news }) => (
   <div>
@@ -45,11 +47,20 @@ const SliceZone = ({ body, news }) => (
             )
           case "supporters":
             return (
-              <div key={idx}>supporters</div>
+              <SupportersRow
+                key={idx}
+                title={bodyContent.primary.title}
+                fields={bodyContent.fields}
+              />
             )
           case "bottom_hero":
             return (
-              <div key={idx}>bottom_hero</div>
+              <BottomHero
+                key={idx}
+                icon={bodyContent.primary.hero_bottom_icon}
+                content={bodyContent.primary.hero_bottom_content}
+                backgroundImage={bodyContent.primary.hero_bottom_image.url}
+              />
             )
           default:
             return null;
