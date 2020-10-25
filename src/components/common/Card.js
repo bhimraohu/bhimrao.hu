@@ -38,12 +38,12 @@ const CardWrapper = styled.span`
     margin-top: 2rem;
 
     .button {
-    color: ${Colors.red};
-    font-size: 2rem;
-    font-weight: bold;
-    background: none;
-    border: none;
-  }
+      color: ${Colors.red};
+      font-size: 2rem;
+      font-weight: bold;
+      background: none;
+      border: none;
+    }
   }
 `;
 
@@ -62,7 +62,7 @@ const Card = ({ news }) => {
           </div>
         </div>
         <div className="button-container">
-          <button className="button">{news.button_label}></button>
+          <button className="button">{news.button_label}&gt;</button>
         </div>
       </div>
     </CardWrapper>
