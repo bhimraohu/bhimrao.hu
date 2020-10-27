@@ -43,6 +43,14 @@ const CardWrapper = styled.span`
       font-weight: bold;
       background: none;
       border: none;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 `;
