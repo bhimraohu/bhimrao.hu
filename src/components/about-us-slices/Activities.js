@@ -43,11 +43,22 @@ const ActivitiesWrapper = styled.section`
       font-weight: bold;
       background: none;
       border: none;
+      padding-left: 0;
+      text-decoration: none;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
   }
 `;
 
-const Activities = ({ title, content, highlighted_text, content_part_2, link_label }) => {
+const Activities = ({ title, content, highlighted_text, content_part_2, link, link_label }) => {
 
   return (
     <ActivitiesWrapper>
@@ -69,7 +80,7 @@ const Activities = ({ title, content, highlighted_text, content_part_2, link_lab
         </div>
 
         <div className="button-wrapper">
-          <button className="button">{link_label}&gt;</button>
+          <a className="button" href={link.url} target="_blank" alt={link_label} rel="noreferrer">{link_label}&gt;</a>
         </div>
       </div>
     </ActivitiesWrapper>
