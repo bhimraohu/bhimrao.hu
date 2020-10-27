@@ -53,7 +53,6 @@ const HeroWrapper = styled.section`
     max-width: 40%;
     color: white;
     font-size: 2.2rem;
-    font-style: italic;
     text-transform: uppercase;
   }
 
