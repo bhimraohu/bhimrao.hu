@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import HeaderTopBar from "./header-top-bar"
+import HeaderTopBar from "./HeaderTopBar"
 import TopNavigation from "./top-navigation"
 
 const HeaderWrapper = styled.header`

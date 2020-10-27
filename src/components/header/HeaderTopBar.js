@@ -103,7 +103,13 @@ class HeaderTopBar extends React.Component {
               this.state.showSearchInput
                 ? <Search search_placeholder={this.props.topbarsData.search_placeholder} onBlur={this.onBlurHandler} />
                 : (
-                  <div className="icon-container" onClick={this.onClickHandler} role="button" onKeyPress={this.onKeyPressHandler}>
+                  <div
+                    className="icon-container"
+                    onClick={this.onClickHandler}
+                    onKeyPress={this.onKeyPressHandler}
+                    role="button"
+                    tabIndex="0"
+                  >
                     <Icon icon_class={'icon-search'} color={Colors.dirtyWhite} />
                   </div>
                 )
