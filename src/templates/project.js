@@ -47,6 +47,7 @@ export default Project;
 export const query = graphql`
 query projectQuery($lang: String) {
   prismic {
+    
     allHeader_topbars (lang: $lang) {
       edges {
         node {
@@ -70,6 +71,9 @@ query projectQuery($lang: String) {
               }
             }
           }
+          address
+          address_label
+          address_maps_link
         }
       }
     }

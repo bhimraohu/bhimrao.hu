@@ -47,6 +47,7 @@ export default Search;
 export const query = graphql`
 query searchQuery($lang: String) {
   prismic {
+    
     allHeader_topbars (lang: $lang) {
       edges {
         node {
@@ -70,6 +71,9 @@ query searchQuery($lang: String) {
               }
             }
           }
+          address
+          address_label
+          address_maps_link
         }
       }
     }

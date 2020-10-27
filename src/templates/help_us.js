@@ -47,6 +47,7 @@ export default HelpUs;
 export const query = graphql`
 query helpusQuery($lang: String) {
   prismic {
+    
     allHeader_topbars (lang: $lang) {
       edges {
         node {
@@ -70,6 +71,9 @@ query helpusQuery($lang: String) {
               }
             }
           }
+          address
+          address_label
+          address_maps_link
         }
       }
     }

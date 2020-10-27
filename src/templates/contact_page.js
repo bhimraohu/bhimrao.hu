@@ -47,6 +47,7 @@ export default ContactPage;
 export const query = graphql`
 query contactusQuery($lang: String) {
   prismic {
+    
     allHeader_topbars (lang: $lang) {
       edges {
         node {
@@ -70,6 +71,9 @@ query contactusQuery($lang: String) {
               }
             }
           }
+          address
+          address_label
+          address_maps_link
         }
       }
     }
