@@ -270,10 +270,6 @@ th {
   font-weight: bold;
 }
 
-li {
-  margin-bottom: calc(1.45rem / 2);
-}
-
 ol li,
 ul li {
   padding-left: 0;
@@ -287,9 +283,6 @@ li *:last-child {
 }
 p *:last-child {
   margin-bottom: 0;
-}
-li > p {
-  margin-bottom: calc(1.45rem / 2);
 }
 
 code,
