@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Hero from './Hero';
+import Hero from '../common/Hero';
 import Activities from './Activities';
 import StatisticsRow from './StatisticsRow';
 import Goals from './Goals';
@@ -14,6 +14,7 @@ const SliceZone = ({ body }) => (
             return (
               <Hero
                 key={idx}
+                color={bodyContent.primary.hero_color}
                 title={bodyContent.primary.hero_title}
                 content={bodyContent.primary.hero_content}
                 backgroundImage={bodyContent.primary.hero_image.url}
