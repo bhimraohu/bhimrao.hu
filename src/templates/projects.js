@@ -64,6 +64,7 @@ query projectsQuery($lang: String) {
                 title
               }
               fields {
+                link_label
                 link {
                   ... on PRISMIC_Project {
                     closed
