@@ -8,15 +8,6 @@ const HighlightedTextWrapper = styled.section`
   margin: 5rem auto;
   width: ${DesignSettings.innerWidth};
 
-  .h1-border-bottom > h1,
-  .title-wrapper > .h1-border-bottom > h1 {
-    font-size: 2.8rem;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  
-
   .highlighted-text {
     margin: 4rem 0;
   }
