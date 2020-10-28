@@ -17,8 +17,7 @@ class Homepage extends React.Component {
 
   render() {
     const navigationData = this.getNavigationData(this.props);
-    console.log("allHomepages")
-    console.log(this.props.data.prismic.allHomepages.edges[0].node.body)
+
     return (
       <Layout navigationData={navigationData}>
         <SliceZone

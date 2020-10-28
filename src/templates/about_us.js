@@ -17,8 +17,7 @@ class AboutUs extends React.Component {
 
   render() {
     const navigationData = this.getNavigationData(this.props);
-    // console.log("allAbout_uss")
-    // console.log(this.props.data.prismic.allAbout_uss.edges[0].node.body)
+
     return (
       <Layout navigationData={navigationData}>
         <SliceZone body={this.props.data.prismic.allAbout_uss.edges[0].node.body} />

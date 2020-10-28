@@ -17,8 +17,6 @@ class Projects extends React.Component {
 
   render() {
     const navigationData = this.getNavigationData(this.props);
-    console.log("allProjectss")
-    console.log(this.props.data.prismic.allProjectss.edges[0].node.body)
 
     return (
       <Layout navigationData={navigationData}>
