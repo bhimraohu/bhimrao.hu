@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import HeaderTopBar from "./HeaderTopBar"
-import TopNavigation from "./top-navigation"
+import TopNavigation from "./TopNavigation"
 
 const HeaderWrapper = styled.header`
   margin-bottom: 1.5rem; 

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { linkResolverBase } from '../../utils/linkResolverBase';
 import { Colors, DesignSettings } from "../../utils/constants";
 import Icon from "../common/icon";
-import BrandingWrapper from "./branding";
+import BrandingWrapper from "./Branding";
 
 const TopNavigationWrapper = styled.div`
   margin: 0 auto;
@@ -172,7 +172,12 @@ const getMainAndSubNav = (link, subNav) => {
           subNav.node.sub_navigation_links.map(subLink => {
             return (
               <NavLink key={subLink.link._meta.uid}>
-                <Link to={linkResolverBase(subLink.link._meta)}>{subLink.label}</Link>
+                <Link
+                  to={linkResolverBase(subLink.link._meta)}
+                  className={getSelectedClassName(subLink.link._meta)}
+                >
+                  {subLink.label}
+                </Link>
               </NavLink>
             )
           })

@@ -1,7 +1,7 @@
 import React from "react"
 // import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "../header/header"
+import Header from "../header/Header"
 import Footer from "../footer/Footer"
 
 import "../../../static/styles/common.css"

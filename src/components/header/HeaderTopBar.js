@@ -2,8 +2,8 @@ import React from "react"
 import styled from "styled-components"
 
 import { Colors, DesignSettings } from "../../utils/constants";
-import LanguageSelector from "./language-selector";
-import SocialLinks from "./social-links";
+import LanguageSelector from "./LanguageSelector";
+import SocialLinks from "./SocialLinks";
 import Search from "./Search";
 import Icon from "../common/icon";
 
