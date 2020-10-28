@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import RichTextCustom from '../common/richtext';
-import { DesignSettings } from "../../utils/constants";
-import { Colors } from '../../utils/constants';
+import { Colors, DesignSettings } from "../../utils/constants";
 
 const ActivitiesWrapper = styled.section`
   margin: 5rem auto;
