@@ -77,7 +77,6 @@ query projectQuery($lang: String, $uid: String) {
             ... on PRISMIC_ProjectBodyStudy_halls {
               type
               fields {
-                icon
                 label
               }
             }
@@ -199,6 +198,8 @@ query projectQuery($lang: String, $uid: String) {
             ... on PRISMIC_ProjectBodyImage_with_description {
               type
               primary {
+                background_color_a
+                background_color_b
                 description_a
                 description_b
                 icon_a
