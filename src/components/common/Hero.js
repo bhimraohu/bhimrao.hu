@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import RichTextCustom from '../common/richtext';
+import RichTextCustom from './richtext';
 import { DesignSettings } from "../../utils/constants";
 
 const HeroWrapper = styled.section`
