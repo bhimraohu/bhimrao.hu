@@ -30,9 +30,13 @@ const TextWithTitle = ({ text_title, text_subtitle, text }) => {
           <RichTextCustom render={text_title} />
         </div>
 
-        <div className="content-wrapper">
-          <RichTextCustom render={text_subtitle} />
-        </div>
+        {
+          text_subtitle
+            ? (<div className="content-wrapper">
+              <RichTextCustom render={text_subtitle} />
+            </div>)
+            : null
+        }
 
         <div className="content-wrapper">
           <RichTextCustom render={text} />
