@@ -4,6 +4,9 @@ import Hero from '../common/Hero';
 import TextWithTitle from './TextWithTitle';
 import HighlightedText from './HighlightedText';
 import StudyHalls from './StudyHalls';
+import TextOnly from './TextOnly';
+import ImageWithDescription from './ImageWithDescription';
+import ImageGrid from './ImageGrid';
 
 const SliceZone = ({ body }) => (
   <div>
@@ -46,9 +49,34 @@ const SliceZone = ({ body }) => (
               />
             );
           case "text_only":
-          case "text_with_title":
+            return (
+              <TextOnly
+                key={idx}
+                text={bodyContent.primary.text}
+              />
+            );
           case "image_with_description":
+            return (
+              <ImageWithDescription
+                key={idx}
+                background_color_a={bodyContent.primary.background_color_a}
+                background_color_b={bodyContent.primary.background_color_b}
+                description_a={bodyContent.primary.description_a}
+                description_b={bodyContent.primary.description_b}
+                icon_a={bodyContent.primary.icon_a}
+                icon_b={bodyContent.primary.icon_b}
+                image_a={bodyContent.primary.image_a}
+                image_b={bodyContent.primary.image_b}
+              />
+            );
           case "image_grid":
+            return (
+              <ImageGrid
+                key={idx}
+                background_color={bodyContent.primary.background_color}
+                fields={bodyContent.fields}
+              />
+            );
           case "hero_image_complex":
           case "image_collage":
           case "image_and_description":
