@@ -59,8 +59,8 @@ const BottomHeroWrapper = styled.section`
     &::before{
       content: "";
       background: transparent url(${props => props.icon.url}) no-repeat 0 0;
-    width: 6rem;
-    height: 6rem;
+      width: 6rem;
+      height: 6rem;
       display: inline-block;
     }
   }
