@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Colors } from "../../utils/constants";
+import { Colors, DesignSettings } from "../../utils/constants";
 import RichTextCustom from '../common/richtext';
 
 const SupportersRowWrapper = styled.section`
@@ -16,7 +16,8 @@ const SupportersRowWrapper = styled.section`
   .image-container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
+    width: ${DesignSettings.innerWidth};
   }
 
   .item {
@@ -38,7 +39,10 @@ const SupportersRowWrapper = styled.section`
 
   .title-container > h1 {
     font-size: 2.8rem;
+    text-transform: uppercase;
     text-align: center;
+    color: ${Colors.headerColor};
+    font-weight: 500;
   }
 `;
 

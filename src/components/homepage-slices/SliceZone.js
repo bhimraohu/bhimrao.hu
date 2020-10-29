@@ -5,7 +5,7 @@ import IntroText from './IntroText';
 import ActivitiesRow from './ActivitiesRow';
 import TopNews from './TopNews';
 import BottomHero from './BottomHero';
-import SupportersRow from './SupportersRow';
+import SupportersRow from '../common/SupportersRow';
 
 const SliceZone = ({ body, news }) => (
   <div>
