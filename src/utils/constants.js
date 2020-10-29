@@ -13,4 +13,5 @@ export const Colors = {
 export const DesignSettings = {
   outerWidth: '1200px',
   innerWidth: '1000px',
+  textWidth: '900px',
 }
