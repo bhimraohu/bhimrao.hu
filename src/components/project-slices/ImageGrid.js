@@ -5,7 +5,7 @@ const ImageGridWrapper = styled.section`
   padding: 10rem;
   background-color: ${props => props.background_color};
 
-  .content-wrapper {
+  .image-grid-wrapper {
     margin: 0 auto;
 
     img {
@@ -18,7 +18,7 @@ const ImageGridWrapper = styled.section`
 const ImageGrid = ({ background_color, fields }) => {
   return (
     <ImageGridWrapper background_color={background_color}>
-      <div className="content-wrapper">
+      <div className="image-grid-wrapper">
         {
           fields.map((item, idx) => {
             return (
