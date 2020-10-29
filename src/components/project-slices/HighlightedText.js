@@ -5,8 +5,14 @@ import RichTextCustom from '../common/richtext';
 import { Colors, DesignSettings } from "../../utils/constants";
 
 const HighlightedTextWrapper = styled.section`
-  margin: 5rem auto;
-  width: ${DesignSettings.innerWidth};
+  padding: 5rem auto;
+  background-color: ${props => props.background_color};
+  
+  .highlighted-text-container {
+    margin: 0 auto;
+    padding: 1rem 0;
+    width: ${DesignSettings.innerWidth};
+  }
 
   .highlighted-text {
     margin: 4rem 0;
@@ -23,9 +29,11 @@ const HighlightedTextWrapper = styled.section`
 const HighlightedText = ({ background_color, highlighted_text }) => {
 
   return (
-    <HighlightedTextWrapper>
-      <div className="highlighted-text">
-        <RichTextCustom render={highlighted_text} />
+    <HighlightedTextWrapper background_color={background_color}>
+      <div className="highlighted-text-container">
+        <div className="highlighted-text">
+          <RichTextCustom render={highlighted_text} />
+        </div>
       </div>
     </HighlightedTextWrapper>
   );
