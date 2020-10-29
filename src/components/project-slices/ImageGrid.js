@@ -1,0 +1,34 @@
+import React from 'react';
+import styled from 'styled-components';
+
+const ImageGridWrapper = styled.section`
+  padding: 10rem;
+  background-color: ${props => props.background_color};
+
+  .content-wrapper {
+    margin: 0 auto;
+
+    img {
+      width: 33%;
+      padding: 1%;
+    }
+  }
+`;
+
+const ImageGrid = ({ background_color, fields }) => {
+  return (
+    <ImageGridWrapper background_color={background_color}>
+      <div className="content-wrapper">
+        {
+          fields.map((item, idx) => {
+            return (
+              <img src={item.image.url} alt={item.image.alt} />
+            )
+          })
+        }
+      </div>
+    </ImageGridWrapper>
+  );
+}
+
+export default ImageGrid;
