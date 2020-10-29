@@ -55,10 +55,14 @@ const ImageWithDescription = ({ background_color_a, background_color_b, descript
           {getImage(image_a)}
           {getText(background_color_a, description_a, icon_a)}
         </div>
-        <div className="row b">
-          {getText(background_color_b, description_b, icon_b)}
-          {getImage(image_b)}
-        </div>
+        {
+          background_color_b && description_b && icon_b && image_b
+            ? <div className="row b">
+              {getText(background_color_b, description_b, icon_b)}
+              {getImage(image_b)}
+            </div>
+            : null
+        }
       </div>
     </ImageWithDescriptionWrapper>
   );
