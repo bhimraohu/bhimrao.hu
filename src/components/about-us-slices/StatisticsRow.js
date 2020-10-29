@@ -18,7 +18,7 @@ const StatisticsRowWrapper = styled.section`
 
     .item {
       display: flex;
-      flex: 0 0 25%;
+      flex: 0 0 20%;
       flex-direction: column;
       justify-content: center;
       align-items: center;
