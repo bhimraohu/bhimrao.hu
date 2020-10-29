@@ -103,8 +103,8 @@ query projectQuery($lang: String, $uid: String) {
             ... on PRISMIC_ProjectBodyStatistics_row {
               type
               fields {
-                description
-                title
+                stat_number
+                stat_text
               }
             }
             ... on PRISMIC_ProjectBodyProject_structure {
