@@ -2,7 +2,7 @@ import React from 'react';
 
 import Hero from '../common/Hero';
 import Activities from './Activities';
-import StatisticsRow from './StatisticsRow';
+import StatisticsRow from '../common/StatisticsRow';
 import Goals from './Goals';
 
 const SliceZone = ({ body }) => (
