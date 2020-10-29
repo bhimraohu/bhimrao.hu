@@ -18,7 +18,7 @@ const StatisticsRowWrapper = styled.section`
 
     .item {
       display: flex;
-      flex: 0 0 20%;
+      flex: 0 0 ${props => props.fieldLength};
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -50,8 +50,10 @@ const StatisticsRowWrapper = styled.section`
 `;
 
 const StatisticsRow = ({ explanation, fields }) => {
+  const fieldLength = 100 / fields?.length + '%';
+
   return (
-    <StatisticsRowWrapper>
+    <StatisticsRowWrapper fieldLength={fieldLength}>
       <div className="stat-container">
         {
           fields.map((field, idx) => {
@@ -64,9 +66,13 @@ const StatisticsRow = ({ explanation, fields }) => {
           })
         }
       </div>
-      <div className="text-container">
-        <span className="text-content">{explanation}</span>
-      </div>
+      {
+        explanation
+          ? <div className="text-container">
+            <span className="text-content">{explanation}</span>
+          </div>
+          : null
+      }
     </StatisticsRowWrapper>
   );
 }
