@@ -30,6 +30,10 @@ const TopBarContainer = styled.div`
     height: inherit;
     margin-right: 3.1rem;
     cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   .address {
