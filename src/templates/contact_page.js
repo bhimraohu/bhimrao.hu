@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from "gatsby"
 
-import Layout from "../components/layout/Layout"
+import Layout from "../components/layout/LayoutCmp"
 // import SliceZone from "../components/sliceZone"
 
 class ContactPage extends React.Component {

@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { Colors, DesignSettings } from "../../utils/constants";
 import LanguageSelector from "./LanguageSelector";
 import SocialLinks from "./SocialLinks";
-import Search from "./Search";
+import Search from "./SearchCmp";
 import Icon from "../common/IconCmp";
 
 const TopBarWrapper = styled.div`

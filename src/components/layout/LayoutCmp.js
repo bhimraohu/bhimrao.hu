@@ -2,7 +2,7 @@ import React from "react"
 // import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "../header/Header"
-import Footer from "../footer/Footer"
+import Footer from "../footer/FooterCmp"
 
 import "../../../static/styles/common.css"
 import "../../../static/styles/Glyphter.css"
