@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import RichTextCustom from '../common/richtext';
+import RichTextCustom from '../common/RichTextCustom';
 import { Colors } from "../../utils/constants";
-import Icon from '../common/icon';
+import Icon from '../common/Icon';
 
 const ImageWithDescriptionWrapper = styled.section`
 
@@ -30,11 +30,6 @@ const ImageWithDescriptionWrapper = styled.section`
 
       &.a > div i:before {
         color: #DEDBCB;
-        font-size: 3rem;
-      }
-
-      &.b > div i:before {
-        font-size: 3rem;
       }
     }
   }
@@ -79,7 +74,7 @@ const getImage = (image) => {
 const getText = (background_color, description) => {
   return (
     <TextContainer background_color={background_color}>
-      <Icon icon_class={'icon-quote'} color={Colors.main} />
+      <Icon icon_class={'icon-quote'} color={Colors.main} size={'3rem'} />
       <RichTextCustom render={description} />
     </TextContainer>
   )

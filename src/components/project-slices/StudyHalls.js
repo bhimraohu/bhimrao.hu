@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Colors } from "../../utils/constants";
-import Icon from '../common/icon';
+import Icon from '../common/Icon';
 
 const StudyHallsWrapper = styled.section`
   display: flex;
@@ -23,10 +23,6 @@ const StudyHallsWrapper = styled.section`
       flex-direction: column;
       justify-content: center;
       align-items: center;
-
-      .icon-home::before {
-        font-size: 7rem;
-      }
     
       &:hover,
       &:hover .icon-home::before {
@@ -51,7 +47,7 @@ const StudyHalls = ({ fields }) => {
           fields.map((field, idx) => {
             return (
               <div key={idx} className="item">
-                <Icon icon_class={'icon-home'} color={Colors.dirtyWhite} />
+                <Icon icon_class={'icon-home'} color={Colors.dirtyWhite} size={'7rem'} />
                 <span className="item-stat_text">{field.label}</span>
                 {/* <Link 
                   to={linkResolverBase(field.link._meta)}

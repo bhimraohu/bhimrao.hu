@@ -6,7 +6,7 @@ const IconWrapper = styled.span`
     padding: .5rem;
 
     &:before {
-      font-size: 1.5rem;
+      font-size: ${(props) => props.size ? props.size : '1.5rem'};
       color: ${(props) => props.color};
       vertical-align: ${(props) => props.color ? 'middle' : 'inherit'};
     }
@@ -15,7 +15,7 @@ const IconWrapper = styled.span`
 
 const Icon = (props) => {
   return (
-    <IconWrapper color={props.color}>
+    <IconWrapper color={props.color} size={props.size}>
       <i className={props.icon_class} />
     </IconWrapper>
   )
