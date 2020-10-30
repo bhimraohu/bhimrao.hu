@@ -86,11 +86,7 @@ query projectQuery($lang: String, $uid: String) {
                 supporters_title
               }
               fields {
-                image_link {
-                  ... on PRISMIC__ImageLink {
-                    url
-                  }
-                }
+                image
               }
             }
             ... on PRISMIC_ProjectBodyTwo_column {
