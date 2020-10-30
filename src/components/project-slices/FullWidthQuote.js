@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import RichTextCustom from '../common/RichTextCustom';
 import { Colors, DesignSettings } from "../../utils/constants";
-import Icon from '../common/Icon';
+import Icon from '../common/IconCmp';
 
 const FullWidthQuoteWrapper = styled.section`
   width: 100%;

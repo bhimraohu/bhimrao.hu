@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import RichTextCustom from '../common/RichTextCustom';
 import { Colors } from "../../utils/constants";
-import Icon from '../common/Icon';
+import Icon from '../common/IconCmp';
 
 const ImageWithDescriptionWrapper = styled.section`
 

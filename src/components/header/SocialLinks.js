@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import Icon from "../common/Icon";
+import Icon from "../common/IconCmp";
 
 const SocialLinksWrapper = styled.ul`
   display: flex;

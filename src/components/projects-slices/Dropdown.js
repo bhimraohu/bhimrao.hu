@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from "gatsby"
 
 import { Colors, DesignSettings } from "../../utils/constants";
-import Icon from "../common/icon";
+import Icon from "../common/IconCmp";
 import { linkResolverBase } from '../../utils/linkResolverBase';
 
 const DropdownWrapper = styled.section`

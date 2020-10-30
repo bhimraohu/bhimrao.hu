@@ -5,7 +5,7 @@ import { Colors, DesignSettings } from "../../utils/constants";
 import LanguageSelector from "./LanguageSelector";
 import SocialLinks from "./SocialLinks";
 import Search from "./Search";
-import Icon from "../common/Icon";
+import Icon from "../common/IconCmp";
 
 const TopBarWrapper = styled.div`
   padding: 1.6rem 0;
