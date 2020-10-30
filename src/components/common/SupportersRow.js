@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Colors, DesignSettings } from "../../utils/constants";
-import RichTextCustom from '../common/richtext';
+import RichTextCustom from './RichTextCustom';
 
 const SupportersRowWrapper = styled.section`
   display: flex;

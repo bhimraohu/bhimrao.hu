@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { linkResolverBase } from '../../utils/linkResolverBase';
 import { Colors, DesignSettings } from "../../utils/constants";
-import Icon from "../common/icon";
+import Icon from "../common/Icon";
 import BrandingWrapper from "./Branding";
 
 const TopNavigationWrapper = styled.div`

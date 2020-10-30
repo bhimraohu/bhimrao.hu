@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { Colors } from "../../utils/constants";
-import Icon from "../common/icon";
+import Icon from "../common/Icon";
 
 const SearchWrapper = styled.div`
   display: flex;

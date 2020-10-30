@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from "gatsby"
 
-import RichTextCustom from '../common/richtext';
+import RichTextCustom from '../common/RichTextCustom';
 import { Colors, DesignSettings } from "../../utils/constants";
 import { linkResolverBase } from '../../utils/linkResolverBase';
 

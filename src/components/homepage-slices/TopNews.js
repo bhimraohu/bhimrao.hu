@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import RichTextCustom from '../common/richtext';
+import RichTextCustom from '../common/RichTextCustom';
 import Card from '../common/Card';
 import { DesignSettings } from "../../utils/constants";
 
