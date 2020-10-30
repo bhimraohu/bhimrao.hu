@@ -22,7 +22,7 @@ const ImageGrid = ({ background_color, fields }) => {
         {
           fields.map((item, idx) => {
             return (
-              <img src={item.image.url} alt={item.image.alt} />
+              <img key={idx} src={item.image.url} alt={item.image.alt} />
             )
           })
         }
