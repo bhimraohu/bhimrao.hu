@@ -68,7 +68,11 @@ const HeroComplex = ({ background_image, description, foreground_image, subtitle
       <div className="hero-complex-container">
         <div className="hero-complex-text-container h1-border-bottom">
           <RichTextCustom render={title} />
-          <RichTextCustom render={subtitle} />
+          {
+            subtitle
+              ? <RichTextCustom render={subtitle} />
+              : null
+          }
         </div>
         <div className="hero-complex-details-container">
           <img src={foreground_image} alt="title" />
