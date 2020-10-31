@@ -44,6 +44,7 @@ const ActivitiesRowWrapper = styled.section`
     text-align: center;
     font-weight: bold;
     font-size: 2rem;
+    color: ${Colors.textColor};
   }
 `;
 

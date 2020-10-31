@@ -23,10 +23,9 @@ const TopNewsWrapper = styled.section`
 `;
 
 const TopNews = ({ title, news }) => {
-  console.log(news);
   return (
     <TopNewsWrapper>
-      <div className="section-title h1-border-bottom">
+      <div className="section-title h1-border-bottom common-header">
         <RichTextCustom render={title} />
       </div>
       <div className="news-row">
