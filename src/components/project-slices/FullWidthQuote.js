@@ -16,7 +16,7 @@ const FullWidthQuoteWrapper = styled.section`
   `;
 
 const TextContainer = styled.div`
-  margin: 5rem auto;
+  margin: 3rem auto;
   width: ${DesignSettings.innerWidth};
   padding: 5rem 0;
   text-transform: uppercase;

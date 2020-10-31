@@ -5,7 +5,7 @@ import RichTextCustom from '../common/RichTextCustom';
 import { DesignSettings } from "../../utils/constants";
 
 const TextOnlyWrapper = styled.section`
-  margin: 5rem auto;
+  margin: 3rem auto;
   width: ${DesignSettings.innerWidth};
 
   .content-wrapper > p {

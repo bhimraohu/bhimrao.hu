@@ -5,7 +5,7 @@ import RichTextCustom from '../common/RichTextCustom';
 import { Colors, DesignSettings } from "../../utils/constants";
 
 const ActivitiesWrapper = styled.section`
-  margin: 5rem auto;
+  margin: 3rem auto;
   width: ${DesignSettings.innerWidth};
 
   .h1-border-bottom > h1,

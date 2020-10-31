@@ -7,7 +7,7 @@ import { Colors, DesignSettings } from "../../utils/constants";
 import { linkResolverBase } from '../../utils/linkResolverBase';
 
 const ProjectsWrapper = styled.section`
-  margin: 5rem auto;
+  margin: 3rem auto;
   width: ${DesignSettings.innerWidth};
 
   .projects-wrapper {
