@@ -62,6 +62,7 @@ const HeroWrapper = styled.section`
   .hero-content {
     color: white;
     font-size: 2rem;
+    line-height: 120%;
   }
 `;
 
