@@ -22,7 +22,7 @@ import TitleOnly from './TitleOnly';
 const SliceZone = ({ body }) => (
   <div>
     {
-      body.map((bodyContent, idx) => {
+      body.map((bodyContent, idx, arr) => {
         console.log(bodyContent.type)
         switch (bodyContent.type) {
           case "hero_image":
@@ -142,6 +142,7 @@ const SliceZone = ({ body }) => (
                 image_left={bodyContent.primary.image_left}
                 image_center={bodyContent.primary.image_center}
                 image_right={bodyContent.primary.image_right}
+                isLastSlice={idx === arr.length - 1}
               />
             );
           case "full_width_image":

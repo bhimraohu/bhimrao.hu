@@ -6,7 +6,7 @@ import { DesignSettings } from "../../utils/constants";
 
 const TitleOnlyWrapper = styled.section`
   margin: 3rem auto;
-  width: ${DesignSettings.innerWidth};
+  width: ${DesignSettings.textWidth};
 
   .content-wrapper > h1 {
     font-size: 3rem;

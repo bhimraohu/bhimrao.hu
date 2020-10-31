@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Colors, DesignSettings } from "../../utils/constants";
 
 const StatisticsRowWrapper = styled.section`
+  margin: 5rem auto;
   display: flex;
   flex-direction: column;
   background: ${Colors.main};

@@ -5,7 +5,7 @@ import { DesignSettings } from '../../utils/constants';
 import RichTextCustom from '../common/RichTextCustom';
 
 const SmallDetailRowWrapper = styled.section`
-  width: ${DesignSettings.innerWidth};
+  width: ${DesignSettings.textWidth};
   margin: 6rem auto;
   margin-top: 4rem;
 

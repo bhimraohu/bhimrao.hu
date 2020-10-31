@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ImageRowWrapper = styled.section`
-  margin: 5rem 0;
+  margin: ${props => props.isLastSlice ? '5rem 0 0 0' : '5rem 0'};
   width: 100%;
 
   .image-row-wrapper {
@@ -14,9 +14,9 @@ const ImageRowWrapper = styled.section`
   }
 `;
 
-const ImageRow = ({ image_left, image_center, image_right }) => {
+const ImageRow = ({ image_left, image_center, image_right, isLastSlice }) => {
   return (
-    <ImageRowWrapper>
+    <ImageRowWrapper isLastSlice={isLastSlice}>
       <div className="image-row-wrapper">
         <img src={image_left.url} alt={image_left.alt} />
         <img src={image_center.url} alt={image_center.alt} />

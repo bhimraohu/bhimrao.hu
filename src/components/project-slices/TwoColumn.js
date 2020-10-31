@@ -5,11 +5,15 @@ import RichTextCustom from '../common/RichTextCustom';
 import { DesignSettings } from "../../utils/constants";
 
 const TwoColumnWrapper = styled.section`
+  width: ${DesignSettings.outerWidth};
   margin: 3rem auto;
-  width: ${DesignSettings.innerWidth};
-  margin-bottom: 8rem;
+  margin-bottom: 5rem;
+  background-color: #FCFBF9;
+  padding: 5rem 0;
 
   .content-wrapper {
+    width: ${DesignSettings.textWidth};
+    margin: 0 auto;
     font-size: 2rem;
     display: flex;
     flex-direction: row;

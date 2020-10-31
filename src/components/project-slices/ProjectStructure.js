@@ -5,7 +5,7 @@ import { DesignSettings } from '../../utils/constants';
 import RichTextCustom from '../common/RichTextCustom';
 
 const ProjectStructureWrapper = styled.section`
-  width: ${DesignSettings.innerWidth};
+  width: ${DesignSettings.textWidth};
   margin: 6rem auto;
   margin-top: 4rem;
 
@@ -16,6 +16,7 @@ const ProjectStructureWrapper = styled.section`
 
     .card-container {
       display: flex;
+      margin-bottom: 3rem;
     
       p {
         font-size: 2rem;
@@ -25,7 +26,7 @@ const ProjectStructureWrapper = styled.section`
         width: 45%;
       }
 
-      .image-container{
+      .image-container {
         &.odd {
           margin-right: 5%;
         }
@@ -39,14 +40,15 @@ const ProjectStructureWrapper = styled.section`
       }
     }
   }
+
+  [class~='card-container']:last-of-type  {
+    margin-bottom: 0;
+  }
 `;
 
-const ProjectStructure = ({ fields, title }) => {
+const ProjectStructure = ({ fields }) => {
   return (
     <ProjectStructureWrapper>
-      <div className="h1-border-bottom">
-        {/* <RichTextCustom render={title} /> */}
-      </div>
       <div className="card-wrapper">
         {
           fields.map((field, idx) =>
