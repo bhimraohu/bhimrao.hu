@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { DesignSettings } from "../../utils/constants";
 
 const ImageCollageWrapper = styled.section`
-  padding: 10rem;
+  margin: 5rem;
   background-color: ${props => props.background_color};
   
   .image-collage-wrapper {

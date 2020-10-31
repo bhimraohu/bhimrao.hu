@@ -29,7 +29,7 @@ const ProjectsWrapper = styled.section`
       .even {
         display: flex;
         flex-direction: row;
-        height: 36rem;
+        min-height: 36rem;
       }
 
       .project-image {
@@ -58,6 +58,7 @@ const ProjectsWrapper = styled.section`
       }
 
       .button-container {
+        margin-top: 2rem;
         
         a {
           display: inline-block;
@@ -106,7 +107,7 @@ const Projects = ({ fields }) => {
 const getOddStyle = (field) => (
   <div className="odd">
     <div className="content-container">
-      <div className="h1-border-bottom">
+      <div className="h1-border-bottom common-header common-text">
         <RichTextCustom render={field.title} />
         <RichTextCustom render={field.description} />
       </div>
@@ -124,7 +125,7 @@ const getEvenStyle = (field) => (
   <div className="even">
     <img className="project-image" src={field.image.url} alt={field.image.alt} />
     <div className="content-container">
-      <div className="h1-border-bottom">
+      <div className="h1-border-bottom  common-header common-text">
         <RichTextCustom render={field.title} />
         <RichTextCustom render={field.description} />
       </div>

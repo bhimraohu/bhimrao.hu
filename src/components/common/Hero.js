@@ -24,7 +24,7 @@ const HeroWrapper = styled.section`
     background-image: 
       linear-gradient(
         -106deg,
-        rgba(0,0,0,.5) 
+        ${props => props.color ? (props.color + '80') : '#00000080'} 
         calc((1140px / 1.8) + ((100vw - 1180px)/ 2)),
         rgba(0,0,0,0) 0);
   }
@@ -54,22 +54,18 @@ const HeroWrapper = styled.section`
     color: white;
     font-size: 2.2rem;
     text-transform: uppercase;
+    line-height: 140%;
   }
 
   .hero-text-container-2ndpart {
     flex: 0 0 60%;
     max-width: 60%;
   }
-  
-  .hero-content {
-    color: white;
-    font-size: 2rem;
-  }
 `;
 
-const Hero = ({ title, content, backgroundImage }) => {
+const Hero = ({ title, content, backgroundImage, color }) => {
   return (
-    <HeroWrapper backgroundImage={backgroundImage}>
+    <HeroWrapper backgroundImage={backgroundImage} color={color}>
       <div className="hero-container">
         <div className="hero-text-container-2ndpart"></div>
         <div className="hero-text-container h1-border-bottom">

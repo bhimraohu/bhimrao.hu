@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ImageGridWrapper = styled.section`
+  margin: 5rem auto;
   padding: 10rem;
   background-color: ${props => props.background_color};
 

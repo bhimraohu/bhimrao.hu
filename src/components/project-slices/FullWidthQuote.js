@@ -24,6 +24,7 @@ const TextContainer = styled.div`
   > p {
     color: ${Colors.dirtyWhite} !important;
     font-size: 2.4rem;
+    line-height: 160%;
   }
 `;
 

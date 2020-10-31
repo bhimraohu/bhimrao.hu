@@ -61,9 +61,9 @@ const Goals = ({ title, fields }) => {
 
   return (
     <GoalsWrapper>
-      <div className="h1-border-bottom">
+      <div className="h1-border-bottom common-header">
         <RichTextCustom render={title} />
-        <div className="goals-wrapper">
+        <div className="goals-wrapper common-text">
           {
             fields.map((field, idx) =>
               <div key={idx} className="goal-container">

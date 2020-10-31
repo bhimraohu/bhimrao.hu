@@ -18,6 +18,7 @@ const HeroComplexWrapper = styled.section`
     color: ${Colors.main};
     font-size: 3rem;
     margin-bottom: 1rem;
+    max-width: ${DesignSettings.textWidth};
   }
 
   h2 {
@@ -54,10 +55,11 @@ const HeroComplexWrapper = styled.section`
     }
   
     .hero-complex-content {
-      flex: 0 0 40%;
-      max-width: 40%;
+      flex: 0 0 45%;
+      max-width: 45%;
       color: ${Colors.main};
       font-size: 2rem;
+      line-height: 160%;
     }
   }
 `;

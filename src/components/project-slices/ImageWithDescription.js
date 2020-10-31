@@ -6,6 +6,7 @@ import { Colors } from "../../utils/constants";
 import Icon from '../common/IconCmp';
 
 const ImageWithDescriptionWrapper = styled.section`
+  margin: 5rem auto;
 
   .content-wrapper  {
     font-size: 2rem;
@@ -37,7 +38,8 @@ const ImageWithDescriptionWrapper = styled.section`
 
 const TextContainer = styled.div`
   background-color: ${props => props.background_color};
-  padding: 0 5rem;
+  padding: 0 10rem;
+  line-height: 160%;
   text-transform: uppercase;
 `;
 

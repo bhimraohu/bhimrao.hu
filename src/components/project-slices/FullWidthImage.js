@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FullWidthImageWrapper = styled.section`
-  padding-top: 5rem;
+  margin-top: 5rem;
   width: 100%;
 
   .image-grid-wrapper {

@@ -5,6 +5,7 @@ import { Colors } from "../../utils/constants";
 import Icon from '../common/IconCmp';
 
 const StudyHallsWrapper = styled.section`
+  margin: 5rem auto;
   display: flex;
   flex-direction: column;
   background: ${Colors.main};

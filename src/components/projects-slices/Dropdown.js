@@ -16,6 +16,11 @@ const DropdownWrapper = styled.section`
     height: 10.4rem;
     margin-bottom: 3rem;
 
+    &:hover span i::before {
+      transform: rotate(180deg);
+      transition: transform .5s;
+    }
+
     .dropdown-title {
       margin: 0 auto;
       width: ${DesignSettings.innerWidth};
@@ -32,13 +37,8 @@ const DropdownWrapper = styled.section`
         transform: rotate(0deg);
         transition: transform .5s;
       }
-
-      &:hover span i::before {
-        transform: rotate(180deg);
-        transition: transform .5s;
-      }
-
     }
+
     &:hover ul {
       visibility: visible;
     }
@@ -82,6 +82,7 @@ const Dropdown = ({ title, fields }) => {
           <span>{title}</span>
           <Icon icon_class={'icon-down'} color={Colors.red} />
         </div>
+
         <DropdownList>
           {
             fields.map((field, idx) =>

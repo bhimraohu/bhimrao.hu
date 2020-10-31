@@ -6,7 +6,7 @@ import { DesignSettings } from "../../utils/constants";
 
 const TextWithTitleWrapper = styled.section`
   margin: 3rem auto;
-  width: ${DesignSettings.innerWidth};
+  width: ${props => props.isHomepage ? DesignSettings.innerWidth : DesignSettings.textWidth};
 
   .h1-border-bottom > h1,
   .title-wrapper > .h1-border-bottom > h1 {
@@ -20,10 +20,10 @@ const TextWithTitleWrapper = styled.section`
   }
 `;
 
-const TextWithTitle = ({ title, subtitle, text }) => {
+const TextWithTitle = ({ title, subtitle, text, isHomepage }) => {
 
   return (
-    <TextWithTitleWrapper>
+    <TextWithTitleWrapper isHomepage={isHomepage}>
       <div className="h1-border-bottom">
         <div className="title-wrapper h1-border-bottom common-header">
           <RichTextCustom render={title} />

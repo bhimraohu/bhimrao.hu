@@ -24,8 +24,7 @@ const TopNavigationWrapper = styled.div`
 
     &:hover {
       color: ${Colors.red};
-      border: .1rem solid ${Colors.red};
-      background-color: ${Colors.dirtyWhite};
+      background-color: white;
 
       a {
         color: ${Colors.red};
@@ -33,7 +32,13 @@ const TopNavigationWrapper = styled.div`
     }
 
     a.selected {
+      background-color: ${Colors.red};
       color: ${Colors.dirtyWhite};
+
+      &:hover {
+      color: ${Colors.red};
+      background-color: white;
+    }
     }
   }
 `;
@@ -48,7 +53,7 @@ const NavLinks = styled.ul`
 
 const NavLink = styled.li`
   margin: auto 0;
-  height: 4.5rem;
+  height: 4.7rem;
   cursor: pointer;
 
   span i::before {

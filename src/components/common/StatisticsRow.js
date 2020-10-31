@@ -12,7 +12,8 @@ const StatisticsRowWrapper = styled.section`
   justify-content: space-evenly;
 
   .stat-container {
-    width: 100%;
+    width: ${DesignSettings.outerWidth};
+    margin: 0 auto;
     display: flex;
     height: 10rem;
 
@@ -38,7 +39,7 @@ const StatisticsRowWrapper = styled.section`
   }
 
   .text-container {
-    width: ${DesignSettings.innerWidth};
+    width: ${DesignSettings.outerWidth};
     display: flex;
     justify-content: flex-end;
     align-self: center;
