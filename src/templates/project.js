@@ -105,7 +105,7 @@ query projectQuery($lang: String, $uid: String) {
             }
             ... on PRISMIC_ProjectBodyProject_structure {
               type
-              primary {
+              fields {
                 big_image
                 small_image
                 text
