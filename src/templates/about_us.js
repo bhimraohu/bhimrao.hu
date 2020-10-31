@@ -41,6 +41,7 @@ query aboutusQuery($lang: String) {
                 hero_title
                 hero_content
                 hero_image
+                hero_color
               }
             }
             ... on PRISMIC_About_usBodyActivities {
