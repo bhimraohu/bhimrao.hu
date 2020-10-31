@@ -1,21 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import RichTextCustom from '../common/RichTextCustom';
+import RichTextCustom from './RichTextCustom';
 import { Colors, DesignSettings } from "../../utils/constants";
 
 const HighlightedTextWrapper = styled.section`
-  padding: 5rem auto;
+  padding: ${props => props.background_color ? '3rem auto' : '0 auto'};
   background-color: ${props => props.background_color};
   
   .highlighted-text-container {
     margin: 0 auto;
-    padding: 1rem 0;
-    width: ${DesignSettings.innerWidth};
+    padding: ${props => props.background_color ? '1rem 0' : '0 auto'};
+    width: ${DesignSettings.textWidth};
   }
 
   .highlighted-text {
-    margin: 4rem 0;
+    margin: 2rem 0;
   }
 
   .highlighted-text > p {
@@ -31,7 +31,7 @@ const HighlightedText = ({ background_color, highlighted_text }) => {
   return (
     <HighlightedTextWrapper background_color={background_color}>
       <div className="highlighted-text-container">
-        <div className="highlighted-text">
+        <div className="highlighted-text common-text">
           <RichTextCustom render={highlighted_text} />
         </div>
       </div>
