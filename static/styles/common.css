@@ -3,6 +3,9 @@
   --main-color: #1d1d3c;
   --secondary-color: #d44f3b;
   --third-color: #eeeeee;
+  --text-color: #5d5d73;
+  --header-color: #343450;
+  --back-color: #e5e5e5;
 }
 
 .icon-search:before {
@@ -19,7 +22,9 @@
 
 .h1-border-bottom > h1 {
   display: inline-block;
+  text-transform: uppercase;
 }
+
 .h1-border-bottom > h1::after {
   content: "";
   display: block;
@@ -27,4 +32,20 @@
   width: 33%;
   padding-top: 0.3rem;
   border-bottom: 0.3rem solid var(--secondary-color);
+}
+
+h1.common-header,
+.common-header h1 {
+  color: var(--header-color);
+}
+
+p.common-text,
+.common-text p {
+  font-size: 2rem;
+  color: var(--text-color);
+  line-height: 160%;
+}
+
+.common-background {
+  color: var(--back-color);
 }
