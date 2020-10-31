@@ -2,7 +2,7 @@ import React from 'react';
 
 import Hero from '../common/Hero';
 import HeroComplex from '../common/HeroComplex';
-import TextWithTitle from './TextWithTitle';
+import TextWithTitle from '../common/TextWithTitle';
 import HighlightedText from './HighlightedText';
 import StudyHalls from './StudyHalls';
 import TextOnly from './TextOnly';
@@ -39,8 +39,8 @@ const SliceZone = ({ body }) => (
             return (
               <TextWithTitle
                 key={idx}
-                text_title={bodyContent.primary.text_title}
-                text_subtitle={bodyContent.primary.text_subtitle}
+                title={bodyContent.primary.text_title}
+                subtitle={bodyContent.primary.text_subtitle}
                 text={bodyContent.primary.text}
               />
             );

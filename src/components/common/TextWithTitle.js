@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import RichTextCustom from '../common/RichTextCustom';
+import RichTextCustom from './RichTextCustom';
 import { DesignSettings } from "../../utils/constants";
 
 const TextWithTitleWrapper = styled.section`
@@ -21,19 +21,19 @@ const TextWithTitleWrapper = styled.section`
   }
 `;
 
-const TextWithTitle = ({ text_title, text_subtitle, text }) => {
+const TextWithTitle = ({ title, subtitle, text }) => {
 
   return (
     <TextWithTitleWrapper>
       <div className="h1-border-bottom">
         <div className="title-wrapper h1-border-bottom">
-          <RichTextCustom render={text_title} />
+          <RichTextCustom render={title} />
         </div>
 
         {
-          text_subtitle
+          subtitle
             ? (<div className="content-wrapper">
-              <RichTextCustom render={text_subtitle} />
+              <RichTextCustom render={subtitle} />
             </div>)
             : null
         }

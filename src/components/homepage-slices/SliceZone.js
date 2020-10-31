@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Hero from './Hero';
-import IntroText from './IntroText';
+import TextWithTitle from '../common/TextWithTitle';
 import ActivitiesRow from './ActivitiesRow';
 import TopNews from './TopNews';
 import BottomHero from './BottomHero';
@@ -24,7 +24,7 @@ const SliceZone = ({ body, news }) => (
             )
           case "intro_text":
             return (
-              <IntroText
+              <TextWithTitle
                 key={idx}
                 title={bodyContent.primary.intro_title}
                 text={bodyContent.primary.intro_text}
