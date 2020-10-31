@@ -8,6 +8,7 @@ export const Colors = {
   imageRowBackground: '#FAFAF6',
   imageRowBackground2: '#F5F5F5',
   lightGrey: '#E4E4E4',
+  backColor: '#E5E5E5',
 }
 
 export const DesignSettings = {
