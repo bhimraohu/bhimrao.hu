@@ -9,7 +9,7 @@ const SupportersRowWrapper = styled.section`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 45rem;
+  min-height: 35rem;
   background: ${Colors.imageRowBackground2};
   margin-top: 5rem;
 

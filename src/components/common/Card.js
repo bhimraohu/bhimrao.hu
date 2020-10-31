@@ -20,16 +20,21 @@ const CardWrapper = styled.span`
 
   .date {
     font-size: 1.4rem;
+    color: ${Colors.textColor};
+    line-height: 160%;
   }
 
   .card-title > h1 {
     font-size: 1.8rem;
     font-weight: bold;
     margin: 2rem 0;
+    color: ${Colors.textColor};
   }
 
   .text {
     font-size: 1.8rem;
+    color: ${Colors.textColor};
+    line-height: 160%;
   }
 
   .button-container {

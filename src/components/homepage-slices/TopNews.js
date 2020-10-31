@@ -8,7 +8,7 @@ import { DesignSettings } from "../../utils/constants";
 const TopNewsWrapper = styled.section`
   margin: 0 auto;
   width: ${DesignSettings.innerWidth};
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 
   .news-row {
     display: flex;

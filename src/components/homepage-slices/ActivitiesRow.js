@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Colors } from "../../utils/constants";
 
 const ActivitiesRowWrapper = styled.section`
+  margin: 5rem auto 3rem auto;
   width: 100%;
   display: flex;
   height: 25rem;

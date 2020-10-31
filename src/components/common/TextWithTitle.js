@@ -16,7 +16,6 @@ const TextWithTitleWrapper = styled.section`
   }
 
   .content-wrapper > p {
-    font-size: 2rem;
     margin: 2rem 0;
   }
 `;
@@ -26,19 +25,19 @@ const TextWithTitle = ({ title, subtitle, text }) => {
   return (
     <TextWithTitleWrapper>
       <div className="h1-border-bottom">
-        <div className="title-wrapper h1-border-bottom">
+        <div className="title-wrapper h1-border-bottom common-header">
           <RichTextCustom render={title} />
         </div>
 
         {
           subtitle
-            ? (<div className="content-wrapper">
+            ? (<div className="content-wrapper common-header">
               <RichTextCustom render={subtitle} />
             </div>)
             : null
         }
 
-        <div className="content-wrapper">
+        <div className="content-wrapper common-text">
           <RichTextCustom render={text} />
         </div>
       </div>
