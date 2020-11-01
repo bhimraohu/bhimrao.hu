@@ -19,7 +19,7 @@ import SmallDetailRow from './SmallDetailRow';
 import ProjectStructure from './ProjectStructure';
 import TitleOnly from './TitleOnly';
 
-const SliceZone = ({ body }) => (
+const SliceZone = ({ body, closed }) => (
   <div>
     {
       body.map((bodyContent, idx, arr) => {
@@ -42,6 +42,7 @@ const SliceZone = ({ body }) => (
                 title={bodyContent.primary.text_title}
                 subtitle={bodyContent.primary.text_subtitle}
                 text={bodyContent.primary.text}
+                closed={closed}
               />
             );
           case "highlighted_text":

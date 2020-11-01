@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import RichTextCustom from './RichTextCustom';
-import { DesignSettings } from "../../utils/constants";
+import { Colors, DesignSettings } from "../../utils/constants";
 
 const TextWithTitleWrapper = styled.section`
   margin: 3rem auto;
@@ -10,9 +10,15 @@ const TextWithTitleWrapper = styled.section`
 
   .h1-border-bottom > h1,
   .title-wrapper > .h1-border-bottom > h1 {
-    font-size: 2.8rem;
+    font-size: 3rem;
     font-weight: bold;
     text-transform: uppercase;
+  }
+
+  .content-wrapper > h2 {
+    color: ${props => props.closed ? Colors.red : Colors.headerColor};
+    font-size: 2rem;
+    font-weight: 500;
   }
 
   .content-wrapper > p {
@@ -20,10 +26,10 @@ const TextWithTitleWrapper = styled.section`
   }
 `;
 
-const TextWithTitle = ({ title, subtitle, text, isHomepage }) => {
+const TextWithTitle = ({ title, subtitle, text, isHomepage, closed }) => {
 
   return (
-    <TextWithTitleWrapper isHomepage={isHomepage}>
+    <TextWithTitleWrapper isHomepage={isHomepage} closed={closed}>
       <div className="h1-border-bottom">
         <div className="title-wrapper h1-border-bottom common-header">
           <RichTextCustom render={title} />

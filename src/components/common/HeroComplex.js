@@ -23,7 +23,8 @@ const HeroComplexWrapper = styled.section`
 
   h2 {
     margin-top: 0;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
+    font-weight: 500;
     color: ${Colors.main};
   }
 

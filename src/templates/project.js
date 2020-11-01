@@ -23,7 +23,10 @@ class Project extends React.Component {
     return (
       <Layout navigationData={navigationData}>
 
-        <SliceZone body={this.props.data.prismic.allProjects.edges[0].node.body} />
+        <SliceZone
+          body={this.props.data.prismic.allProjects.edges[0].node.body}
+          closed={this.props.data.prismic.allProjects.edges[0].node.closed}
+        />
       </Layout >
     );
   }
