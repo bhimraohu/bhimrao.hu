@@ -8,7 +8,8 @@ const CardWrapper = styled.span`
   display: flex;
   flex-direction: column;
   box-shadow: 0px 2px 2px 0px #424242ba;
-  width: 30%;
+  width: ${props => props.width};
+  height: ${props => props.height};
 
   .card-content-wrapper {
     margin: 2rem;
@@ -29,6 +30,7 @@ const CardWrapper = styled.span`
     font-weight: bold;
     margin: 2rem 0;
     color: ${Colors.textColor};
+    min-height: 4.5rem;
   }
 
   .text {
@@ -60,9 +62,9 @@ const CardWrapper = styled.span`
   }
 `;
 
-const Card = ({ news }) => {
+const Card = ({ news, width, height }) => {
   return (
-    <CardWrapper>
+    <CardWrapper width={width} height={height}>
       <img src={news.image.url} alt={news.image.alt} />
       <div className="card-content-wrapper">
         <div className="content-container">

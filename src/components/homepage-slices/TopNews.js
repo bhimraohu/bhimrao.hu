@@ -32,7 +32,7 @@ const TopNews = ({ title, news }) => {
         {
           news?.map((newsItem, idx) => {
             return (
-              <Card key={idx} news={newsItem.node} />
+              <Card key={idx} news={newsItem.node} width={'30%'} />
             )
           })
         }
