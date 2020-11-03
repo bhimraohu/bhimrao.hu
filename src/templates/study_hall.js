@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout/LayoutCmp"
+import StudyHallPage from '../components/study-hall/StudyHallPage';
 
 class StudyHall extends React.Component {
 
@@ -19,7 +20,7 @@ class StudyHall extends React.Component {
 
     return (
       <Layout navigationData={navigationData}>
-        {/* <SliceZone body={this.props.data.prismic.allStudy_halls.edges[0].node} /> */}
+        <StudyHallPage items={this.props.data.prismic.allStudy_halls.edges[0].node} />
       </Layout >
     );
   }
