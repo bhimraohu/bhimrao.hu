@@ -18,8 +18,6 @@ class Project extends React.Component {
   render() {
     const navigationData = this.getNavigationData(this.props);
 
-    console.log("allProjects")
-    console.log(this.props.data.prismic.allProjects.edges[0].node.body)
     return (
       <Layout navigationData={navigationData}>
 
@@ -81,6 +79,15 @@ query projectQuery($lang: String, $uid: String) {
               type
               fields {
                 label
+                link {
+                  ... on PRISMIC_Study_hall {
+                    _meta {
+                      uid
+                      type
+                      lang
+                    }
+                  }
+                }
               }
             }
             ... on PRISMIC_ProjectBodySupporters {
@@ -205,6 +212,28 @@ query projectQuery($lang: String, $uid: String) {
                 icon_b
                 image_a
                 image_b
+              }
+            }
+            ... on PRISMIC_ProjectBodyThumbnails {
+              type
+              fields {
+                label
+                link {
+                  ... on PRISMIC_Projects {
+                    _meta {
+                      lang
+                      type
+                      uid
+                    }
+                  }
+                  ... on PRISMIC_Project {
+                    _meta {
+                      uid
+                      type
+                      lang
+                    }
+                  }
+                }
               }
             }
           }

@@ -32,7 +32,7 @@ export const query = graphql`
 query projectsQuery($lang: String) {
   prismic {
 
-    allProjectss(lang: "hu") {
+    allProjectss(lang: $lang) {
       edges {
         node {
           body {
