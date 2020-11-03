@@ -12,7 +12,7 @@ import ImageCollage from './ImageCollage';
 import StatisticsRow from '../common/StatisticsRow';
 import SupportersRow from '../common/SupportersRow';
 import ImageRow from '../common/ImageRow';
-import FullWidthImage from './FullWidthImage';
+import FullWidthImage from '../common/FullWidthImage';
 import FullWidthQuote from './FullWidthQuote';
 import TwoColumn from './TwoColumn';
 import SmallDetailRow from './SmallDetailRow';
