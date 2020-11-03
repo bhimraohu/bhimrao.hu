@@ -29,10 +29,10 @@ class StudyHall extends React.Component {
 export default StudyHall;
 
 export const query = graphql`
-query studyHallQuery($lang: String) {
+query studyHallQuery($lang: String, $uid: String) {
   prismic {
 
-    allStudy_halls(lang: "hu") {
+    allStudy_halls(lang: $lang, uid: $uid)  {
       edges {
         node {
           title
