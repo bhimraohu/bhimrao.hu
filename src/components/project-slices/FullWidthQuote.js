@@ -8,12 +8,7 @@ import Icon from '../common/IconCmp';
 const FullWidthQuoteWrapper = styled.section`
   width: 100%;
   background: ${Colors.main};
-  
-  /* .content-wrapper > p {
-    font-size: 2rem;
-    margin: 2rem 0;
-  } */
-  `;
+`;
 
 const TextContainer = styled.div`
   margin: 3rem auto;
