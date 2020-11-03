@@ -17,7 +17,8 @@ import FullWidthQuote from './FullWidthQuote';
 import TwoColumn from './TwoColumn';
 import SmallDetailRow from './SmallDetailRow';
 import ProjectStructure from './ProjectStructure';
-import TitleOnly from './TitleOnly';
+import TitleOnly from '../common/TitleOnly';
+import Breadcrumb from '../common/Breadcrumb';
 
 const SliceZone = ({ body, closed }) => (
   <div>
@@ -188,6 +189,13 @@ const SliceZone = ({ body, closed }) => (
               <TitleOnly
                 key={idx}
                 title={bodyContent.primary.title}
+              />
+            );
+          case "thumbnails":
+            return (
+              <Breadcrumb
+                key={idx}
+                fields={bodyContent.fields}
               />
             );
           default:
