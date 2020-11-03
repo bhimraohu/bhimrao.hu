@@ -1,4 +1,4 @@
-import { defaultLanguage } from '../../prismic-config'
+import { defaultLanguage, projectPathBase, studyHallPathBase } from '../../prismic-config'
 
 export const linkResolverBase = (properties) => {
   if (properties.type === 'homepage') {
@@ -22,11 +22,13 @@ export const linkResolverBase = (properties) => {
 
   if (properties.type === 'project') {
     return properties.lang === defaultLanguage
-      ? `/project/${properties.uid}`
-      : `/${properties.lang}/project/${properties.uid}`
+      ? `/${projectPathBase}/${properties.uid}`
+      : `/${properties.lang}/${projectPathBase}/${properties.uid}`
   }
 
-  // return properties.lang === defaultLanguage
-  //   ? `/`
-  //   : `/${properties.lang}`;
+  if (properties.type === 'study_hall') {
+    return properties.lang === defaultLanguage
+      ? `/${studyHallPathBase}/${properties.uid}`
+      : `/${properties.lang}/${studyHallPathBase}/${properties.uid}`
+  }
 };

@@ -5,4 +5,7 @@ module.exports = {
   // Language configuration in your Prismic repository: Settings / Translations & locals
   defaultLanguage: 'hu',
   langs: ['hu', 'en-us'],
+
+  projectPathBase: 'projekt',
+  studyHallPathBase: 'projekt/tanoda',
 }
