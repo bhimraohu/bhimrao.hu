@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from "gatsby"
 
 import { Colors } from "../../utils/constants";
+import { linkResolverBase } from '../../utils/linkResolverBase';
 import Icon from '../common/IconCmp';
 
 const StudyHallsWrapper = styled.section`
@@ -26,16 +28,24 @@ const StudyHallsWrapper = styled.section`
       align-items: center;
     
       &:hover,
-      &:hover .icon-home::before {
+      &:hover .icon-home::before,
+      &:hover .item-link .item-stat_text {
         color: ${Colors.red};
         cursor: pointer;
       }
-    }
 
-    .item-stat_text {
-      text-align: center;
-      font-weight: bold;
-      font-size: 2.4rem;
+      .item-link {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        text-decoration: none;
+
+        .item-stat_text {
+          font-weight: bold;
+          font-size: 2.4rem;
+          color: ${Colors.dirtyWhite};
+        }
+      }
     }
   }
 `;
@@ -48,14 +58,13 @@ const StudyHalls = ({ fields }) => {
           fields.map((field, idx) => {
             return (
               <div key={idx} className="item">
-                <Icon icon_class={'icon-home'} color={Colors.dirtyWhite} size={'7rem'} />
-                <span className="item-stat_text">{field.label}</span>
-                {/* <Link 
+                <Link
                   to={linkResolverBase(field.link._meta)}
-                  className="item-stat_text"
+                  className="item-link"
                 >
-                  {field.label}
-                </Link> */}
+                  <Icon icon_class={'icon-home'} color={Colors.dirtyWhite} size={'7rem'} />
+                  <span className="item-stat_text">{field.label}</span>
+                </Link>
               </div>
             )
           })
