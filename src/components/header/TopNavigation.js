@@ -17,8 +17,10 @@ const TopNavigationWrapper = styled.div`
     border: .1rem solid ${Colors.red};
     background-color: ${Colors.red};
     line-height: 4.5rem;
-
+    
     a {
+      min-width: 17rem;
+      text-align: center;
       color: ${Colors.dirtyWhite};
     }
 
