@@ -5,7 +5,6 @@ import HeaderTopBar from "./HeaderTopBar"
 import TopNavigation from "./TopNavigation"
 
 const HeaderWrapper = styled.header`
-  margin-bottom: 1.5rem; 
   box-shadow: 0px 0px 3px black;
 `;
 
