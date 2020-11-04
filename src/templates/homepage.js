@@ -93,6 +93,7 @@ query homepageQuery($lang: String) {
       edges {
         node {
           button_label
+          short_description
           content
           date
           title

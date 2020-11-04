@@ -48,6 +48,7 @@ query newsQuery($lang: String) {
       edges {
         node {
           title
+          short_description
           date
           image
           content
