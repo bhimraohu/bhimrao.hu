@@ -1,7 +1,7 @@
 import React from "react"
 import styled from 'styled-components';
 
-import { Colors, DesignSettings } from "../../utils/constants";
+import { DesignSettings } from "../../utils/constants";
 import TitleOnly from "../common/TitleOnly";
 import Card from '../common/Card';
 
@@ -68,13 +68,5 @@ const TeamPage = ({ data }) => {
   );
 }
 
-const onClickHandler = (member) => {
-  console.log(member);
-  return (
-    <MemberModal>
-
-    </MemberModal>
-  )
-}
 
 export default TeamPage;
