@@ -1,8 +1,10 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 import RichTextCustom from './RichTextCustom';
 import { Colors } from '../../utils/constants';
+import { linkResolverBase } from '../../utils/linkResolverBase';
 
 const CardWrapper = styled.span`
   display: flex;
@@ -50,6 +52,7 @@ const CardWrapper = styled.span`
       font-weight: bold;
       background: none;
       border: none;
+      text-decoration: none;
 
       &:focus {
         outline: none;
@@ -78,11 +81,16 @@ const Card = ({ news, width, height }) => {
             <RichTextCustom render={news.title} />
           </div>
           <div className="text">
-            <RichTextCustom render={news.content} />
+            <RichTextCustom render={news.short_description} />
           </div>
         </div>
         <div className="button-container">
-          <button className="button">{news.button_label}&gt;</button>
+          <Link
+            to={linkResolverBase(news._meta)}
+            className="button"
+          >
+            {news.button_label}&gt;
+            </Link>
         </div>
       </div>
     </CardWrapper>
