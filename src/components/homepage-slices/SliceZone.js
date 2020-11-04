@@ -60,7 +60,7 @@ const SliceZone = ({ body, news }) => (
                 key={idx}
                 icon={bodyContent.primary.hero_bottom_icon}
                 content={bodyContent.primary.hero_bottom_content}
-                backgroundImage={bodyContent.primary.hero_bottom_image.url}
+                backgroundImage={bodyContent.primary.hero_bottom_image?.url}
               />
             )
           default:
