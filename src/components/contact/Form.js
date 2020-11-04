@@ -63,6 +63,8 @@ const Form = ({ form_fields, label, action }) => {
       data-netlify="true"
       action={`/${action}?sent=true`}
       netlify
+      netlify-honeypot="bot-field"
+      data-netlify-recaptcha="true"
     >
       {/* This needed for Netlify  */}
       <input type="hidden" name="form-name" value="contact-us" />
@@ -104,6 +106,7 @@ const Form = ({ form_fields, label, action }) => {
           }
         })
       }
+      <div data-netlify-recaptcha="true"></div>
       <div className="button-container">
         <Button type="submit">{label}</Button>
       </div>
