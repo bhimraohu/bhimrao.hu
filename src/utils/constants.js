@@ -1,7 +1,7 @@
 /* Use the same values in static/styles/common.css :root */
 export const Colors = {
   main: '#1D1D3C',
-  red: '#D44F3B',
+  red: '#EC5951',
   dirtyWhite: '#EEEEEE',
   textColor: '#5D5D73',
   headerColor: '#343450',
@@ -14,5 +14,5 @@ export const Colors = {
 export const DesignSettings = {
   outerWidth: '1200px',
   innerWidth: '1000px',
-  textWidth: '900px',
+  textWidth: '840px',
 }
