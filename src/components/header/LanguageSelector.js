@@ -39,9 +39,15 @@ const languageChange = (meta, targetLanguage) => {
   // TODO 2. find the current path
   // TODO 3. find the same index in the other language
   if (targetLanguage === defaultLanguage) {
+    if (typeof window === "undefined") {
+      return '';
+    }
     navigate(window?.location.pathname.replace(`/${langs[1]}`, ''));
   }
   else {
+    if (typeof window === "undefined") {
+      return '';
+    }
     navigate(`/${targetLanguage}${window?.location.pathname}`);
   }
 }
