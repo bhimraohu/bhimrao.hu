@@ -21,10 +21,18 @@ const FormWrapper = styled.form`
     margin-top: .5rem;
     margin-bottom: 2rem;
     border-radius: 4px;
-    height: 40px;
+    padding: .5rem .5rem .5rem 1rem;
     border: 1px solid ${Colors.lightGrey};
+    height: 40px;
     width: 100%;
     font-weight: 500;
+    line-height: 2.2rem;
+    font-size: 1.4rem;
+    color: ${Colors.main};
+
+    &:focus {
+      outline: none;
+    }
   }
 
   textarea {
@@ -42,16 +50,21 @@ const Button = styled.button`
   border: .1rem solid ${Colors.red};
   background-color: ${Colors.red};
   color: ${Colors.dirtyWhite};
-  line-height: 4.5rem;
   padding: 0 1.6rem;
+  line-height: 4.5rem;
   font-weight: bold;
   font-size: 1.6rem;
+  min-width: 17rem;
   cursor: pointer;
 
   &:hover {
     border: .1rem solid ${Colors.red};
     background-color: white;
     color: ${Colors.red};
+  }
+
+  &:focus {
+    outline: none;
   }
 `;
 
