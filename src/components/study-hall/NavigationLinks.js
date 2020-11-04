@@ -42,7 +42,6 @@ const NavigationLinks = ({ fields }) => {
     <NavigationLinksWrapper>
       {
         fields.map((field, idx) => {
-          console.log(field)
           return getCrumb(field, idx)
         })
       }
