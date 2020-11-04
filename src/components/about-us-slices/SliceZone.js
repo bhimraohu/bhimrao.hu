@@ -4,6 +4,11 @@ import Hero from '../common/Hero';
 import Activities from './Activities';
 import StatisticsRow from '../common/StatisticsRow';
 import Goals from './Goals';
+import TextWithTitle from '../common/TextWithTitle';
+import HighlightedText from '../common/HighlightedText';
+import TextOnly from '../common/TextOnly';
+import ImageRow from '../common/ImageRow';
+import FullWidthImage from '../common/FullWidthImage';
 
 const SliceZone = ({ body }) => (
   <div>
@@ -48,6 +53,47 @@ const SliceZone = ({ body }) => (
                 fields={bodyContent.fields}
               />
             )
+          case "full_width_image":
+            return (
+              <FullWidthImage
+                key={idx}
+                image={bodyContent.primary.image}
+              />
+            );
+          case "text_with_title":
+            return (
+              <TextWithTitle
+                key={idx}
+                title={bodyContent.primary.text_title}
+                subtitle={bodyContent.primary.text_subtitle}
+                text={bodyContent.primary.text}
+              />
+            );
+          case "highlighted_text":
+            return (
+              <HighlightedText
+                key={idx}
+                background_color={bodyContent.primary.background_color}
+                highlighted_text={bodyContent.primary.highlighted_text}
+              />
+            );
+          case "text_only":
+            return (
+              <TextOnly
+                key={idx}
+                text={bodyContent.primary.text}
+              />
+            );
+          case "image_row":
+            return (
+              <ImageRow
+                key={idx}
+                image_left={bodyContent.primary.image_left}
+                image_center={bodyContent.primary.image_center}
+                image_right={bodyContent.primary.image_right}
+                isLastSlice={true}
+              />
+            );
           default:
             return null;
         }

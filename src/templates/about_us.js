@@ -80,6 +80,41 @@ query aboutusQuery($lang: String) {
                 image
               }
             }
+            ... on PRISMIC_ProjectBodyText_with_title {
+              type
+              primary {
+                text
+                text_subtitle
+                text_title
+              }
+            }
+            ... on PRISMIC_ProjectBodyText_only {
+              type
+              primary {
+                text
+              }
+            }
+            ... on PRISMIC_ProjectBodyHighlighted_text {
+              type
+              primary {
+                background_color
+                highlighted_text
+              }
+            }
+            ... on PRISMIC_ProjectBodyFull_width_image {
+              type
+              primary {
+                image
+              }
+            }
+            ... on PRISMIC_ProjectBodyImage_row {
+              type
+              primary {
+                image_center
+                image_left
+                image_right
+              }
+            }
           }
         }
       }
