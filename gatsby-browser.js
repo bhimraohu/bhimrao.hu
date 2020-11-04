@@ -1,7 +1,4 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
+import { registerLinkResolver } from '@prismicio/gatsby-source-prismic-graphql'
+import { linkResolver } from './src/utils/linkResolver'
 
-// You can delete this file if you're not using it
+registerLinkResolver(linkResolver)
