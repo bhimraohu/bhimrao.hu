@@ -29,7 +29,6 @@ const Breadcrumb = ({ fields }) => {
     <BreadcrumbWrapper>
       {
         fields.map((field, idx, arr) => {
-          console.log(field)
           return arr.length - 1 !== idx
             ? getCrumb(field, idx)
             : getLastCrumb(field, idx)
