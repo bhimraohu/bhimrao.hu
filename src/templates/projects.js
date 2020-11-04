@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout/LayoutCmp"
-import SliceZone from "../components/projects-slices/sliceZone"
+import SliceZone from "../components/projects-slices/SliceZone"
 
 class Projects extends React.Component {
 

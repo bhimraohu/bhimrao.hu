@@ -1,9 +1,7 @@
-import { Link } from "gatsby"
 import React from "react"
 import styled from 'styled-components';
 
 import { Colors, DesignSettings } from "../../utils/constants";
-import { linkResolverBase } from '../../utils/linkResolverBase';
 import TitleOnly from "../common/TitleOnly";
 import Card from '../common/Card';
 
