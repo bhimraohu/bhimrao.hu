@@ -1,6 +1,10 @@
 import { defaultLanguage, newsPathBase, projectPathBase, studyHallPathBase } from '../../prismic-config'
 
 export const linkResolverBase = (properties) => {
+  if (!properties) {
+    return '';
+  }
+
   if (properties.type === 'homepage') {
     return properties.lang === defaultLanguage
       ? '/'
