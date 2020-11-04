@@ -193,6 +193,6 @@ const getMainAndSubNav = (link, subNav) => {
 }
 
 const getSelectedClassName = (meta) => {
-  return window.location.pathname.indexOf(linkResolverBase(meta)) > -1 ? 'selected' : '';
+  return window?.location.pathname.indexOf(linkResolverBase(meta)) > -1 ? 'selected' : '';
 }
 export default TopNavigation;
