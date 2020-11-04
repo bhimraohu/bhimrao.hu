@@ -68,7 +68,12 @@ const Card = ({ news, width, height }) => {
       <img src={news.image.url} alt={news.image.alt} />
       <div className="card-content-wrapper">
         <div className="content-container">
-          <p className="date">{news.date}</p>
+          {
+            news.date
+              ? <p className="date">{news.date}</p>
+              : null
+          }
+
           <div className="card-title">
             <RichTextCustom render={news.title} />
           </div>
