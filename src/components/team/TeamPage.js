@@ -52,7 +52,6 @@ const TeamPage = ({ data }) => {
       <MemberRows>
         {
           data.team_members.map((member, idx) => {
-            console.log(member)
             member.title = member.name;
             member.button_label = 'Tovább';
             return (

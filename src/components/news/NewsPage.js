@@ -40,7 +40,6 @@ const NewsPage = ({ news, news_items, totalCount }) => {
       <NewsRows>
         {
           news_items.map((node, idx) => {
-            console.log(node.node)
 
             return (
               node.node.placeholder
