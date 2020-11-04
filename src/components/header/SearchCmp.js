@@ -12,18 +12,15 @@ const SearchWrapper = styled.div`
   margin-right: 1.6rem;
   padding-left: 1rem;
   padding-right: 1rem;
-
-  input {
-    padding: .5rem;
-    border: none;
-    width: 30rem;
-    font-size: 1.4rem;
-    color: ${Colors.main};
-  }
 `;
 
 const SearchInput = styled.input`
   line-height: 2.2rem;
+  padding: .5rem;
+  border: none;
+  width: 30rem;
+  font-size: 1.4rem;
+  color: ${Colors.main};
 
   &:focus {
     outline: none;
