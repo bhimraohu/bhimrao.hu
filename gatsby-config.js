@@ -1,4 +1,4 @@
-const { prismicRepo, defaultLanguage, langs, projectPathBase, studyHallPathBase } = require('./prismic-config')
+const { prismicRepo, defaultLanguage, langs, projectPathBase, studyHallPathBase, newsPathBase } = require('./prismic-config')
 
 module.exports = {
   siteMetadata: {
@@ -83,6 +83,13 @@ module.exports = {
             match: `/:lang?/${studyHallPathBase}/:uid`,
             path: `/:lang?/${studyHallPathBase}/:uid`,
             component: require.resolve('./src/templates/study_hall.js'),
+            langs,
+          },
+          {
+            type: 'news_item',
+            match: `/:lang?/${newsPathBase}/:uid`,
+            path: `/:lang?/${newsPathBase}/:uid`,
+            component: require.resolve('./src/templates/news_item.js'),
             langs,
           },
         ],

@@ -1,4 +1,4 @@
-import { defaultLanguage, projectPathBase, studyHallPathBase } from '../../prismic-config'
+import { defaultLanguage, newsPathBase, projectPathBase, studyHallPathBase } from '../../prismic-config'
 
 export const linkResolverBase = (properties) => {
   if (properties.type === 'homepage') {
@@ -30,5 +30,11 @@ export const linkResolverBase = (properties) => {
     return properties.lang === defaultLanguage
       ? `/${studyHallPathBase}/${properties.uid}`
       : `/${properties.lang}/${studyHallPathBase}/${properties.uid}`
+  }
+
+  if (properties.type === 'news_item') {
+    return properties.lang === defaultLanguage
+      ? `/${newsPathBase}/${properties.uid}`
+      : `/${properties.lang}/${newsPathBase}/${properties.uid}`
   }
 };

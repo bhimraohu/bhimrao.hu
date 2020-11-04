@@ -8,4 +8,5 @@ module.exports = {
 
   projectPathBase: 'projekt',
   studyHallPathBase: 'projekt/tanoda',
+  newsPathBase: 'hir',
 }
