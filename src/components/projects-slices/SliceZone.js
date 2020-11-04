@@ -8,7 +8,6 @@ const SliceZone = ({ body }) => (
   <div>
     {
       body.map((bodyContent, idx) => {
-        console.log(bodyContent.type)
         switch (bodyContent.type) {
           case "projects":
             return (

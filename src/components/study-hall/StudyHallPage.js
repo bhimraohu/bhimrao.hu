@@ -20,7 +20,6 @@ const MainContainer = styled.div`
 `;
 
 const StudyHallPage = ({ items }) => {
-  console.log(items)
   return (
     <StudyHallWrapper>
       <MainContainer>

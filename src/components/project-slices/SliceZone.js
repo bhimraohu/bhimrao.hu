@@ -24,7 +24,6 @@ const SliceZone = ({ body, closed }) => (
   <div>
     {
       body.map((bodyContent, idx, arr) => {
-        console.log(bodyContent.type)
         switch (bodyContent.type) {
           case "hero_image":
             return (
