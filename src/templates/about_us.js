@@ -80,7 +80,7 @@ query aboutusQuery($lang: String) {
                 image
               }
             }
-            ... on PRISMIC_ProjectBodyText_with_title {
+            ... on PRISMIC_About_usBodyText_with_title {
               type
               primary {
                 text
@@ -88,26 +88,26 @@ query aboutusQuery($lang: String) {
                 text_title
               }
             }
-            ... on PRISMIC_ProjectBodyText_only {
+            ... on PRISMIC_About_usBodyText_only {
               type
               primary {
                 text
               }
             }
-            ... on PRISMIC_ProjectBodyHighlighted_text {
+            ... on PRISMIC_About_usBodyHighlighted_text {
               type
               primary {
                 background_color
                 highlighted_text
               }
             }
-            ... on PRISMIC_ProjectBodyFull_width_image {
+            ... on PRISMIC_About_usBodyFull_width_image {
               type
               primary {
                 image
               }
             }
-            ... on PRISMIC_ProjectBodyImage_row {
+            ... on PRISMIC_About_usBodyImage_row {
               type
               primary {
                 image_center
