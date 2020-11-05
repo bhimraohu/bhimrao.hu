@@ -1,6 +1,11 @@
 import React from "react"
 import styled from 'styled-components';
+
+import { useLocation } from '@reach/router';
+import queryString from 'query-string';
+
 import { Colors, DesignSettings } from "../../utils/constants";
+import Modal from '../common/Modal'
 
 const FormWrapper = styled.form`
   width: ${DesignSettings.textWidth};
@@ -69,61 +74,85 @@ const Button = styled.button`
 `;
 
 const Form = ({ form_fields, label, action }) => {
+  const location = useLocation();
+  window.history.pushState({}, document.title, location.pathname);
+
   return (
-    <FormWrapper
-      name="contact-us"
-      method="POST"
-      data-netlify="true"
-      action={`/${action}?sent=true`}
-      netlify
-      netlify-honeypot="bot-field"
-      data-netlify-recaptcha="true"
-    >
-      {/* This needed for Netlify  */}
-      <input type="hidden" name="form-name" value="contact-us" />
-      {
-        form_fields.map((field, idx) => {
-          switch (field.field_type) {
-            case 'text':
-            case 'email':
-              return (
-                <div key={idx}>
-                  <label>
-                    {field.field_name}
-                    <input
-                      name={field.field_name}
-                      type={field.field_type}
-                      required={field.required === 'true'}
-                      placeholder={field.field_name}
-                    />
-                  </label>
-                </div>
-              )
-            case 'textarea':
-              return (
-                <div key={idx}>
-                  <label>
-                    {field.field_name}
-                    <textarea
-                      name={field.field_name}
-                      required={field.required === 'true'}
-                      placeholder={field.field_name}
-                    />
-                  </label>
-                </div>
-              )
-            default:
-              return (
-                <div></div>
-              )
-          }
-        })
-      }
-      <div data-netlify-recaptcha="true"></div>
-      <div className="button-container">
-        <Button type="submit">{label}</Button>
-      </div>
-    </FormWrapper>
+    <div>
+      {checkResult(location)}
+      <FormWrapper
+        name="contact-us"
+        method="POST"
+        data-netlify="true"
+        action={`/${action}?sent=true`}
+        netlify
+        netlify-honeypot="bot-field"
+        data-netlify-recaptcha="true"
+      >
+        {/* This needed for Netlify  */}
+        <input type="hidden" name="form-name" value="contact-us" />
+        {
+          form_fields.map((field, idx) => {
+            switch (field.field_type) {
+              case 'text':
+              case 'email':
+                return (
+                  <div key={idx}>
+                    <label>
+                      {field.field_name}
+                      <input
+                        name={field.field_name}
+                        type={field.field_type}
+                        required={field.required === 'true'}
+                        placeholder={field.field_name}
+                      />
+                    </label>
+                  </div>
+                )
+              case 'textarea':
+                return (
+                  <div key={idx}>
+                    <label>
+                      {field.field_name}
+                      <textarea
+                        name={field.field_name}
+                        required={field.required === 'true'}
+                        placeholder={field.field_name}
+                      />
+                    </label>
+                  </div>
+                )
+              default:
+                return (
+                  <div></div>
+                )
+            }
+          })
+        }
+        <div data-netlify-recaptcha="true"></div>
+        <div className="button-container">
+          <Button type="submit">{label}</Button>
+        </div>
+      </FormWrapper>
+    </div>
+  )
+}
+
+const checkResult = (location) => {
+  const query = location.search ? queryString.parse(location.search) : null;
+
+  if (!query) {
+    return null;
+  }
+
+  return showModal(Boolean(query.sent));
+}
+
+const showModal = (sent) => {
+  return (
+    sent
+      ? <Modal title={''} content={''} />
+      : null
   )
 }
 
