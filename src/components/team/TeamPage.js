@@ -25,17 +25,6 @@ const MemberRows = styled.section`
   }
 `;
 
-const MemberModal = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-
-  
-`;
-
 const TeamPage = ({ data }) => {
 
   const placeholders = 3 - (data.team_members.length % 3);
@@ -67,6 +56,5 @@ const TeamPage = ({ data }) => {
     </TeamPageWrapper>
   );
 }
-
 
 export default TeamPage;
