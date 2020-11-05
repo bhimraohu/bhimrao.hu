@@ -7,7 +7,7 @@ import Form from './Form';
 
 const ContactWrapper = styled.section`
   margin: 0 auto;
-  width: ${DesignSettings.innerWidth};
+  width: ${DesignSettings.textWidth};
   display: flex;
   flex-direction: row;
   flex: 0 0 30%;
