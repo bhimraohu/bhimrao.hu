@@ -8,6 +8,33 @@ const GoalsWrapper = styled.section`
   margin: 3rem auto;
   width: ${DesignSettings.innerWidth};
 
+@media screen and (max-width: 1300px) {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media screen and (max-width: 950px) {
+  width: 100%;
+
+  .odd {
+    flex-direction: column !important;
+    height: initial !important;
+  }
+  
+  .even {
+    flex-direction: column-reverse !important;
+    height: initial !important;
+
+    .content-container {
+      margin-left: 0 !important;
+    }
+  }
+  
+  .goal-image {
+    align-self: flex-start !important;
+  }
+}
+
   > .h1-border-bottom > h1 {
     font-size: 2.8rem;
     font-weight: bold;

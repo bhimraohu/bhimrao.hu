@@ -1,7 +1,7 @@
 import React from "react"
 import styled from 'styled-components';
 
-import { Colors, DesignSettings } from "../../utils/constants";
+import { DesignSettings } from "../../utils/constants";
 import TitleOnly from "../common/TitleOnly";
 import Card from '../common/Card';
 
@@ -23,17 +23,6 @@ const MemberRows = styled.section`
     width: 30%;
     margin: 3rem 0;
   }
-`;
-
-const MemberModal = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-
-  
 `;
 
 const TeamPage = ({ data }) => {
@@ -66,15 +55,6 @@ const TeamPage = ({ data }) => {
       </MemberRows>
     </TeamPageWrapper>
   );
-}
-
-const onClickHandler = (member) => {
-  console.log(member);
-  return (
-    <MemberModal>
-
-    </MemberModal>
-  )
 }
 
 export default TeamPage;

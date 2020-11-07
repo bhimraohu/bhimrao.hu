@@ -10,6 +10,46 @@ import Icon from "../common/IconCmp";
 const TopBarWrapper = styled.div`
   padding: 1.6rem 0;
   background-color: ${Colors.main};
+
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 950px) {
+    width: 100%;
+
+    .address-text {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .rightside-container {
+      display: none !important;
+    }
+
+    .rightside-container-mobile {
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+
+      .top-row {
+        display: flex;
+      }
+
+      .bottom-row {
+        display: flex;
+
+        button {
+          padding-left: 0
+        }
+      }
+    }
+    .address {
+      display: none;
+    }
+  }
 `;
 
 const TopBarContainer = styled.div`
@@ -18,9 +58,17 @@ const TopBarContainer = styled.div`
   display: flex;
   justify-content: space-between;
 
+  @media screen and (max-width: 600px) {
+    justify-content: center;
+  }
+
   .rightside-container {
-  display: flex;
-  justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .rightside-container-mobile {
+    display: none;
   }
 
   .icon-container {
@@ -90,10 +138,10 @@ class HeaderTopBar extends React.Component {
     return (
       <TopBarWrapper>
         <TopBarContainer>
-
           <div className="address">
-            {this.props.topbarsData.address_label}:
+            {/* {this.props.topbarsData.address_label}: */}
             <a
+              className="address-text"
               href={this.props.topbarsData.address_maps_link}
               target="_blank"
               rel="noreferrer"
@@ -103,32 +151,62 @@ class HeaderTopBar extends React.Component {
           </div>
 
           <div className="rightside-container">
-            {
-              this.state.showSearchInput
-                ? <Search search_placeholder={this.props.topbarsData.search_placeholder} onBlur={this.onBlurHandler} />
-                : (
-                  <div
-                    className="icon-container"
-                    onClick={this.onClickHandler}
-                    onKeyPress={this.onKeyPressHandler}
-                    role="button"
-                    tabIndex="0"
-                  >
-                    <Icon icon_class={'icon-search'} color={Colors.dirtyWhite} />
-                  </div>
-                )
-            }
-            <SocialLinks links={this.props.topbarsData.social_links} />
-            {
-              this.props.topbarsData.multilanguage_enabled
-                ? <LanguageSelector data={this.props.topbarsData} />
-                : null
-            }
+            {getSerach(this.state, this.props, this.onBlurHandler, this.onClickHandler, this.onKeyPressHandler, false)}
+            {getSocialLinks(this.props)}
+            {getLanguageSelector(this.props)}
+          </div>
+
+          <div className="rightside-container-mobile">
+            <div className="top-row">
+              {getSerach(this.state, this.props, this.onBlurHandler, this.onClickHandler, this.onKeyPressHandler, true)}
+            </div>
+            <div className="bottom-row">
+              {getSocialLinks(this.props)}
+              {getLanguageSelector(this.props)}
+            </div>
           </div>
         </TopBarContainer>
       </TopBarWrapper>
     )
   }
+}
+
+const getSerach = (state, props, onBlurHandler, onClickHandler, onKeyPressHandler, mobile) => {
+  if (mobile) {
+    return (
+      <Search search_placeholder={props.topbarsData.search_placeholder} onBlur={onBlurHandler} />
+    )
+  }
+
+  return (
+    state.showSearchInput
+      ? <Search search_placeholder={props.topbarsData.search_placeholder} onBlur={onBlurHandler} />
+      : (
+        <div
+          className="icon-container"
+          onClick={onClickHandler}
+          onKeyPress={onKeyPressHandler}
+          role="button"
+          tabIndex="0"
+        >
+          <Icon icon_class={'icon-search'} color={Colors.dirtyWhite} />
+        </div>
+      )
+  )
+}
+
+const getSocialLinks = (props) => {
+  return (
+    <SocialLinks links={props.topbarsData.social_links} />
+  )
+}
+
+const getLanguageSelector = (props) => {
+  return (
+    props.topbarsData.multilanguage_enabled
+      ? <LanguageSelector data={props.topbarsData} />
+      : null
+  )
 }
 
 export default HeaderTopBar

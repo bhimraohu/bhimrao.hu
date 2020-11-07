@@ -10,6 +10,24 @@ const TopNewsWrapper = styled.section`
   width: ${DesignSettings.innerWidth};
   margin-bottom: 3rem;
 
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+
+    .news-row {
+      flex-direction: column;
+
+      > span {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+    } 
+  }
+
   .news-row {
     display: flex;
     justify-content: space-between;

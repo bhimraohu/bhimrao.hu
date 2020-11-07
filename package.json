@@ -6,6 +6,7 @@
   "author": "Bhimrao",
   "dependencies": {
     "@prismicio/gatsby-source-prismic-graphql": "3.6.11",
+    "@reach/router": "1.3.4",
     "apollo-cache-inmemory": "1.6.6",
     "apollo-client": "2.6.10",
     "apollo-link-prismic": "1.0.8",
@@ -22,6 +23,7 @@
     "graphql-tag": "2.11.0",
     "prismic-reactjs": "1.3.2",
     "prop-types": "^15.7.2",
+    "query-string": "6.13.6",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",

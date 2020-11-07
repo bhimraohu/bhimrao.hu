@@ -8,6 +8,15 @@ const TitleOnlyWrapper = styled.section`
   margin: 3rem auto;
   width: ${DesignSettings.textWidth};
 
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 950px) {
+    width: 100%;
+  }
+
   .content-wrapper > h1 {
     font-size: 3rem;
     margin: 2rem 0;

@@ -7,6 +7,17 @@ import { Colors, DesignSettings } from "../../utils/constants";
 const HighlightedTextWrapper = styled.section`
   padding: ${props => props.background_color ? '3rem auto' : '0 auto'};
   background-color: ${props => props.background_color};
+
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 950px) {
+    .highlighted-text-container {
+      width: 100% !important;
+    }
+  }
   
   .highlighted-text-container {
     margin: 0 auto;

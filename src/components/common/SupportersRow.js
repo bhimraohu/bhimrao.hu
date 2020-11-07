@@ -13,6 +13,20 @@ const SupportersRowWrapper = styled.section`
   background: ${Colors.imageRowBackground2};
   margin-top: 5rem;
 
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 950px) {
+    width: 100%;
+    padding-bottom: 5rem;
+
+    .image-container {
+      flex-direction: column !important;
+    }
+  }
+
   .image-container {
     display: flex;
     flex-direction: row;

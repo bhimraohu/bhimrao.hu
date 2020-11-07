@@ -12,6 +12,23 @@ const FooterWrapper = styled.footer`
   width: 100%;
   height: 30rem;
 
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 950px) {
+    width: 100%;
+    flex-direction: column;
+    height: initial;
+    padding-bottom: 350px;
+    position: relative;
+
+    .eu-logo {
+      position: absolute !important;
+    }
+  }
+
   .emmi-logo {
     width: 20rem;
     margin-bottom: 1.6rem;
@@ -33,6 +50,21 @@ const FooterContainer = styled.div`
   width: ${DesignSettings.outerWidth};
   margin: 0 auto;
   justify-content: space-between;
+
+  @media screen and (max-width: 950px) {
+    width: 100%;
+    .columns {
+      flex-direction:column !important;
+    }
+
+    .copyright-text {
+      margin-top: 1rem;
+    }
+
+    .documents-links { 
+      margin-bottom: 1rem;
+    }
+  }
 
   .text-container {
     display: flex;
@@ -68,6 +100,18 @@ const FooterContainer = styled.div`
 const Column = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 950px) {
+    &:nth-child(1) {
+      width: initial !important;
+    }
+    &:nth-child(2) {
+      width: initial !important;
+    }
+    &:nth-child(3) {
+      width: initial !important;
+    }
+  }
 
   &:nth-child(1) {
     width: 25rem;
