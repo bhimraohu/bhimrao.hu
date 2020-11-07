@@ -10,6 +10,11 @@ import Icon from "../common/IconCmp";
 const TopBarWrapper = styled.div`
   padding: 1.6rem 0;
   background-color: ${Colors.main};
+
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 `;
 
 const TopBarContainer = styled.div`

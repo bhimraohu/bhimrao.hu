@@ -15,6 +15,7 @@ const Button = styled.button`
   background-color: transparent;
   border: none;
   font-size: 1.6rem;
+  padding-right: 0;
 
   &:hover {
     color: ${Colors.red};
