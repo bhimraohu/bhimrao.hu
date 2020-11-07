@@ -10,6 +10,53 @@ const ProjectsWrapper = styled.section`
   margin: 3rem auto;
   width: ${DesignSettings.innerWidth};
 
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+@media screen and (max-width: 1300px) {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media screen and (max-width: 1050px) {
+  width: 100%;
+
+  .odd {
+    flex-direction: column !important;
+    height: initial !important;
+
+    .content-container {
+      margin-right: 0 !important;
+    }
+  }
+  
+  .even {
+    flex-direction: column-reverse !important;
+    height: initial !important;
+
+    .content-container {
+      margin-left: 0 !important;
+    }
+  }
+  
+  .project-image {
+    margin: 3rem 0;
+    align-self: center !important;
+  }
+
+
+  .button-container {
+    display: none;
+  }
+
+  .button-container-mobile {
+    display: flex !important;
+    justify-content: flex-end;
+  }
+}
+
   .projects-wrapper {
     display: flex;
     flex-direction: column;
@@ -57,7 +104,12 @@ const ProjectsWrapper = styled.section`
         align-items: flex-start;
       }
 
-      .button-container {
+      .button-container-mobile {
+        display: none;
+      }
+
+      .button-container,
+      .button-container-mobile {
         margin-top: 2rem;
         
         a {
@@ -118,11 +170,21 @@ const getOddStyle = (field) => (
       </div>
     </div>
     <img className="project-image" src={field.image.url} alt={field.image.alt} />
+    <div className="button-container-mobile">
+      <Link to={linkResolverBase(field.link._meta)}>
+        {field.link_label}
+      </Link>
+    </div>
   </div>
 )
 
 const getEvenStyle = (field) => (
   <div className="even">
+    <div className="button-container-mobile">
+      <Link to={linkResolverBase(field.link._meta)}>
+        {field.link_label}
+      </Link>
+    </div>
     <img className="project-image" src={field.image.url} alt={field.image.alt} />
     <div className="content-container">
       <div className="h1-border-bottom  common-header common-text">

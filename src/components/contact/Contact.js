@@ -14,6 +14,12 @@ const ContactWrapper = styled.section`
   flex-wrap: wrap;
   justify-content: space-between;
 
+  @media screen and (max-width: 950px) {
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
   .card-container {
     width: 30%;
     margin: 3rem 0;

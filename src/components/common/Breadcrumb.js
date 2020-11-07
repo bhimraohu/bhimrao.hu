@@ -9,6 +9,11 @@ const BreadcrumbWrapper = styled.section`
   margin: 3rem auto;
   width: ${DesignSettings.outerWidth};
 
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   .item-link {
     font-size: 2rem;
     font-weight: bold;

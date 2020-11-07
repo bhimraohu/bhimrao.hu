@@ -15,17 +15,41 @@ const StudyHallsWrapper = styled.section`
   height: 25rem;
   justify-content: space-evenly;
 
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 950px) {
+    width: 100%;
+    height: initial !important;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    .halls-container {
+      height: initial !important;
+
+      .item {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        
+      }
+    }
+  }
+
   .halls-container {
     width: 100%;
     display: flex;
     height: 10rem;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 
     .item {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      min-width: 15rem;
     
       &:hover,
       &:hover .icon-home::before,

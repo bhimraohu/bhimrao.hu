@@ -8,6 +8,20 @@ import { linkResolverBase } from '../../utils/linkResolverBase';
 
 const DropdownWrapper = styled.section`
 
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 1050px) {
+    .dropdown-wrapper {
+      width: 100% !important;
+    }
+    .dropdown-title {
+      width: 100% !important;
+    }
+  }
+
   .dropdown-wrapper {
     margin: 0 auto;
     width: ${DesignSettings.innerWidth};

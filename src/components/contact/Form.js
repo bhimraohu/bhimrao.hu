@@ -17,6 +17,17 @@ const FormWrapper = styled.form`
   margin-bottom: 10rem;
   border: 1px solid ${Colors.lightGrey};
 
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 950px) {
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
   label {
     font-weight: 600;
   }

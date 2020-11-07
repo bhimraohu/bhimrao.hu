@@ -5,6 +5,34 @@ const ImageGridWrapper = styled.section`
   margin: 5rem auto;
   padding: 10rem;
   background-color: ${props => props.background_color};
+  margin-bottom: 0;
+
+@media screen and (max-width: 1300px) {
+  padding: 8rem 2rem;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 950px) {
+  padding: 5rem 2rem;
+
+  .image-grid-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    img {
+      width: 50% !important;
+      padding: 1%;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .image-grid-wrapper {
+
+    img {
+      width: 100% !important;
+    }
+  }
+}
 
   .image-grid-wrapper {
     margin: 0 auto;
