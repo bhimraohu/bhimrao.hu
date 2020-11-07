@@ -5,6 +5,16 @@ const ImageRowWrapper = styled.section`
   margin: ${props => props.isLastSlice ? '5rem 0 0 0' : '5rem 0'};
   width: 100%;
 
+  @media screen and (max-width: 600px) {
+    .image-row-wrapper {
+      flex-direction: column;
+
+      img {
+        width: 100% !important;
+      }
+    }
+  }
+
   .image-row-wrapper {
     display: flex;
 

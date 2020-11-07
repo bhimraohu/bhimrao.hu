@@ -8,6 +8,15 @@ const TextWithTitleWrapper = styled.section`
   margin: 3rem auto;
   width: ${props => props.isHomepage ? DesignSettings.innerWidth : DesignSettings.textWidth};
 
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 950px) {
+    width: 100%;
+  }
+
   .h1-border-bottom > h1,
   .title-wrapper > .h1-border-bottom > h1 {
     font-size: 3rem;

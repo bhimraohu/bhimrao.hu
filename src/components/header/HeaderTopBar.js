@@ -15,6 +15,21 @@ const TopBarWrapper = styled.div`
     padding-left: 2rem;
     padding-right: 2rem;
   }
+
+  @media screen and (max-width: 950px) {
+    width: 100%;
+
+    .address-text {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    /* .rightside-container {
+      display: flex;
+      flex-direction: column;
+    } */
+  }
 `;
 
 const TopBarContainer = styled.div`
@@ -24,8 +39,8 @@ const TopBarContainer = styled.div`
   justify-content: space-between;
 
   .rightside-container {
-  display: flex;
-  justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .icon-container {
@@ -97,8 +112,9 @@ class HeaderTopBar extends React.Component {
         <TopBarContainer>
 
           <div className="address">
-            {this.props.topbarsData.address_label}:
+            {/* {this.props.topbarsData.address_label}: */}
             <a
+              className="address-text"
               href={this.props.topbarsData.address_maps_link}
               target="_blank"
               rel="noreferrer"

@@ -12,6 +12,41 @@ const StatisticsRowWrapper = styled.section`
   height: 25rem;
   justify-content: space-evenly;
 
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 950px) {
+    width: initial !important;
+    height: initial !important;
+    padding: 5rem 0;
+
+    .stat-container {
+      height: initial !important;
+      width: initial !important;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+      }
+    }
+
+    .text-container {
+      width: 100% !important;
+
+      .text-content {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
   .stat-container {
     width: ${DesignSettings.outerWidth};
     margin: 0 auto;

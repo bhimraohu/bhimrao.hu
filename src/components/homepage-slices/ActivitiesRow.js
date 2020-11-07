@@ -9,6 +9,16 @@ const ActivitiesRowWrapper = styled.section`
   display: flex;
   height: 25rem;
 
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    height: initial;
+  }
+
   .item {
     display: flex;
     flex: 0 0 25%;
