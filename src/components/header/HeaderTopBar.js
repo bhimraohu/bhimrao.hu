@@ -31,8 +31,9 @@ const TopBarWrapper = styled.div`
 
     .rightside-container-mobile {
       display: flex !important;
-      flex-direction: column;
-      justify-content: center;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
 
       .top-row {
         display: flex;
@@ -129,10 +130,12 @@ class HeaderTopBar extends React.Component {
 
   onKeyPressHandler = (event) => {
     // todo: handle enter
-    this.setState({
-      ...this.state,
-      showSearchInput: true,
-    });
+    if (event.which === 13) {
+      this.setState({
+        ...this.state,
+        showSearchInput: true,
+      });
+    }
   }
 
   render() {
@@ -140,7 +143,6 @@ class HeaderTopBar extends React.Component {
       <TopBarWrapper>
         <TopBarContainer>
           <div className="address">
-            {/* {this.props.topbarsData.address_label}: */}
             <a
               className="address-text"
               href={this.props.topbarsData.address_maps_link}
@@ -158,13 +160,9 @@ class HeaderTopBar extends React.Component {
           </div>
 
           <div className="rightside-container-mobile">
-            <div className="top-row">
-              {getSerach(this.state, this.props, this.onBlurHandler, this.onClickHandler, this.onKeyPressHandler, true)}
-            </div>
-            <div className="bottom-row">
-              {getSocialLinks(this.props)}
-              {getLanguageSelector(this.props)}
-            </div>
+            {getSerach(this.state, this.props, this.onBlurHandler, this.onClickHandler, this.onKeyPressHandler, true)}
+            {getSocialLinks(this.props)}
+            {getLanguageSelector(this.props)}
           </div>
         </TopBarContainer>
       </TopBarWrapper>
