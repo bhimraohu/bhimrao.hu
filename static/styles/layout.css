@@ -122,6 +122,25 @@ html {
   font-size: 10px;
   overflow-y: scroll;
 }
+
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 9px !important;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  html {
+    font-size: 8px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 6px !important;
+  }
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;

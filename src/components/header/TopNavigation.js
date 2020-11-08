@@ -80,8 +80,8 @@ const TopNavigationWrapper = styled.div`
       display: flex;
       align-items: center;
       padding: 0 2rem;
-      border: 1px solid ${Colors.main};
       background-color: white;
+      border: none;
       height: 6.6rem;
       width: 8.2rem;
 

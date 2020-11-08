@@ -87,7 +87,7 @@ const Button = styled.button`
 const Form = ({ form_fields, label, action }) => {
   const location = useLocation();
   if (typeof window === 'object') {
-    window?.history.pushState({}, document.title, location.pathname);
+    window.history.pushState({}, document.title, location.pathname);
   }
 
   return (

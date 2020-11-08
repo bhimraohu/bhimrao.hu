@@ -42,6 +42,8 @@ const ProjectsWrapper = styled.section`
   }
   
   .project-image {
+    width: initial !important;
+    height: initial !important;
     margin: 3rem 0;
     align-self: center !important;
   }
