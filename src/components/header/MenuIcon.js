@@ -40,7 +40,7 @@ class MenuIcon extends React.Component {
   render() {
     return (
       <MenuIconWrapper>
-        <div onclick={this.onClickHandler} ref={inputEl => (this.container = inputEl)} class="container">
+        <div ref={inputEl => (this.container = inputEl)} class="container">
           <div class="bar1"></div>
           <div class="bar2"></div>
           <div class="bar3"></div>

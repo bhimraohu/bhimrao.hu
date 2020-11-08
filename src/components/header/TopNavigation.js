@@ -153,6 +153,7 @@ const NavLink = styled.li`
     font-size: 1.6rem;
     line-height: 4.5rem;
     display: inline-block;
+    width: 100%;
   }
 
   a.selected {
@@ -247,7 +248,7 @@ const getMenu = (navigationData, mobile) => {
 
 const getMainNav = (link) => {
   return (
-    <NavLink key={link.link._meta.uid} className={link.is_cta ? 'desktop button-cta' : ''}>
+    <NavLink key={link.link._meta.uid} className={link.is_cta ? 'button-cta' : ''}>
       <Link
         to={linkResolverBase(link.link._meta)}
         className={getSelectedClassName(link.link._meta)}
@@ -266,7 +267,7 @@ const getMainAndSubNav = (link, subNav) => {
         className={getSelectedClassName(link.link._meta)}
       >
         <span>{link.label}</span>
-        <Icon style="padding-right: 2rem" icon_class={'icon-down'} color={Colors.red} />
+        <Icon style={{ paddingRight: '2rem' }} icon_class={'icon-down'} color={Colors.red} />
       </Link>
       <SubNavLinks className={`${link.submenu} ${link.link._meta.lang}`}>
         {

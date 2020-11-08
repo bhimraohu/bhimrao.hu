@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { DesignSettings } from "../../utils/constants";
 import TitleOnly from "../common/TitleOnly";
-import Card from '../common/Card';
+// import Card from '../common/Card';
 
 const TeamPageWrapper = styled.section`
   margin: 3rem auto;
@@ -39,7 +39,8 @@ const TeamPage = ({ data }) => {
     <TeamPageWrapper>
       <TitleOnly title={data.title} />
       <MemberRows>
-        {
+        <h1>Fejlesztés alatt</h1>
+        {/* {
           data.team_members.map((member, idx) => {
             member.title = member.name;
             member.button_label = 'Tovább';
@@ -51,7 +52,7 @@ const TeamPage = ({ data }) => {
                 </div>
             )
           })
-        }
+        } */}
       </MemberRows>
     </TeamPageWrapper>
   );

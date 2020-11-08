@@ -10,12 +10,20 @@ const NewsItemWrapper = styled.section`
   width: ${DesignSettings.innerWidth};
   display: flex;
   flex-direction: column;
-  flex: 0 0 30%;
   flex-wrap: wrap;
 
   @media screen and (max-width: 1300px) {
+    width: 100%;
     padding-left: 2rem;
     padding-right: 2rem;
+
+    .main-image {
+      width: 100%;
+    }
+
+    .date {
+      width: 100% !important;
+    }
   }
 
   .main-image {

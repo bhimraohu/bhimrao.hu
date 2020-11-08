@@ -67,13 +67,16 @@ const DropdownList = styled.ul`
   .dropdown-item {
     background: ${Colors.imageRowBackground};
     border: 1px solid ${Colors.lightGrey};
-    padding: 2.5rem 2rem;
+    padding: 0 2rem;
     
     > a {
       text-decoration: none;
       color: ${Colors.main};
       font-size: 2rem;
       font-weight: bold;
+      width: 100%;
+      display: inline-block;
+      line-height: 6rem;
 
       &:hover {
         color: ${Colors.red};

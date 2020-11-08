@@ -71,6 +71,10 @@ const Modal = ({ title, content, modalCloseTimeout }) => {
     close();
   }
 
+  const onKeyPressHandler = () => {
+    close();
+  }
+
   const close = () => {
     setModalOpen(false);
   }
@@ -81,7 +85,15 @@ const Modal = ({ title, content, modalCloseTimeout }) => {
         <div>
           <div className="modal-header">
             {title} <span role="img" aria-label="Sad emoji">😊</span>
-            <span className="close-modal" onClick={onClickHandler} role="button">X</span>
+            <span
+              className="close-modal"
+              onClick={onClickHandler}
+              role="button"
+              onKeyPress={onKeyPressHandler}
+              tabIndex={-1}
+            >
+              X
+                </span>
           </div>
           <p className="modal-content">
             {content}

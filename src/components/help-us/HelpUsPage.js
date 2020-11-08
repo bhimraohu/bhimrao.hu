@@ -9,12 +9,37 @@ const HelpUsPageWrapper = styled.section`
   flex-direction: column;
   width: 100%;
 
+  @media screen and (max-width: 1300px) {
+    .helpus-wrapper {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .helpus-container {
+      justify-content: space-between;
+      width: initial !important;
+      flex-direction: column !important;
+
+      .texts {
+        width: initial !important;
+        
+        > section {
+          width: initial !important;
+        }
+      }
+
+      .image {
+        margin-top: 5rem;
+      }
+    }
+  }
+
   .helpus-wrapper {
     width: 100%;
 
-      &:nth-child(1) {
-        background-color: #F7F6F0;
-      }
+    &:nth-child(1) {
+      background-color: #F7F6F0;
+    }
 
     .helpus-container {
       margin: 10rem auto;
@@ -34,7 +59,8 @@ const HelpUsPageWrapper = styled.section`
         > section {
           width: 60rem;
           margin-left: 0;
-
+          padding-left: 0;
+          padding-right: 0;
         }
 
         .key-number {
