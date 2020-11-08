@@ -12,6 +12,16 @@ const SearchWrapper = styled.div`
   margin-right: 1.6rem;
   padding-left: 1rem;
   padding-right: 1rem;
+
+  @media screen and (max-width: 950px) {
+    width: initial !important;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    input {
+      width: initial !important;
+    }
+  }
 `;
 
 const SearchInput = styled.input`

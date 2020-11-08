@@ -32,6 +32,9 @@ const GoalsWrapper = styled.section`
   
   .goal-image {
     align-self: flex-start !important;
+    width: inherit !important;
+    height: inherit !important;
+}
   }
 }
 

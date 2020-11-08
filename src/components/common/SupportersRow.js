@@ -24,6 +24,7 @@ const SupportersRowWrapper = styled.section`
 
     .image-container {
       flex-direction: column !important;
+      width: initial !important;
     }
   }
 

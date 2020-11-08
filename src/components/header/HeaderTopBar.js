@@ -36,6 +36,7 @@ const TopBarWrapper = styled.div`
 
       .top-row {
         display: flex;
+        justify-content: center;
       }
 
       .bottom-row {
