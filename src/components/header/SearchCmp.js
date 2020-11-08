@@ -1,8 +1,8 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react'
+import styled from 'styled-components'
 
-import { Colors } from "../../utils/constants";
-import Icon from "../common/IconCmp";
+import { Colors } from '../../utils/constants';
+import Icon from '../common/IconCmp';
 
 const SearchWrapper = styled.div`
   display: flex;
@@ -36,6 +36,7 @@ const SearchInput = styled.input`
 `;
 
 class Search extends React.Component {
+
   componentDidMount() {
     this.searchInput.focus();
   }
