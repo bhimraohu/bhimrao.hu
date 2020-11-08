@@ -6,6 +6,7 @@ import { linkResolverBase } from '../../utils/linkResolverBase';
 import { Colors, DesignSettings } from '../../utils/constants';
 import Icon from '../common/IconCmp';
 import BrandingWrapper from './BrandingCmp';
+import MenuIcon from './MenuIcon';
 
 const TopNavigationWrapper = styled.div`
   margin: 0 auto;
@@ -209,7 +210,7 @@ const TopNavigation = ({ navigationData }) => {
         }
         <div className="mobile">
           <button className="menu-toggle-button" onClick={toggleMenu}>
-            <Icon icon_class={'icon-down'} color={Colors.main} size={'3rem'} />
+            <MenuIcon menuOpen={menuOpen} />
           </button>
         </div>
       </div>
