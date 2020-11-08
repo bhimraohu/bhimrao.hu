@@ -1,11 +1,11 @@
-import { Link } from "gatsby"
-import React, { useState } from "react"
+import { Link } from 'gatsby'
+import React, { useState } from 'react'
 import styled from 'styled-components';
 
 import { linkResolverBase } from '../../utils/linkResolverBase';
-import { Colors, DesignSettings } from "../../utils/constants";
-import Icon from "../common/IconCmp";
-import BrandingWrapper from "./BrandingCmp";
+import { Colors, DesignSettings } from '../../utils/constants';
+import Icon from '../common/IconCmp';
+import BrandingWrapper from './BrandingCmp';
 
 const TopNavigationWrapper = styled.div`
   margin: 0 auto;
@@ -110,7 +110,16 @@ const NavLinks = styled.ul`
 const NavLink = styled.li`
   margin: auto 0;
   height: 4.7rem;
+  border-top: 1px solid ${Colors.lightGrey};
   cursor: pointer;
+
+  &:nth-child(2) {
+    border-bottom: 1px solid ${Colors.lightGrey};
+  }
+
+  &:nth-child(3) {
+    border-top: none;
+  }
 
   span i::before {
     transform: rotate(0deg);
@@ -169,10 +178,10 @@ const NavLink = styled.li`
 `;
 
 const SubNavLinks = styled.ul`
-  display: ${props => props.subMenuOpen ? 'flex' : 'none'};
+  display: none;
   position: relative;
   height: auto;
-  box-shadow: 1px 4px 3px 0px black;
+  box-shadow: 1px 2px 2px 0px ${Colors.main};
   background-color: white;
 
   /* Set the width of the submenu per language*/
@@ -186,17 +195,9 @@ const SubNavLinks = styled.ul`
 
 const TopNavigation = ({ navigationData }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [subMenuOpen, setSubMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-  }
-
-  const toggleSubMenu = (e) => {
-    e.preventDefault();
-    console.log(toggleSubMenu)
-    console.log(subMenuOpen)
-    setSubMenuOpen(!subMenuOpen);
   }
 
   return (
@@ -214,14 +215,14 @@ const TopNavigation = ({ navigationData }) => {
       </div>
       {
         menuOpen
-          ? getMenu(navigationData, true, toggleSubMenu, subMenuOpen)
+          ? getMenu(navigationData, true)
           : null
       }
     </TopNavigationWrapper>
   )
 }
 
-const getMenu = (navigationData, mobile, toggleSubMenu, subMenuOpen) => {
+const getMenu = (navigationData, mobile) => {
   return (
     <NavLinks className={mobile ? 'mobile-menu' : 'desktop'}>
       {
@@ -232,7 +233,7 @@ const getMenu = (navigationData, mobile, toggleSubMenu, subMenuOpen) => {
               return edge.node.parent === link.submenu;
             });
             if (subNav) {
-              return getMainAndSubNav(link, subNav, toggleSubMenu, subMenuOpen);
+              return getMainAndSubNav(link, subNav);
             }
             return getMainNav(link);
           })
@@ -254,7 +255,7 @@ const getMainNav = (link) => {
   );
 }
 
-const getMainAndSubNav = (link, subNav, toggleSubMenu, subMenuOpen) => {
+const getMainAndSubNav = (link, subNav) => {
   return (
     <NavLink key={link.link._meta.uid} className={`${link.submenu} ${link.link._meta.lang}`}>
       <Link
@@ -262,9 +263,9 @@ const getMainAndSubNav = (link, subNav, toggleSubMenu, subMenuOpen) => {
         className={getSelectedClassName(link.link._meta)}
       >
         <span>{link.label}</span>
-        <Icon style="padding-right: 2rem" icon_class={'icon-down'} color={Colors.red} onClick={toggleSubMenu} />
+        <Icon style="padding-right: 2rem" icon_class={'icon-down'} color={Colors.red} />
       </Link>
-      <SubNavLinks subMenuOpen={subMenuOpen} className={`${link.submenu} ${link.link._meta.lang}`}>
+      <SubNavLinks className={`${link.submenu} ${link.link._meta.lang}`}>
         {
           subNav.node.sub_navigation_links.map(subLink => {
             return (
@@ -285,9 +286,10 @@ const getMainAndSubNav = (link, subNav, toggleSubMenu, subMenuOpen) => {
 }
 
 const getSelectedClassName = (meta) => {
-  if (typeof window === "undefined") {
+  if (typeof window === 'undefined') {
     return '';
   }
   return window?.location.pathname.indexOf(linkResolverBase(meta)) > -1 ? 'selected' : '';
 }
+
 export default TopNavigation;

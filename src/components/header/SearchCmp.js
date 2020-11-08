@@ -15,8 +15,6 @@ const SearchWrapper = styled.div`
 
   @media screen and (max-width: 950px) {
     width: initial !important;
-    margin-left: 2rem;
-    margin-right: 2rem;
 
     input {
       width: initial !important;
