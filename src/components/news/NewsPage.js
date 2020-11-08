@@ -10,43 +10,29 @@ const NewsRows = styled.section`
   width: ${DesignSettings.innerWidth};
   display: flex;
   flex-direction: row;
-  flex: 0 0 30%;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  justify-content: space-between;
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+  }
 
   .card-container {
-    width: 30%;
     margin: 3rem 0;
   }
 `;
 
-const NewsPage = ({ news, news_items, totalCount }) => {
-
-  const placeholders = 3 - (totalCount % 3);
-  // add extra
-  for (let i = 0; i < placeholders; i++) {
-    news_items.push({
-      node: {
-        placeholder: true,
-      }
-    });
-  }
-
+const NewsPage = ({ news, news_items }) => {
   return (
     <div>
-      <TitleOnly
-        title={news.title}
-      />
+      <TitleOnly title={news.title} />
       <NewsRows>
         {
           news_items.map((node, idx) => {
-
             return (
-              node.node.placeholder
-                ? <div className="card-container"></div>
-                : <div className="card-container">
-                  <Card key={idx} news={node.node} width={'initial'} height={'100%'} />
-                </div>
+              <div className="card-container">
+                <Card key={idx} news={node.node} width={'initial'} height={'100%'} />
+              </div>
             )
           })
         }

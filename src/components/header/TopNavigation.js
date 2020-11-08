@@ -111,17 +111,19 @@ const NavLinks = styled.ul`
 const NavLink = styled.li`
   margin: auto 0;
   height: 4.7rem;
-  border-top: 1px solid ${Colors.lightGrey};
   cursor: pointer;
+  
+  @media screen and (max-width: 950px) {
+    border-top: 1px solid ${Colors.lightGrey};
+  
+    &:nth-child(2) {
+      border-bottom: 1px solid ${Colors.lightGrey};
+    }
 
-  &:nth-child(2) {
-    border-bottom: 1px solid ${Colors.lightGrey};
+    &:nth-child(3) {
+      border-top: none;
+    }
   }
-
-  &:nth-child(3) {
-    border-top: none;
-  }
-
   span i::before {
     transform: rotate(0deg);
     transition: transform .5s;

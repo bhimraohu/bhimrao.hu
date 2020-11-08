@@ -12,10 +12,11 @@ const SupportersRowWrapper = styled.section`
   min-height: 35rem;
   background: ${Colors.imageRowBackground2};
   margin-top: 5rem;
+  padding: 4rem;
 
   @media screen and (max-width: 1300px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    /* padding-left: 2rem;
+    padding-right: 2rem; */
   }
 
   @media screen and (max-width: 950px) {
@@ -23,7 +24,6 @@ const SupportersRowWrapper = styled.section`
     padding-bottom: 5rem;
 
     .image-container {
-      flex-direction: column !important;
       width: initial !important;
     }
   }
@@ -33,12 +33,14 @@ const SupportersRowWrapper = styled.section`
     flex-direction: row;
     justify-content: space-around;
     width: ${DesignSettings.innerWidth};
+    flex-wrap: wrap;
   }
 
   .item {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2rem;
     
     .item-icon {
       max-width: 25rem;
@@ -53,6 +55,7 @@ const SupportersRowWrapper = styled.section`
   }
 
   .title-container > h1 {
+    padding-bottom: 3rem;
     font-size: 2.8rem;
     text-transform: uppercase;
     text-align: center;

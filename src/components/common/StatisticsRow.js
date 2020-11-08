@@ -13,19 +13,15 @@ const StatisticsRowWrapper = styled.section`
   justify-content: space-evenly;
 
   @media screen and (max-width: 1300px) {
+    padding: 5rem 0;
     padding-left: 2rem;
     padding-right: 2rem;
-  }
-
-  @media screen and (max-width: 950px) {
     width: initial !important;
     height: initial !important;
-    padding: 5rem 0;
 
     .stat-container {
       height: initial !important;
       width: initial !important;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
 
@@ -52,6 +48,8 @@ const StatisticsRowWrapper = styled.section`
     margin: 0 auto;
     display: flex;
     height: 10rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
 
     .item {
       display: flex;

@@ -8,15 +8,11 @@ const ActivitiesRowWrapper = styled.section`
   width: 100%;
   display: flex;
   height: 25rem;
+  flex-wrap: wrap;
 
-  @media screen and (max-width: 1300px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  @media screen and (max-width: 600px) {
-    flex-direction: column;
+  @media screen and (max-width: 700px) {
     height: initial;
+    justify-content: center;
   }
 
   .item {
@@ -25,6 +21,8 @@ const ActivitiesRowWrapper = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-width: 20rem;
+    min-height: 20rem;
   }
   .item:nth-of-type(odd) {
     background: ${Colors.imageRowBackground};

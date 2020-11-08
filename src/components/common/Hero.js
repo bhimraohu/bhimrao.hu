@@ -23,10 +23,15 @@ const HeroWrapper = styled.section`
     left: 0;
     background-image: 
       linear-gradient(
-        -106deg,
+        -120deg,
         ${props => props.color ? (props.color + '80') : '#00000080'} 
         calc((1140px / 1.8) + ((100vw - 1180px)/ 2)),
         rgba(0,0,0,0) 0);
+  }
+
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   h1 {
