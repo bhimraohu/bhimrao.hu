@@ -11,6 +11,16 @@ const FullWidthQuoteWrapper = styled.section`
 `;
 
 const TextContainer = styled.div`
+
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 950px) {
+    width: 100% !important;
+  }
+  
   margin: 3rem auto;
   width: ${DesignSettings.innerWidth};
   padding: 5rem 0;

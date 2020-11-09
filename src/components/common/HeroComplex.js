@@ -13,7 +13,29 @@ const HeroComplexWrapper = styled.section`
   position: relative;
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .hero-complex-details-container {
+      margin-top: 3rem;
+      flex-direction: column !important;
+
+      img {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+      }
   
+      .hero-complex-content {
+        margin-top: 3rem;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+      }
+    }
+  }
 
   .hero-complex-container {
     width: 100%;
