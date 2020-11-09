@@ -6,7 +6,7 @@ import { Colors, DesignSettings } from "../../utils/constants";
 
 const TextWithTitleWrapper = styled.section`
   margin: 3rem auto;
-  width: ${props => props.isHomepage ? DesignSettings.innerWidth : DesignSettings.textWidth};
+  width: ${DesignSettings.textWidth};
 
   @media screen and (max-width: 1300px) {
     padding-left: 2rem;

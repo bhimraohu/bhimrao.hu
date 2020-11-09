@@ -185,11 +185,12 @@ query projectQuery($lang: String, $uid: String) {
             ... on PRISMIC_ProjectBodyHero_image_complex {
               type
               primary {
+                title
+                main_description
                 background_image
+                hero_color
                 description
                 foreground_image
-                subtitle
-                title
               }
             }
             ... on PRISMIC_ProjectBodyImage_grid {
@@ -234,6 +235,14 @@ query projectQuery($lang: String, $uid: String) {
                     }
                   }
                 }
+              }
+            }
+            ... on PRISMIC_ProjectBodyFull_width_image_and_text {
+              type
+              primary {
+                title
+                text
+                image
               }
             }
           }

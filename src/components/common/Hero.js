@@ -23,10 +23,35 @@ const HeroWrapper = styled.section`
     left: 0;
     background-image: 
       linear-gradient(
-        -106deg,
+        -120deg,
         ${props => props.color ? (props.color + '80') : '#00000080'} 
         calc((1140px / 1.8) + ((100vw - 1180px)/ 2)),
         rgba(0,0,0,0) 0);
+  }
+
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    &::before {
+      background-image: 
+        linear-gradient(
+          ${props => props.color ? (props.color + '80') : '#00000080'} 
+          calc((1140px / 1.8) + ((100vw - 1180px)/ 2)),
+          rgba(0,0,0,0) 0);
+    }
+  
+    .hero-text-container {
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+
+    .hero-text-container-2ndpart {
+      display: none;
+    }
   }
 
   h1 {

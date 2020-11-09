@@ -23,10 +23,15 @@ const HeroWrapper = styled.section`
     left: 0;
     background-image: 
       linear-gradient(
-        -106deg,
+        -120deg,
         rgba(0,0,0,0) 
         calc((1140px / 1.8) + ((100vw - 1180px)/ 2)),
         rgba(0,0,0,0.5) 0);
+  }
+
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   h1 {
@@ -37,6 +42,7 @@ const HeroWrapper = styled.section`
   h2 {
     margin-top: 0;
     font-size: 4rem;
+    font-weight: 500;
   }
 
   .hero-container {

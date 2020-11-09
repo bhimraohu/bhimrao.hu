@@ -9,12 +9,43 @@ const HelpUsPageWrapper = styled.section`
   flex-direction: column;
   width: 100%;
 
+  @media screen and (max-width: 1300px) {
+    .helpus-wrapper {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .helpus-container {
+      justify-content: space-between;
+      width: initial !important;
+
+      .texts {
+        width: initial !important;
+        
+        > section {
+          width: initial !important;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .helpus-container {
+      flex-direction: column !important;
+
+      .image {
+        margin-left: 0 !important;
+        margin-top: 5rem;
+      }
+    }
+  }
+
   .helpus-wrapper {
     width: 100%;
 
-      &:nth-child(1) {
-        background-color: #F7F6F0;
-      }
+    &:nth-child(1) {
+      background-color: #F7F6F0;
+    }
 
     .helpus-container {
       margin: 10rem auto;
@@ -32,9 +63,9 @@ const HelpUsPageWrapper = styled.section`
         width: ${DesignSettings.innerWidth};
 
         > section {
-          width: 60rem;
           margin-left: 0;
-
+          padding-left: 0;
+          padding-right: 0;
         }
 
         .key-number {
@@ -49,6 +80,7 @@ const HelpUsPageWrapper = styled.section`
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        margin-left: 10rem;
 
         img {
           width: 18.5rem;

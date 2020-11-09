@@ -7,7 +7,21 @@ import queryString from 'query-string';
 import { Colors, DesignSettings } from "../../utils/constants";
 import Modal from '../common/Modal'
 
-const FormWrapper = styled.form`
+const FormWrapper = styled.section`
+
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 950px) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: inherit;
+  }
+`;
+
+const FormContainer = styled.form`
   width: ${DesignSettings.textWidth};
   margin: 2rem auto;
   padding: 10px;
@@ -17,15 +31,8 @@ const FormWrapper = styled.form`
   margin-bottom: 10rem;
   border: 1px solid ${Colors.lightGrey};
 
-  @media screen and (max-width: 1300px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
   @media screen and (max-width: 950px) {
-    width: 100%;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    width: initial !important;
   }
 
   label {
@@ -91,9 +98,9 @@ const Form = ({ form_fields, label, action }) => {
   }
 
   return (
-    <div>
+    <FormWrapper>
       {checkResult(location)}
-      <FormWrapper
+      <FormContainer
         name="contact-us"
         method="POST"
         data-netlify="true"
@@ -146,8 +153,8 @@ const Form = ({ form_fields, label, action }) => {
         <div className="button-container">
           <Button type="submit">{label}</Button>
         </div>
-      </FormWrapper>
-    </div>
+      </FormContainer>
+    </FormWrapper>
   )
 }
 

@@ -8,6 +8,24 @@ import Icon from '../common/IconCmp';
 const ImageWithDescriptionWrapper = styled.section`
   margin: 5rem auto;
 
+
+  @media screen and (max-width: 610px) {
+    width: 100% !important;
+
+    .row.a {
+      flex-direction: column !important;
+      margin-bottom: 3rem;
+    }
+
+    .row.b {
+      flex-direction: column-reverse !important;
+    }
+
+    .row div {
+      width: 100% !important;
+    }
+  }
+
   .content-wrapper  {
     font-size: 2rem;
     margin: 2rem 0;
@@ -41,6 +59,20 @@ const TextContainer = styled.div`
   padding: 0 10rem;
   line-height: 160%;
   text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+
+  @media screen and (max-width: 800px) {
+    padding: 4rem !important;
+  }
+
+  @media screen and (max-width: 700px) {
+    padding: 2rem !important;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 4rem !important;
+  }
 `;
 
 const ImageWithDescription = ({ background_color_a, background_color_b, description_a, description_b, icon_a, icon_b, image_a, image_b }) => {

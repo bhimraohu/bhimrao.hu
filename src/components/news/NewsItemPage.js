@@ -10,10 +10,22 @@ const NewsItemWrapper = styled.section`
   width: ${DesignSettings.innerWidth};
   display: flex;
   flex-direction: column;
-  flex: 0 0 30%;
   flex-wrap: wrap;
-  justify-content: space-between;
 
+  @media screen and (max-width: 1300px) {
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    .date {
+      width: 100% !important;
+    }
+  }
+
+  .main-image {
+    width: fit-content;
+    align-self: center;
+  }
 
   .date {
     margin: 0 auto;
@@ -27,7 +39,7 @@ const NewsItemPage = ({ news_item }) => {
 
   return (
     <NewsItemWrapper>
-      <img src={news_item.image.url} alt={news_item.image.alt} />
+      <img className="main-image" src={news_item.image.url} alt={news_item.image.alt} />
       <TitleOnly
         title={news_item.title}
       />

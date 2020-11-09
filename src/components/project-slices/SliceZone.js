@@ -19,6 +19,7 @@ import SmallDetailRow from './SmallDetailRow';
 import ProjectStructure from './ProjectStructure';
 import TitleOnly from '../common/TitleOnly';
 import Breadcrumb from '../common/Breadcrumb';
+import FullWidthImageAndText from '../common/FullWidthImageAndText';
 
 const SliceZone = ({ body, closed }) => (
   <div>
@@ -94,7 +95,8 @@ const SliceZone = ({ body, closed }) => (
               <HeroComplex
                 key={idx}
                 title={bodyContent.primary.title}
-                subtitle={bodyContent.primary.subtitle}
+                hero_color={bodyContent.primary.hero_color}
+                main_description={bodyContent.primary.main_description}
                 description={bodyContent.primary.description}
                 foreground_image={bodyContent.primary.foreground_image.url}
                 background_image={bodyContent.primary.background_image.url}
@@ -195,6 +197,15 @@ const SliceZone = ({ body, closed }) => (
               <Breadcrumb
                 key={idx}
                 fields={bodyContent.fields}
+              />
+            );
+          case "full_width_image_and_text":
+            return (
+              <FullWidthImageAndText
+                key={idx}
+                title={bodyContent.primary.title}
+                text={bodyContent.primary.text}
+                image={bodyContent.primary.image}
               />
             );
           default:

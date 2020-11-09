@@ -14,6 +14,11 @@ const BreadcrumbWrapper = styled.section`
     padding-right: 2rem;
   }
 
+  @media screen and (max-width: 950px) {
+    width: 100% !important;
+  }
+  
+
   .item-link {
     font-size: 2rem;
     font-weight: bold;

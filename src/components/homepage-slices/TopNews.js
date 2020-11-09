@@ -19,10 +19,8 @@ const TopNewsWrapper = styled.section`
     width: 100%;
 
     .news-row {
-      flex-direction: column;
 
       > span {
-        width: 100%;
         margin-bottom: 2rem;
       }
     } 
@@ -31,6 +29,7 @@ const TopNewsWrapper = styled.section`
   .news-row {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     flex: 0 0 30%;
   }
 

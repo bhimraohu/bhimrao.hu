@@ -26,7 +26,6 @@ const SliceZone = ({ body, news }) => (
             return (
               <TextWithTitle
                 key={idx}
-                isHomepage={true}
                 title={bodyContent.primary.intro_title}
                 text={bodyContent.primary.intro_text}
               />

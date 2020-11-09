@@ -10,14 +10,20 @@ const CardWrapper = styled.span`
   display: flex;
   flex-direction: column;
   box-shadow: 0px 2px 2px 0px #424242ba;
-  width: ${props => props.width};
+  width: 30rem;
   height: ${props => props.height};
+  margin-right: 2rem;
+  
+  @media screen and (max-width: 700px) {
+    height: ${props => props.height ? props.height : 'initial'};
+    margin-right: 0 !important;
+  }
 
   .card-content-wrapper {
     margin: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-grow: 1;
   }
 

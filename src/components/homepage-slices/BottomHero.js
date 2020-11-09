@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import RichTextCustom from '../common/RichTextCustom';
-import { DesignSettings } from "../../utils/constants";
+import { Colors, DesignSettings } from '../../utils/constants';
+import Icon from '../common/IconCmp';
 
 const BottomHeroWrapper = styled.section`
   background-image: url('${props => props.backgroundImage}');
@@ -23,7 +24,7 @@ const BottomHeroWrapper = styled.section`
     left: 0;
     background-image: 
       linear-gradient(
-        -106deg,
+        -120deg,
         rgba(0,0,0,.5) 
         calc((1140px / 1.8) + ((100vw - 1180px)/ 2)),
         rgba(0,0,0,0) 0);
@@ -55,14 +56,7 @@ const BottomHeroWrapper = styled.section`
     font-size: 2.2rem;
     font-style: italic;
     text-transform: uppercase;
-
-    &::before{
-      content: "";
-      background: transparent url(${props => props.icon.url}) no-repeat 0 0;
-      width: 6rem;
-      height: 6rem;
-      display: inline-block;
-    }
+    line-height: 160%;
   }
   
   .hero-text-container-2ndpart {
@@ -81,9 +75,10 @@ const BottomHero = ({ icon, content, backgroundImage }) => {
     <BottomHeroWrapper backgroundImage={backgroundImage} icon={icon}>
       <div className="hero-container">
         <div className="hero-text-container-2ndpart"></div>
-        <blockquote className="hero-text-container">
+        <div className="hero-text-container">
+          <Icon icon_class={'icon-quote'} color={Colors.dirtyWhite} size={'3rem'} />
           <RichTextCustom render={content} />
-        </blockquote>
+        </div>
       </div>
     </BottomHeroWrapper>
   );

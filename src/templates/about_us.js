@@ -47,16 +47,15 @@ query aboutusQuery($lang: String) {
             ... on PRISMIC_About_usBodyActivities {
               type
               primary {
-                title
                 content
-                content_part_2
-                highlighted_text
+                link_label
                 link {
                   ... on PRISMIC__ExternalLink {
                     url
                   }
                 }
-                link_label
+                corner_image_position
+                corner_image
               }
             }
             ... on PRISMIC_About_usBodyStatistics_row {
@@ -101,9 +100,11 @@ query aboutusQuery($lang: String) {
                 highlighted_text
               }
             }
-            ... on PRISMIC_About_usBodyFull_width_image {
+            ... on PRISMIC_About_usBodyFull_width_image_and_text {
               type
               primary {
+                title
+                text
                 image
               }
             }
