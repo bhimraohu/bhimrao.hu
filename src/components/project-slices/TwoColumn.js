@@ -11,6 +11,23 @@ const TwoColumnWrapper = styled.section`
   background-color: #FCFBF9;
   padding: 5rem 0;
 
+  @media screen and (max-width: 1300px) {
+    width: 100% !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 9500px) {
+    .content-wrapper {
+      width: 100% !important;
+      flex-direction: column !important;
+
+      .column {
+        width: 100% !important;
+      }
+    }
+  }
+
   .content-wrapper {
     width: ${DesignSettings.textWidth};
     margin: 0 auto;

@@ -12,7 +12,25 @@ const FullWidthImageAndTextWrapper = styled.section`
   background: url('${props => props.backgroundImage.url}');
   width: 100%;
   height: 40rem;
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #00000080;
+  }
+
+  .content-wrapper {
+    z-index: 1;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -31,9 +49,10 @@ const TextContainer = styled.div`
   }
   
   > p {
-    color: ${Colors.dirtyWhite} !important;
+    color: white !important;
     font-size: 2.4rem;
     line-height: 160%;
+    z-index: 10;
   }
 `;
 

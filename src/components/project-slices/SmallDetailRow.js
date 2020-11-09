@@ -9,6 +9,24 @@ const SmallDetailRowWrapper = styled.section`
   margin: 6rem auto;
   margin-top: 4rem;
 
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 950px) {
+    width: 100% !important;
+
+    .card-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      .card {
+        width: 100% !important;
+      }
+    }
+  }
+
   .card-wrapper {
     margin: 0 auto;
     display: flex;
