@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 import RichTextCustom from './RichTextCustom';
 import { Colors, DesignSettings } from "../../utils/constants";
+import Hero from './Hero';
 
 const HeroComplexWrapper = styled.section`
-  background-image: url('${props => props.backgroundImage}');
   min-height: 40rem;
   background-position: center center;
   background-repeat: no-repeat;
@@ -14,23 +14,9 @@ const HeroComplexWrapper = styled.section`
   display: flex;
   align-items: center;
   
-  h1 {
-    color: ${Colors.main};
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    max-width: ${DesignSettings.textWidth};
-  }
-
-  h2 {
-    margin-top: 0;
-    font-size: 2.4rem;
-    font-weight: 500;
-    color: ${Colors.main};
-  }
 
   .hero-complex-container {
-    margin: 0 auto;
-    max-width: ${DesignSettings.innerWidth};
+    width: 100%;
     height: 100%;
     z-index: 1;
     margin-bottom: 4rem;
@@ -43,9 +29,14 @@ const HeroComplexWrapper = styled.section`
     font-size: 2.2rem;
     text-transform: uppercase;
     margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
   }
 
   .hero-complex-details-container {
+    max-width: ${DesignSettings.innerWidth};
+    margin: 0 auto;
+    margin-top: 5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -56,6 +47,8 @@ const HeroComplexWrapper = styled.section`
     }
   
     .hero-complex-content {
+      display: flex;
+      align-items: flex-end;
       flex: 0 0 45%;
       max-width: 45%;
       color: ${Colors.main};
@@ -65,18 +58,11 @@ const HeroComplexWrapper = styled.section`
   }
 `;
 
-const HeroComplex = ({ background_image, description, foreground_image, subtitle, title }) => {
+const HeroComplex = ({ title, main_description, background_image, hero_color, description, foreground_image }) => {
   return (
     <HeroComplexWrapper backgroundImage={background_image}>
       <div className="hero-complex-container">
-        <div className="hero-complex-text-container h1-border-bottom">
-          <RichTextCustom render={title} />
-          {
-            subtitle
-              ? <RichTextCustom render={subtitle} />
-              : null
-          }
-        </div>
+        <Hero title={title} content={main_description} backgroundImage={background_image} color={hero_color} />
         <div className="hero-complex-details-container">
           <img src={foreground_image} alt="title" />
           <div className="hero-complex-content">
