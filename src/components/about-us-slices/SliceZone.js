@@ -9,6 +9,7 @@ import HighlightedText from '../common/HighlightedText';
 import TextOnly from '../common/TextOnly';
 import ImageRow from '../common/ImageRow';
 import FullWidthImage from '../common/FullWidthImage';
+import FullWidthImageAndText from '../common/FullWidthImageAndText';
 
 const SliceZone = ({ body }) => (
   <div>
@@ -53,6 +54,15 @@ const SliceZone = ({ body }) => (
                 fields={bodyContent.fields}
               />
             )
+          case "full_width_image_and_text":
+            return (
+              <FullWidthImageAndText
+                key={idx}
+                title={bodyContent.primary.title}
+                text={bodyContent.primary.text}
+                image={bodyContent.primary.image}
+              />
+            );
           case "full_width_image":
             return (
               <FullWidthImage
