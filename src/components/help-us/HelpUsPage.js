@@ -18,7 +18,6 @@ const HelpUsPageWrapper = styled.section`
     .helpus-container {
       justify-content: space-between;
       width: initial !important;
-      flex-direction: column !important;
 
       .texts {
         width: initial !important;
@@ -27,8 +26,15 @@ const HelpUsPageWrapper = styled.section`
           width: initial !important;
         }
       }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .helpus-container {
+      flex-direction: column !important;
 
       .image {
+        margin-left: 0 !important;
         margin-top: 5rem;
       }
     }
@@ -57,7 +63,6 @@ const HelpUsPageWrapper = styled.section`
         width: ${DesignSettings.innerWidth};
 
         > section {
-          width: 60rem;
           margin-left: 0;
           padding-left: 0;
           padding-right: 0;
@@ -75,6 +80,7 @@ const HelpUsPageWrapper = styled.section`
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        margin-left: 10rem;
 
         img {
           width: 18.5rem;

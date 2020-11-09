@@ -17,17 +17,14 @@ const NewsItemWrapper = styled.section`
     padding-left: 2rem;
     padding-right: 2rem;
 
-    .main-image {
-      width: 100%;
-    }
-
     .date {
       width: 100% !important;
     }
   }
 
   .main-image {
-    width: initial;
+    width: fit-content;
+    align-self: center;
   }
 
   .date {
