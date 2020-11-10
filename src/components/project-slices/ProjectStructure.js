@@ -9,6 +9,42 @@ const ProjectStructureWrapper = styled.section`
   margin: 6rem auto;
   margin-top: 4rem;
 
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 950px) {
+    width: 100% !important;
+
+    .card-container {
+      flex-direction: column !important;
+      margin-bottom: 5rem !important;
+
+      &:nth-of-type(2) {
+        flex-direction: column-reverse !important;
+      } 
+
+      p {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .big-image {
+        width: initial !important;
+      }
+
+      .image-container {
+        &.odd {
+          margin-right: 0 !important;
+        }
+        &.even {
+          margin-left: 0 !important;
+        }
+      }
+    }
+  }
+
   .card-wrapper {
     margin: 0 auto;
     display: flex;
@@ -20,6 +56,8 @@ const ProjectStructureWrapper = styled.section`
     
       p {
         font-size: 2rem;
+        color: var(--text-color);
+        line-height: 160%;
       }
 
       .big-image {

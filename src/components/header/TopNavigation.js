@@ -135,10 +135,23 @@ const NavLink = styled.li`
 
   /* Set the width of the menu item with submenu per language*/
   &.projects.hu {
-    width: 16.5rem;
+    width: 17.5rem;
   }
   &.projects.en-us {
-    width: 14.5rem;
+    width: 17.5rem;
+  }
+
+  &.projects.hu,
+  &.projects.en-us {
+    a {
+      display: flex;
+      justify-content: space-between;
+
+      &:nth-child(2) {
+        width: 5rem;
+        text-align: right;
+      }
+    }
   }
 
   &:hover a {
@@ -190,10 +203,10 @@ const SubNavLinks = styled.ul`
 
   /* Set the width of the submenu per language*/
   &.projects.hu {
-    width: 20rem;
+    width: 33rem;
   }
   &.projects.en-us {
-    width: 20rem;
+    width: 33rem;
   }
 `;
 
