@@ -11,7 +11,7 @@ import MenuIcon from './MenuIcon';
 const TopNavigationWrapper = styled.div`
   margin: 0 auto;
   max-width: ${DesignSettings.outerWidth};
-  padding: .5rem 0;
+  padding: 1rem 0;
 
   .main-container {
     display: flex;
@@ -27,6 +27,7 @@ const TopNavigationWrapper = styled.div`
     border: .1rem solid ${Colors.red};
     background-color: ${Colors.red};
     line-height: 4.5rem;
+    margin-left: 1.5rem;
     
     a {
       min-width: 17rem;
@@ -110,7 +111,7 @@ const NavLinks = styled.ul`
 
 const NavLink = styled.li`
   margin: auto 0;
-  height: 4.7rem;
+  height: 6rem;
   cursor: pointer;
   
   @media screen and (max-width: 950px) {
@@ -161,10 +162,10 @@ const NavLink = styled.li`
   a {
     color: ${Colors.main};
     text-decoration: none;
-    padding: 0 1.6rem;
+    padding: 0 2.5rem;
     font-weight: bold;
     font-size: 1.6rem;
-    line-height: 4.5rem;
+    line-height: 5.8rem;
     display: inline-block;
     width: 100%;
   }

@@ -6,15 +6,18 @@ import RichTextCustom from '../common/RichTextCustom';
 import Icon from '../common/IconCmp';
 
 const ImageCollageWithTextWrapper = styled.section`
-  margin: 5rem;
+  margin-top: 10rem !important;
+  margin-bottom: 10rem !important;
 
   @media screen and (max-width: 1300px) {
     padding-left: 2rem;
     padding-right: 2rem;
-    margin: 0 !important;
   }
-
+  
   @media screen and (max-width: 950px) {
+  margin-top: 5rem !important;
+  margin-bottom: 5rem !important;
+
     .image-collage-wrapper {
       width: 100% !important;
       

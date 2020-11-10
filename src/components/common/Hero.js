@@ -6,13 +6,14 @@ import { DesignSettings } from "../../utils/constants";
 
 const HeroWrapper = styled.section`
   background-image: url('${props => props.backgroundImage}');
-  min-height: 40rem;
+  min-height: 50rem;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   display: flex;
   align-items: center;
+  margin-bottom: 10rem;
 
   &::before {
     content: "";
@@ -32,6 +33,10 @@ const HeroWrapper = styled.section`
   @media screen and (max-width: 1300px) {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 950px) {
+    margin-bottom: 5rem !important;
   }
 
   @media screen and (max-width: 600px) {
@@ -66,10 +71,9 @@ const HeroWrapper = styled.section`
 
   .hero-container {
     margin: 0 auto;
-    max-width: ${DesignSettings.innerWidth};
+    max-width: ${DesignSettings.outerWidth};
     height: 100%;
     z-index: 1;
-    margin-bottom: 4rem;
     display: flex;
   }
   

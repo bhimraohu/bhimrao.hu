@@ -6,10 +6,12 @@ import { Colors } from "../../utils/constants";
 import Icon from '../common/IconCmp';
 
 const ImageWithDescriptionWrapper = styled.section`
-  margin: 5rem auto;
-
+  margin-top: 10rem;
+  margin-bottom: 10rem;
 
   @media screen and (max-width: 610px) {
+  margin-top: 5rem !important;
+  margin-bottom: 5rem !important;
     width: 100% !important;
 
     .row.a {

@@ -17,6 +17,8 @@ const FullWidthImageAndTextWrapper = styled.section`
   background-size: cover;
   position: relative;
   display: flex;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
 
   &:before {
     content: "";
@@ -26,6 +28,12 @@ const FullWidthImageAndTextWrapper = styled.section`
     top: 0;
     left: 0;
     background-color: #00000080;
+  }
+
+  @media screen and (max-width: 950px) {
+    margin-top: 5rem !important;
+    margin-bottom: 5rem !important;
+    width: 100% !important;
   }
 
   .content-wrapper {

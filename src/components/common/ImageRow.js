@@ -2,10 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ImageRowWrapper = styled.section`
-  margin: ${props => props.isLastSlice ? '5rem 0 0 0' : '5rem 0'};
+  margin: ${props => props.isLastSlice ? '10rem 0 0 0' : '10rem 0'};
   width: 100%;
 
   @media screen and (max-width: 600px) {
+    margin: ${props => props.isLastSlice ? '5rem 0 0 0' : '5rem 0'};
+    
     .image-row-wrapper {
       flex-direction: column;
 

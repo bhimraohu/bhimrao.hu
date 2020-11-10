@@ -42,7 +42,7 @@ const BottomHeroWrapper = styled.section`
 
   .hero-container {
     margin: 0 auto;
-    max-width: ${DesignSettings.innerWidth};
+    max-width: ${DesignSettings.outerWidth};
     height: 100%;
     z-index: 1;
     margin-bottom: 4rem;

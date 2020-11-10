@@ -6,7 +6,7 @@ import { Colors, DesignSettings } from "../../utils/constants";
 import { linkResolverBase } from '../../utils/linkResolverBase';
 
 const BreadcrumbWrapper = styled.section`
-  margin: 3rem auto;
+  margin: 5rem auto;
   width: ${DesignSettings.outerWidth};
 
   @media screen and (max-width: 1300px) {
@@ -15,6 +15,7 @@ const BreadcrumbWrapper = styled.section`
   }
 
   @media screen and (max-width: 950px) {
+    margin: 3rem auto;
     width: 100% !important;
   }
   
