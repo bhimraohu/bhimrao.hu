@@ -10,6 +10,23 @@ const NavigationLinksWrapper = styled.section`
   width: ${DesignSettings.outerWidth};
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 1300px) {
+    width: 100% !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (max-width: 950px) {
+    width: 100% !important;
+
+    .item-link {
+      flex-wrap: wrap !important;
+      flex-grow: 1 !important;
+      flex-basis: 15rem !important;
+    }
+  }
 
   .item-link {
     font-size: 2rem;

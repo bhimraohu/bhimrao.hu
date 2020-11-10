@@ -2,12 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FullWidthImageWrapper = styled.section`
-  margin-top: 5rem;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
   width: 100%;
+
+  @media screen and (max-width: 950px) {
+    margin-top: 5rem !important;
+    margin-bottom: 5rem !important;
+  }
 
   .image-grid-wrapper {
     display: flex;
-
   }
 `;
 

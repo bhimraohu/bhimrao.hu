@@ -13,6 +13,7 @@ const HeroComplexWrapper = styled.section`
   position: relative;
   display: flex;
   align-items: center;
+  margin-bottom: 10rem;
 
   @media screen and (max-width: 1300px) {
     padding-left: 2rem;
@@ -20,6 +21,8 @@ const HeroComplexWrapper = styled.section`
   }
 
   @media screen and (max-width: 1000px) {
+    margin-bottom: 5rem !important;
+
     .hero-complex-details-container {
       margin-top: 3rem;
       flex-direction: column !important;
@@ -41,9 +44,12 @@ const HeroComplexWrapper = styled.section`
     width: 100%;
     height: 100%;
     z-index: 1;
-    margin-bottom: 4rem;
     display: flex;
     flex-direction: column;
+
+    > section {
+      margin-bottom: 3rem;
+    }
   }
   
   .hero-complex-text-container {

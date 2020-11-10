@@ -17,6 +17,10 @@ const StudyHallWrapper = styled.section`
 const MainContainer = styled.div`
   margin: 0 auto;
   width: ${DesignSettings.outerWidth};
+
+  @media screen and (max-width: 1300px) {
+    width: 100% !important;
+  }
 `;
 
 const StudyHallPage = ({ items }) => {

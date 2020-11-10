@@ -4,13 +4,16 @@ import styled from 'styled-components';
 import { Colors } from "../../utils/constants";
 
 const ActivitiesRowWrapper = styled.section`
-  margin: 5rem auto 3rem auto;
+  margin-top: 10rem !important;
+  margin-bottom: 10rem !important;
   width: 100%;
   display: flex;
   height: 25rem;
   flex-wrap: wrap;
 
   @media screen and (max-width: 700px) {
+    margin-top: 5rem !important;
+    margin-bottom: 5rem !important;
     height: initial;
     justify-content: center;
   }
@@ -31,22 +34,9 @@ const ActivitiesRowWrapper = styled.section`
     background: ${Colors.imageRowBackground2};
   }
 
-
-  .item:nth-of-type(1) .item-icon {
-    width: 7.3rem;
-    height: 7.3rem;
-  }
-  .item:nth-of-type(2) .item-icon {
-    width: 9.2rem;
-    height: 7.3rem;
-  }
-  .item:nth-of-type(3) .item-icon {
-    width: 8.6rem;
-    height: 7.3rem;
-  }
-  .item:nth-of-type(4) .item-icon {
-    width: 8.8rem;
-    height: 7.3rem;
+  .item-icon {
+    width: 10rem;
+    height: 10rem;
   }
 
   .item-text {

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ImageGridWrapper = styled.section`
-  margin: 5rem auto;
+  margin: 10rem auto;
   padding: 10rem;
   background-color: ${props => props.background_color};
   margin-bottom: 0;
@@ -13,6 +13,8 @@ const ImageGridWrapper = styled.section`
 }
 
 @media screen and (max-width: 950px) {
+  margin-top: 5rem !important;
+  margin-bottom: 5rem !important;
   padding: 5rem 2rem;
 
   .image-grid-wrapper {

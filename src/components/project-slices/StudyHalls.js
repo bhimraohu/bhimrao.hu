@@ -7,7 +7,8 @@ import { linkResolverBase } from '../../utils/linkResolverBase';
 import Icon from '../common/IconCmp';
 
 const StudyHallsWrapper = styled.section`
-  margin: 5rem auto;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
   display: flex;
   flex-direction: column;
   background: ${Colors.main};
@@ -21,6 +22,8 @@ const StudyHallsWrapper = styled.section`
   }
 
   @media screen and (max-width: 950px) {
+    margin-top: 5rem !important;
+    margin-bottom: 5rem !important;
     width: 100%;
     height: initial !important;
     padding-top: 3rem;

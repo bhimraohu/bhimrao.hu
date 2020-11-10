@@ -8,7 +8,7 @@ import Search from "./SearchCmp";
 import Icon from "../common/IconCmp";
 
 const TopBarWrapper = styled.div`
-  padding: 1.6rem 0;
+  padding: 2rem 0;
   background-color: ${Colors.main};
 
   @media screen and (max-width: 1300px) {

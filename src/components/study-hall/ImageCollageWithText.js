@@ -6,7 +6,45 @@ import RichTextCustom from '../common/RichTextCustom';
 import Icon from '../common/IconCmp';
 
 const ImageCollageWithTextWrapper = styled.section`
-  margin: 5rem;
+  margin-top: 10rem !important;
+  margin-bottom: 10rem !important;
+
+  @media screen and (max-width: 1300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  @media screen and (max-width: 950px) {
+  margin-top: 5rem !important;
+  margin-bottom: 5rem !important;
+
+    .image-collage-wrapper {
+      width: 100% !important;
+      
+      .image-collage-container {
+        flex-direction: column !important;
+
+        .big-image {
+          max-width: 100% !important;
+          width: 100% !important;
+        }
+
+        .small-images {
+          width: 100% !important;
+          margin-left: 0 !important;
+          flex-direction: ${props => props.description_position === 'top' ? 'column' : 'column-reverse'} !important;
+
+          .small-image {
+            height: initial !important;
+          }
+          .content-wrapper {
+            padding-top: 4rem !important;
+            padding-bottom: 4rem !important;
+          }
+        }
+      }
+    }
+  }
   
   .image-collage-wrapper {
     max-width: ${DesignSettings.innerWidth};
@@ -73,10 +111,10 @@ const ImageCollageWithText = ({
 }) => {
 
   return (
-    <ImageCollageWithTextWrapper>
+    <ImageCollageWithTextWrapper description_position={description_position}>
       <div className="image-collage-wrapper">
         <div className="image-collage-container left">
-          <img src={image_big.url} alt={image_big.alt} />
+          <img className="big-image" src={image_big.url} alt={image_big.alt} />
           <div className="small-images">
             {
               description_position === 'top'
@@ -101,7 +139,7 @@ const textTop = (image_small, collage_title, collage_description) => {
         }
         <RichTextCustom render={collage_description} />
       </div>
-      <img src={image_small.url} alt={image_small.alt} />
+      <img className="small-image" src={image_small.url} alt={image_small.alt} />
     </>
   )
 }
@@ -109,7 +147,7 @@ const textTop = (image_small, collage_title, collage_description) => {
 const textDown = (image_small, collage_title, collage_description) => {
   return (
     <>
-      <img src={image_small.url} alt={image_small.alt} />
+      <img className="small-image" src={image_small.url} alt={image_small.alt} />
       <div className="content-wrapper">
         {
           collage_title[0].text === `"`

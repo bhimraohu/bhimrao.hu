@@ -4,13 +4,14 @@ import styled from 'styled-components';
 import { Colors, DesignSettings } from "../../utils/constants";
 
 const StatisticsRowWrapper = styled.section`
-  margin: 5rem auto;
   display: flex;
   flex-direction: column;
   background: ${Colors.main};
   color: ${Colors.dirtyWhite};
   height: 25rem;
   justify-content: space-evenly;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
 
   @media screen and (max-width: 1300px) {
     padding: 5rem 0;
@@ -44,6 +45,11 @@ const StatisticsRowWrapper = styled.section`
 
   @media screen and (max-width: 1200px) {
     width: 100%;
+  }
+
+  @media screen and (max-width: 950px) {
+    margin-top: 5rem !important;
+    margin-bottom: 5rem !important;
   }
 
   .stat-container {

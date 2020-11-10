@@ -17,13 +17,17 @@ const TwoColumnWrapper = styled.section`
     padding-right: 2rem;
   }
 
-  @media screen and (max-width: 9500px) {
+  @media screen and (max-width: 950px) {
     .content-wrapper {
       width: 100% !important;
       flex-direction: column !important;
 
       .column {
         width: 100% !important;
+
+        &:nth-of-type(1) {
+          margin-bottom: 3rem;
+        }
       }
     }
   }
