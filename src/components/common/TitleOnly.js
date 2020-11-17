@@ -28,7 +28,7 @@ const TitleOnly = ({ title }) => {
 
   return (
     <TitleOnlyWrapper>
-      <div className="content-wrapper h1-border-bottom">
+      <div className="content-wrapper h1-border-bottom common-header">
         <RichTextCustom render={title} />
       </div>
     </TitleOnlyWrapper>

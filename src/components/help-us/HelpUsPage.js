@@ -55,6 +55,7 @@ const HelpUsPageWrapper = styled.section`
 
       h2 {
         font-size: 5rem;
+        font-weight: bold;
         color: ${Colors.red};
         text-transform: uppercase;
       }
@@ -66,6 +67,12 @@ const HelpUsPageWrapper = styled.section`
           margin-left: 0;
           padding-left: 0;
           padding-right: 0;
+
+          .h1-border-bottom {
+            > section{
+              margin-top: 0 !important;
+            }
+          }
         }
 
         .key-number {
