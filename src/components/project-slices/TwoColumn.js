@@ -2,13 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 import RichTextCustom from '../common/RichTextCustom';
-import { DesignSettings } from "../../utils/constants";
+import { Colors, DesignSettings } from "../../utils/constants";
 
 const TwoColumnWrapper = styled.section`
   width: ${DesignSettings.outerWidth};
   margin: 3rem auto;
   margin-bottom: 5rem;
   background-color: #FCFBF9;
+  color: ${Colors.main};
   padding: 5rem 0;
 
   @media screen and (max-width: 1300px) {

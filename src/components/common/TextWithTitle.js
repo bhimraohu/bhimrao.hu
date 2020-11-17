@@ -3,9 +3,10 @@ import styled from 'styled-components';
 
 import RichTextCustom from './RichTextCustom';
 import { Colors, DesignSettings } from "../../utils/constants";
+import TitleOnly from './TitleOnly';
 
 const TextWithTitleWrapper = styled.section`
-  margin: 3rem auto;
+  margin: 0 auto;
   width: ${DesignSettings.textWidth};
 
   @media screen and (max-width: 1300px) {
@@ -15,13 +16,6 @@ const TextWithTitleWrapper = styled.section`
 
   @media screen and (max-width: 950px) {
     width: 100%;
-  }
-
-  .h1-border-bottom > h1,
-  .title-wrapper > .h1-border-bottom > h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    text-transform: uppercase;
   }
 
   .content-wrapper > h2 {
@@ -40,10 +34,10 @@ const TextWithTitle = ({ title, subtitle, text, isHomepage, closed }) => {
   return (
     <TextWithTitleWrapper isHomepage={isHomepage} closed={closed}>
       <div className="h1-border-bottom">
-        <div className="title-wrapper h1-border-bottom common-header">
+        {/* <div className="title-wrapper h1-border-bottom common-header">
           <RichTextCustom render={title} />
-        </div>
-
+        </div> */}
+        <TitleOnly title={title} />
         {
           subtitle
             ? (<div className="content-wrapper common-header">

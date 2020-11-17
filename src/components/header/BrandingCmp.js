@@ -5,16 +5,8 @@ import { Link } from "gatsby"
 import { Colors } from "../../utils/constants";
 
 const BrandingWrapper = styled.div`
-  a {
-    text-decoration: none;
-    color: ${Colors.main};
-    font-size: 2rem;
-    font-weight: bold;
-    height: 6.6rem;
-  }
-
   .logo {
-    height: 6.6rem;
+    height: 8rem;
   }
 `;
 

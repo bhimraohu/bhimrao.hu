@@ -58,7 +58,8 @@ const TextContainer = styled.div`
   
   > p {
     color: white !important;
-    font-size: 2.4rem;
+    font-size: 3rem;
+    font-weight: 500;
     line-height: 160%;
     z-index: 10;
   }

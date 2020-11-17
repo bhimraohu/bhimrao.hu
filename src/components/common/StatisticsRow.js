@@ -9,7 +9,7 @@ const StatisticsRowWrapper = styled.section`
   background: ${Colors.main};
   color: ${Colors.dirtyWhite};
   height: 25rem;
-  justify-content: space-evenly;
+  justify-content: center;
   margin-top: 10rem;
   margin-bottom: 10rem;
 

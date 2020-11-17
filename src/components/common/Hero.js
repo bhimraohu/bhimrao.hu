@@ -83,7 +83,7 @@ const HeroWrapper = styled.section`
     color: white;
     font-size: 2.2rem;
     text-transform: uppercase;
-    line-height: 140%;
+    line-height: 160%;
   }
 
   .hero-text-container-2ndpart {
