@@ -6,6 +6,7 @@ import { Colors, DesignSettings } from "../../utils/constants";
 import TitleOnly from './TitleOnly';
 
 const TextWithTitleWrapper = styled.section`
+  margin: 0 auto;
   width: ${DesignSettings.textWidth};
 
   @media screen and (max-width: 1300px) {
