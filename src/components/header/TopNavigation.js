@@ -16,6 +16,7 @@ const TopNavigationWrapper = styled.div`
   .main-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   @media screen and (max-width: 1300px) {
