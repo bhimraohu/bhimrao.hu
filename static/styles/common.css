@@ -1,7 +1,9 @@
 /* Use the same values in src/utils/constants Colors */
 :root {
-  --main-color: #1d1d3c;
-  --secondary-color: #ec5951;
+  /* --main-color: #1d1d3c; */
+  --main-color: #002749;
+  /* --secondary-color: #ec5951; */
+  --secondary-color: #ff4e31;
   --third-color: #eeeeee;
   --text-color: #5d5d73;
   --header-color: #343450;
