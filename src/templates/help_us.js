@@ -159,7 +159,7 @@ query helpusQuery($lang: String) {
           first_section_links {
             label
             link {
-              ... on PRISMIC__ExternalLink {
+              ... on PRISMIC__FileLink {
                 url
               }
             }
