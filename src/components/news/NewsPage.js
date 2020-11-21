@@ -30,8 +30,8 @@ const NewsPage = ({ news, news_items }) => {
         {
           news_items.map((node, idx) => {
             return (
-              <div className="card-container">
-                <Card key={idx} news={node.node} width={'initial'} height={'100%'} />
+              <div key={idx} className="card-container">
+                <Card item={node.node} width={'initial'} height={'100%'} />
               </div>
             )
           })
