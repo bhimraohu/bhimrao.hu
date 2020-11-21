@@ -39,6 +39,7 @@ query teamQuery($lang: String) {
             name
             image
             details
+            position
           }
         }
       }
