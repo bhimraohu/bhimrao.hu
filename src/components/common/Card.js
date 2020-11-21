@@ -19,6 +19,11 @@ const CardWrapper = styled.span`
     margin-right: 0 !important;
   }
 
+  .card-image-container {
+    display: flex;
+    justify-content: center;
+  }
+
   .card-content-wrapper {
     margin: 2rem;
     display: flex;
@@ -47,6 +52,13 @@ const CardWrapper = styled.span`
     line-height: 160%;
   }
 
+  .position > h2 {
+    font-size: 1.8rem;
+    font-weight: normal;
+    color: ${Colors.textColor};
+    line-height: 160%;
+  }
+
   .button-container {
     display: flex;
     justify-content: flex-end;
@@ -71,33 +83,54 @@ const CardWrapper = styled.span`
   }
 `;
 
-const Card = ({ news, width, height }) => {
+const Card = ({ item, width, height }) => {
+  if (!item) {
+    return null;
+  }
+
   return (
     <CardWrapper width={width} height={height}>
-      <img src={news.image.url} alt={news.image.alt} />
+      <div className="card-image-container">
+        <img src={item.image.url} alt={item.image.alt} />
+      </div>
       <div className="card-content-wrapper">
         <div className="content-container">
           {
-            news.date
-              ? <p className="date">{news.date}</p>
+            item.date
+              ? <p className="date">{item.date}</p>
               : null
           }
 
           <div className="card-title">
-            <RichTextCustom render={news.title} />
+            <RichTextCustom render={item.title || item.name} />
           </div>
-          <div className="text">
-            <RichTextCustom render={news.short_description} />
-          </div>
+          {
+            item.short_description
+              ? <div className="text">
+                <RichTextCustom render={item.short_description} />
+              </div>
+              : null
+          }
+          {
+            item.position
+              ? <div className="position">
+                <RichTextCustom render={item.position} />
+              </div>
+              : null
+          }
         </div>
-        <div className="button-container">
-          <Link
-            to={linkResolverBase(news._meta)}
-            className="button"
-          >
-            {news.button_label}&gt;
+        {
+          item.button_label && item._meta
+            ? <div className="button-container">
+              <Link
+                to={linkResolverBase(item._meta)}
+                className="button"
+              >
+                {item.button_label}&nbsp;&gt;
             </Link>
-        </div>
+            </div>
+            : null
+        }
       </div>
     </CardWrapper>
   )
