@@ -1,13 +1,45 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from 'styled-components';
 
 import { DesignSettings } from "../../utils/constants";
 import TitleOnly from "../common/TitleOnly";
-// import Card from '../common/Card';
+import Card from '../common/Card';
+import RichTextCustom from '../common/RichTextCustom';
+import Modal from '../common/Modal'
+import { Colors } from '../../utils/constants';
 
 const TeamPageWrapper = styled.section`
   margin: 3rem auto;
-  width: ${DesignSettings.outerWidth};
+
+  @media screen and (max-width: 1000px) {
+    .modal-image-container {
+      margin-right: 0 !important;
+      
+      img {
+        max-height: 400px !important;
+      }
+    }
+  }
+
+  .modal-image-container {
+    max-height: 600px;
+    margin-right: 5rem;
+  }
+
+  .modal-content-wrapper {
+    .modal-title > h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 2rem 0;
+      color: ${Colors.textColor};
+      min-height: 0;
+      margin-top: 0;
+    }
+
+    .text > p {
+      margin: 1.5rem 0;
+    }
+  }
 `;
 
 const MemberRows = styled.section`
@@ -15,44 +47,88 @@ const MemberRows = styled.section`
   width: ${DesignSettings.innerWidth};
   display: flex;
   flex-direction: row;
-  flex: 0 0 30%;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  justify-content: space-between;
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+  }
 
   .card-container {
-    width: 30%;
     margin: 3rem 0;
+    cursor: pointer;
+
+    > span {
+      width: 23rem !important;
+    }
+
+    .card-content-wrapper {
+      justify-content: flex-start !important;
+
+      .card-title > h1 {
+        min-height: 0 !important;
+        margin: 1rem 0 !important;
+      }
+    }
   }
 `;
 
 const TeamPage = ({ data }) => {
 
-  const placeholders = 3 - (data.team_members.length % 3);
-  // add extra
-  for (let i = 0; i < placeholders; i++) {
-    data.team_members.push({
-      placeholder: true,
-    });
+  const onClickHandler = (node) => {
+    if (!node.name) {
+      return;
+    }
+
+    setModalContent(node);
+    setModalOpen(true);
   }
+
+  const setToClose = () => {
+    setModalOpen(false);
+  }
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
 
   return (
     <TeamPageWrapper>
       <TitleOnly title={data.title} />
-      <MemberRows>
-        <h1>Fejlesztés alatt</h1>
-        {/* {
-          data.team_members.map((member, idx) => {
-            member.title = member.name;
-            member.button_label = 'Tovább';
-            return (
-              member.placeholder
-                ? <div className="card-container"></div>
-                : <div className="card-container">
-                  <Card key={idx} news={member} width={'initial'} height={'100%'} />
+      {
+        modalOpen
+          ? <Modal title={''} content={''} setToClose={setToClose}>
+            <div className="modal-image-container">
+              <img src={modalContent.image.url} alt={modalContent.image.alt} />
+            </div>
+            <div className="modal-content-wrapper">
+              <div className="content-container">
+                {
+                  modalContent.date
+                    ? <p className="date">{modalContent.date}</p>
+                    : null
+                }
+
+                <div className="modal-title">
+                  <RichTextCustom render={modalContent.title || modalContent.name} />
                 </div>
+                <div className="text">
+                  <RichTextCustom render={modalContent.short_description || modalContent.details} />
+                </div>
+              </div>
+            </div>
+          </Modal>
+          : null
+      }
+      <MemberRows>
+        {
+          data.team_members.map((node, idx) => {
+            return (
+              <div key={idx} className="card-container" onClick={onClickHandler.bind(null, node)}>
+                <Card item={node} width={'initial'} height={'100%'} />
+              </div>
             )
           })
-        } */}
+        }
       </MemberRows>
     </TeamPageWrapper>
   );

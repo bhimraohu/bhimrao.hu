@@ -2,8 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-import { Colors } from "../../utils/constants";
-
 const BrandingWrapper = styled.div`
   .logo {
     height: 8rem;

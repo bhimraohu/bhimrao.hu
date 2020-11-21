@@ -54,7 +54,7 @@ const TopNews = ({ title, news }) => {
         {
           news?.map((newsItem, idx) => {
             return (
-              <Card key={idx} news={newsItem.node} width={'30%'} />
+              <Card key={idx} item={newsItem.node} width={'30%'} />
             )
           })
         }
