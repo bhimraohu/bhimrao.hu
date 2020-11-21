@@ -9,11 +9,17 @@ const ModalWrapper = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 10;
   display: ${(props) => { return props.visible ? 'flex' : 'none' }};
   justify-content: center;
   align-items: center;
+  
+  @media screen and (max-width: 1000px) {
+      .modal-content {
+        flex-direction: column !important;
+      }
+  }
 
   .modal-container {
     border: 1px solid ${Colors.main};
@@ -23,9 +29,12 @@ const ModalWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 80%;
+    max-width: 100rem;
 
     div {
       .modal-header {
+        min-height: 6rem;
         padding: 2rem 5rem;
         font-size: 3rem;
         font-weight: 500;
@@ -51,12 +60,13 @@ const ModalWrapper = styled.div`
         font-size: 2rem;
         background-color: ${Colors.dirtyWhite};
         color: ${Colors.main};
+        display: flex;
       }
     }
   }
 `;
 
-const Modal = ({ title, content, modalCloseTimeout }) => {
+const Modal = ({ children, title, content, modalCloseTimeout, setToClose }) => {
 
   const [modalOpen, setModalOpen] = useState(true);
 
@@ -77,6 +87,7 @@ const Modal = ({ title, content, modalCloseTimeout }) => {
 
   const close = () => {
     setModalOpen(false);
+    setToClose();
   }
 
   return (
@@ -84,7 +95,7 @@ const Modal = ({ title, content, modalCloseTimeout }) => {
       <div className="modal-container">
         <div>
           <div className="modal-header">
-            {title} <span role="img" aria-label="Sad emoji">😊</span>
+            {title}
             <span
               className="close-modal"
               onClick={onClickHandler}
@@ -95,9 +106,13 @@ const Modal = ({ title, content, modalCloseTimeout }) => {
               X
                 </span>
           </div>
-          <p className="modal-content">
-            {content}
-          </p>
+          <div className="modal-content">
+            {
+              children
+                ? children
+                : content
+            }
+          </div>
         </div>
       </div>
     </ModalWrapper>
