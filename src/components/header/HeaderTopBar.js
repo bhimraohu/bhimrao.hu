@@ -128,16 +128,6 @@ class HeaderTopBar extends React.Component {
     });
   }
 
-  onKeyPressHandler = (event) => {
-    // todo: handle enter
-    if (event.which === 13) {
-      this.setState({
-        ...this.state,
-        showSearchInput: true,
-      });
-    }
-  }
-
   render() {
     return (
       <TopBarWrapper>
@@ -154,13 +144,13 @@ class HeaderTopBar extends React.Component {
           </div>
 
           <div className="rightside-container">
-            {getSerach(this.state, this.props, this.onBlurHandler, this.onClickHandler, this.onKeyPressHandler, false)}
+            {getSerach(this.state, this.props, this.onBlurHandler, this.onClickHandler, false)}
             {getSocialLinks(this.props)}
             {getLanguageSelector(this.props)}
           </div>
 
           <div className="rightside-container-mobile">
-            {getSerach(this.state, this.props, this.onBlurHandler, this.onClickHandler, this.onKeyPressHandler, true)}
+            {getSerach(this.state, this.props, this.onBlurHandler, this.onClickHandler, true)}
             {getSocialLinks(this.props)}
             {getLanguageSelector(this.props)}
           </div>
@@ -170,7 +160,7 @@ class HeaderTopBar extends React.Component {
   }
 }
 
-const getSerach = (state, props, onBlurHandler, onClickHandler, onKeyPressHandler, mobile) => {
+const getSerach = (state, props, onBlurHandler, onClickHandler, mobile) => {
   if (mobile) {
     return (
       <Search search_placeholder={props.topbarsData.search_placeholder} onBlur={onBlurHandler} />
@@ -184,7 +174,6 @@ const getSerach = (state, props, onBlurHandler, onClickHandler, onKeyPressHandle
         <div
           className="icon-container"
           onClick={onClickHandler}
-          onKeyPress={onKeyPressHandler}
           role="button"
           tabIndex="0"
         >
