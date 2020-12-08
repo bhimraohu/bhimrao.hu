@@ -101,9 +101,15 @@ const Card = ({ item, width, height }) => {
               : null
           }
 
-          <div className="card-title">
-            <RichTextCustom render={item.title || item.name} />
-          </div>
+          {
+            item.title || item.name
+              ?
+              <div className="card-title">
+                <RichTextCustom render={item.title || item.name} />
+              </div>
+              : null
+          }
+
           {
             item.short_description
               ? <div className="text">
@@ -111,6 +117,7 @@ const Card = ({ item, width, height }) => {
               </div>
               : null
           }
+
           {
             item.position
               ? <div className="position">
