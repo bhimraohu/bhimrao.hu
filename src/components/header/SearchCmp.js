@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { navigate } from 'gatsby'
 
 import { Colors } from '../../utils/constants';
 import Icon from '../common/IconCmp';
@@ -20,6 +21,12 @@ const SearchWrapper = styled.div`
       width: initial !important;
     }
   }
+
+  form {
+    display: flex;
+    align-items: center;
+    width: 28rem;
+  }
 `;
 
 const SearchInput = styled.input`
@@ -36,21 +43,58 @@ const SearchInput = styled.input`
 `;
 
 class Search extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      searchValue: null,
+    };
+  }
 
   componentDidMount() {
     this.searchInput.focus();
   }
 
+  getPath = () => {
+    const path = window?.location.pathname.indexOf('/en-us') === 0
+      ? `/en-us/search`
+      : `/kereses`;
+
+    return `${path}?search=${this.state.searchValue}`;
+  }
+
+  handleInputChange = (event) => {
+    const value = event?.target?.value;
+
+    this.setState({
+      searchValue: value,
+    })
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const searchPath = this.getPath()
+    navigate(searchPath);
+  }
+
   render() {
     return (
       <SearchWrapper>
-        <SearchInput
-          type="text"
-          placeholder={this.props.search_placeholder}
-          onBlur={this.props.onBlur}
-          ref={inputEl => (this.searchInput = inputEl)}
-        />
-        <Icon icon_class={'icon-search'} />
+        <form
+          name="search"
+          onSubmit={this.handleSubmit}
+        >
+          <SearchInput
+            type="text"
+            name="search"
+            placeholder={this.props.search_placeholder}
+            onBlur={this.props.onBlur}
+            ref={inputEl => (this.searchInput = inputEl)}
+            value={this.state.lastName}
+            onChange={this.handleInputChange}
+          />
+          <Icon icon_class={'icon-search'} />
+        </form>
       </SearchWrapper>
     )
   }
