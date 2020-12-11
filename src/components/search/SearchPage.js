@@ -29,46 +29,7 @@ query SearchQuery($searchterm: String, $lang: String) {
           uid
           type
         }
-        ... on PRISMIC_Project {
-          body {
-            ... on PRISMIC_ProjectBodyHero_image {
-              primary {
-                hero_title
-              }
-            }
-          }
-          _meta {
-            uid
-            type
-          }
-        }
-        ... on PRISMIC_Study_hall {
-          title
-          _meta {
-            uid
-            type
-          }
-        }
-        ... on PRISMIC_News_item {
-          title
-          _meta {
-            uid
-            type
-          }
-        }
-        ... on PRISMIC_About_us {
-          body {
-            ... on PRISMIC_About_usBodyHero_image {
-              primary {
-                hero_title
-              }
-            }
-          }
-          _meta {
-            uid
-            type
-          }
-        }
+        
       }
     }
   }
