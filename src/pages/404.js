@@ -1,8 +1,24 @@
 import React from "react"
 import { graphql } from 'gatsby'
+import styled from 'styled-components';
 
 import Layout from "../components/layout/LayoutCmp"
 import SEO from "../components/seo"
+import { DesignSettings } from "../utils/constants";
+
+const NotFoundPageWrapper = styled.section`
+  margin: 0 auto;
+  width: ${DesignSettings.innerWidth};
+  margin-top: 10rem;
+  margin-bottom: 20rem;
+
+  h1 {
+    font-size: 5rem;
+  }
+  p {
+    font-size: 2rem;
+  }
+`;
 
 const NotFoundPage = (props) => {
   const getNavigationData = (_props) => {
@@ -18,9 +34,12 @@ const NotFoundPage = (props) => {
 
   return (
     <Layout navigationData={navigationData}>
-      <SEO title="404: Not found" />
-      <h1>404: nem található <span role="img" aria-label="Sad emoji">😕</span></h1>
-      <p>Upsz, úgy látszik, hogy nincs ilyen oldal.</p>
+      <NotFoundPageWrapper>
+
+        {/* <SEO title="404: Not found" /> */}
+        <h1>404: nem található <span role="img" aria-label="Sad emoji">😕</span></h1>
+        <p>Upsz, úgy látszik, hogy nincs ilyen oldal.</p>
+      </NotFoundPageWrapper>
     </Layout>
   )
 }
