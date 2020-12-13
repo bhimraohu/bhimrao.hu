@@ -28,7 +28,7 @@ const CardWrapper = styled.span`
     margin: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-grow: 1;
   }
 
