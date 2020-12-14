@@ -20,7 +20,17 @@ class Search extends React.Component {
 
     return (
       <Layout navigationData={navigationData}>
-        <SearchPage node={this.props.data.prismic.allSearchs.edges[0].node} />
+        <SearchPage
+          node={this.props.data.prismic.allSearchs.edges[0].node}
+          navigationData={{
+            allHeader_navbars: this.props.data?.prismic?.allHeader_navbars.edges[0].node,
+            allAbout_uss: this.props.data?.prismic?.allAbout_uss,
+            allNews_items: this.props.data?.prismic?.allNews_items,
+            allProjects: this.props.data?.prismic?.allProjects,
+            allProjectss: this.props.data?.prismic?.allProjectss?.edges[0].node,
+            allStudy_halls: this.props.data?.prismic?.allStudy_halls,
+          }}
+        />
       </Layout >
     );
   }
@@ -35,6 +45,44 @@ query searchQuery($lang: String) {
       edges {
         node {
           title
+          search_placeholder
+          explanation_text
+          no_result
+          categories {
+            category
+            type
+            link {
+              ... on PRISMIC_About_us {
+                _meta {
+                  uid
+                  type
+                  lang
+                }
+              }
+              ... on PRISMIC_News {
+                title
+                _meta {
+                  uid
+                  type
+                  lang
+                }
+              }
+              ... on PRISMIC_Projects {
+                _meta {
+                  uid
+                  type
+                  lang
+                }
+              }
+              ... on PRISMIC_Study_hall {
+                _meta {
+                  uid
+                  type
+                  lang
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -169,6 +217,95 @@ query searchQuery($lang: String) {
         }
       }
     }
+
+
+    allAbout_uss(lang: $lang) {
+      edges {
+        node {
+          _meta {
+            lang
+            uid
+            type
+          }
+        }
+      }
+    }
+    
+    allNews_items(lang: $lang) {
+      edges {
+        node {
+          _meta {
+            lang
+            uid
+            type
+          }
+          title
+        }
+      }
+    }
+  
+    allProjects(lang: $lang) {
+      edges {
+        node {
+          _meta {
+            lang
+            uid
+            type
+          }
+        }
+      }
+    }
+
+    allProjectss (lang: $lang) {
+      edges {
+        node {
+          body {
+            ... on PRISMIC_ProjectsBodyProjects {
+              fields {
+                title
+                link {
+                  ... on PRISMIC_Project {
+                    _meta {
+                      uid
+                      type
+                      lang
+                    }
+                  }
+                }
+              }
+            }
+            ... on PRISMIC_ProjectsBodyClosed_projects {
+              fields {
+                link_label
+                link {
+                  ... on PRISMIC_Project {
+                    _meta {
+                      lang
+                      uid
+                      type
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    allStudy_halls (lang: $lang) {
+      edges {
+        node {
+          title
+          _meta {
+            uid
+            type
+            lang
+          }
+        }
+      }
+    }
+
   }
 }
 `;
