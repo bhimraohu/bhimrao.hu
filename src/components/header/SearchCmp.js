@@ -43,11 +43,11 @@ const SearchInput = styled.input`
 `;
 
 class Search extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      searchValue: null,
+      searchValue: this.props.value ? this.props.value : '',
     };
   }
 
@@ -90,7 +90,7 @@ class Search extends React.Component {
             placeholder={this.props.search_placeholder}
             onBlur={this.props.onBlur}
             ref={inputEl => (this.searchInput = inputEl)}
-            value={this.state.lastName}
+            value={this.state.searchValue}
             onChange={this.handleInputChange}
           />
           <Icon icon_class={'icon-search'} />

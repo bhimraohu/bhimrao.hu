@@ -123,7 +123,14 @@ const TeamPage = ({ data }) => {
         {
           data.team_members.map((node, idx) => {
             return (
-              <div key={idx} className="card-container" onClick={onClickHandler.bind(null, node)}>
+              <div
+                key={idx}
+                className="card-container"
+                onClick={onClickHandler.bind(null, node)}
+                role="button"
+                tabIndex="0"
+                onKeyPress={(e) => e}
+              >
                 <Card item={node} width={'initial'} height={'100%'} />
               </div>
             )

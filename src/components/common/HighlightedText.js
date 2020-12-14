@@ -43,7 +43,11 @@ const HighlightedText = ({ background_color, highlighted_text }) => {
     <HighlightedTextWrapper background_color={background_color}>
       <div className="highlighted-text-container">
         <div className="highlighted-text common-text">
-          <RichTextCustom render={highlighted_text} />
+          {
+            highlighted_text
+              ? <RichTextCustom render={highlighted_text} />
+              : null
+          }
         </div>
       </div>
     </HighlightedTextWrapper>

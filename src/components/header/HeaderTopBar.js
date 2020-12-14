@@ -176,6 +176,7 @@ const getSerach = (state, props, onBlurHandler, onClickHandler, mobile) => {
           onClick={onClickHandler}
           role="button"
           tabIndex="0"
+          onKeyPress={(e) => e}
         >
           <Icon icon_class={'icon-search'} color={Colors.dirtyWhite} />
         </div>

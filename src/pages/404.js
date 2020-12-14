@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components';
 
 import Layout from "../components/layout/LayoutCmp"
-import SEO from "../components/seo"
+// import SEO from "../components/seo"
 import { DesignSettings } from "../utils/constants";
 
 const NotFoundPageWrapper = styled.section`
