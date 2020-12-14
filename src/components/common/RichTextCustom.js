@@ -11,7 +11,7 @@ const htmlSerializer = (type, element, content, children, index) => {
     if (element.data.link_type === 'Document') {
       result = <Link to={url} key={index}>{content}</Link>
     } else {
-      const target = element.data.target ? { 'target': element.data.target, 'rel': 'noopener' } : {}
+      const target = element.data.target ? { 'target': element.data.target, 'rel': 'noopener' } : { 'target': '_blank', 'rel': 'noopener' }
       result = <a href={url} {...target} key={index}>{content}</a>
     }
     return result
@@ -27,7 +27,7 @@ const htmlSerializer = (type, element, content, children, index) => {
       if (element.linkTo.link_type === 'Document') {
         result = <Link to={url} key={index}>{result}</Link>
       } else {
-        const target = element.linkTo.target ? { 'target': element.linkTo.target, 'rel': 'noopener' } : {}
+        const target = element.linkTo.target ? { 'target': element.linkTo.target, 'rel': 'noopener' } : { 'target': '_blank', 'rel': 'noopener' }
         result = <a href={url} {...target}>{result}</a>
       }
     }
