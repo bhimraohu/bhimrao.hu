@@ -28,7 +28,7 @@ const CardWrapper = styled.span`
     margin: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-grow: 1;
   }
 
@@ -101,9 +101,15 @@ const Card = ({ item, width, height }) => {
               : null
           }
 
-          <div className="card-title">
-            <RichTextCustom render={item.title || item.name} />
-          </div>
+          {
+            item.title || item.name
+              ?
+              <div className="card-title">
+                <RichTextCustom render={item.title || item.name} />
+              </div>
+              : null
+          }
+
           {
             item.short_description
               ? <div className="text">
@@ -111,6 +117,7 @@ const Card = ({ item, width, height }) => {
               </div>
               : null
           }
+
           {
             item.position
               ? <div className="position">

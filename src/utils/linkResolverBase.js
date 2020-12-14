@@ -18,6 +18,7 @@ export const linkResolverBase = (properties) => {
     || properties.type === 'contact_page'
     || properties.type === 'team'
     || properties.type === 'help_us'
+    || properties.type === 'search'
   ) {
     return properties.lang === defaultLanguage
       ? `/${properties.uid}`

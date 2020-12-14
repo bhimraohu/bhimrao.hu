@@ -28,7 +28,11 @@ const TextOnly = ({ text }) => {
   return (
     <TextOnlyWrapper>
       <div className="content-wrapper common-text">
-        <RichTextCustom render={text} />
+        {
+          text
+            ? <RichTextCustom render={text} />
+            : null
+        }
       </div>
     </TextOnlyWrapper>
   );

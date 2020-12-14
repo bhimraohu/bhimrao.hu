@@ -34,9 +34,6 @@ const TextWithTitle = ({ title, subtitle, text, isHomepage, closed }) => {
   return (
     <TextWithTitleWrapper isHomepage={isHomepage} closed={closed}>
       <div className="h1-border-bottom">
-        {/* <div className="title-wrapper h1-border-bottom common-header">
-          <RichTextCustom render={title} />
-        </div> */}
         <TitleOnly title={title} />
         {
           subtitle

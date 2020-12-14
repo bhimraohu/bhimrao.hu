@@ -75,6 +75,9 @@ const MemberRows = styled.section`
 
 const TeamPage = ({ data }) => {
 
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
+
   const onClickHandler = (node) => {
     if (!node.name) {
       return;
@@ -87,9 +90,6 @@ const TeamPage = ({ data }) => {
   const setToClose = () => {
     setModalOpen(false);
   }
-
-  const [modalOpen, setModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState(null);
 
   return (
     <TeamPageWrapper>
@@ -111,7 +111,7 @@ const TeamPage = ({ data }) => {
                 <div className="modal-title">
                   <RichTextCustom render={modalContent.title || modalContent.name} />
                 </div>
-                <div className="text">
+                <div className="text common-text">
                   <RichTextCustom render={modalContent.short_description || modalContent.details} />
                 </div>
               </div>
@@ -123,7 +123,14 @@ const TeamPage = ({ data }) => {
         {
           data.team_members.map((node, idx) => {
             return (
-              <div key={idx} className="card-container" onClick={onClickHandler.bind(null, node)}>
+              <div
+                key={idx}
+                className="card-container"
+                onClick={onClickHandler.bind(null, node)}
+                role="button"
+                tabIndex="0"
+                onKeyPress={(e) => e}
+              >
                 <Card item={node} width={'initial'} height={'100%'} />
               </div>
             )
