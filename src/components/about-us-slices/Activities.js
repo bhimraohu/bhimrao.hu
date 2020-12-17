@@ -13,8 +13,8 @@ const ActivitiesWrapper = styled.section`
 
   @media screen and (max-width: 1300px) {
    .button-wrapper {
-      padding-left: 2rem;
-      padding-right: 2rem;
+      padding-left: ${DesignSettings.mobilePaddingLeft};
+      padding-right: ${DesignSettings.mobilePaddingRight};
     }
   }
 

@@ -14,15 +14,32 @@ const NewsItemWrapper = styled.section`
 
   @media screen and (max-width: 1300px) {
     width: 100%;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: ${DesignSettings.mobilePaddingLeft};
+    padding-right: ${DesignSettings.mobilePaddingRight};
 
+    .date {
+      padding-left: ${DesignSettings.mobilePaddingLeft};
+      padding-right: ${DesignSettings.mobilePaddingRight};
+    }
+  }
+
+  @media screen and (max-width: 950px) {
     .date {
       width: 100% !important;
     }
   }
 
+  section:nth-of-type(1) {
+    margin-top: 5rem;
+    margin-bottom: 0rem;
+  }
+  section:nth-of-type(2) {
+    margin-top: 0rem;
+    margin-bottom: 10rem;
+  }
+
   .main-image {
+    margin-top: 5rem;
     width: fit-content;
     align-self: center;
   }

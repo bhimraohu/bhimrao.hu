@@ -17,4 +17,6 @@ export const DesignSettings = {
   outerWidth: '1200px',
   innerWidth: '1000px',
   textWidth: '800px',
+  mobilePaddingLeft: '3rem',
+  mobilePaddingRight: '3rem',
 }

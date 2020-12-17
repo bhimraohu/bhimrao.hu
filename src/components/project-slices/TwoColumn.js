@@ -14,8 +14,8 @@ const TwoColumnWrapper = styled.section`
 
   @media screen and (max-width: 1300px) {
     width: 100% !important;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: ${DesignSettings.mobilePaddingLeft};
+    padding-right: ${DesignSettings.mobilePaddingRight};
   }
 
   @media screen and (max-width: 950px) {

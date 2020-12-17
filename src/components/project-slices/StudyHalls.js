@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from "gatsby"
 
-import { Colors } from "../../utils/constants";
+import { Colors, DesignSettings } from "../../utils/constants";
 import { linkResolverBase } from '../../utils/linkResolverBase';
 import Icon from '../common/IconCmp';
 
@@ -17,8 +17,8 @@ const StudyHallsWrapper = styled.section`
   justify-content: space-evenly;
 
   @media screen and (max-width: 1300px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: ${DesignSettings.mobilePaddingLeft};
+    padding-right: ${DesignSettings.mobilePaddingRight};
   }
 
   @media screen and (max-width: 950px) {
