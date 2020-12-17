@@ -18,11 +18,28 @@ const NewsItemWrapper = styled.section`
     padding-right: 2rem;
 
     .date {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 950px) {
+    .date {
       width: 100% !important;
     }
   }
 
+  section:nth-of-type(1) {
+    margin-top: 5rem;
+    margin-bottom: 0rem;
+  }
+  section:nth-of-type(2) {
+    margin-top: 0rem;
+    margin-bottom: 10rem;
+  }
+
   .main-image {
+    margin-top: 5rem;
     width: fit-content;
     align-self: center;
   }
