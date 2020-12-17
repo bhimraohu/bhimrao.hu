@@ -10,8 +10,8 @@ import Modal from '../common/Modal'
 const FormWrapper = styled.section`
 
   @media screen and (max-width: 1300px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: ${DesignSettings.mobilePaddingLeft};
+    padding-right: ${DesignSettings.mobilePaddingRight};
   }
 
   @media screen and (max-width: 950px) {

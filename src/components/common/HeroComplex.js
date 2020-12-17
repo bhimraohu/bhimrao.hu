@@ -16,8 +16,8 @@ const HeroComplexWrapper = styled.section`
   margin-bottom: 10rem;
 
   @media screen and (max-width: 1300px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: ${DesignSettings.mobilePaddingLeft};
+    padding-right: ${DesignSettings.mobilePaddingRight};
   }
 
   @media screen and (max-width: 1000px) {

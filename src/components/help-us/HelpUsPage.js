@@ -11,8 +11,8 @@ const HelpUsPageWrapper = styled.section`
 
   @media screen and (max-width: 1300px) {
     .helpus-wrapper {
-      padding-left: 2rem;
-      padding-right: 2rem;
+      padding-left: ${DesignSettings.mobilePaddingLeft};
+      padding-right: ${DesignSettings.mobilePaddingRight};
     }
 
     .helpus-container {

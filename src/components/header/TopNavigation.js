@@ -20,8 +20,8 @@ const TopNavigationWrapper = styled.div`
   }
 
   @media screen and (max-width: 1300px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: ${DesignSettings.mobilePaddingLeft};
+    padding-right: ${DesignSettings.mobilePaddingRight};
   }
 
   .button-cta {
