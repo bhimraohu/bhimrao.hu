@@ -7,7 +7,7 @@ import RichTextCustom from './RichTextCustom';
 const SupportersRowWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   min-height: 35rem;
   background: ${Colors.imageRowBackground2};
@@ -32,7 +32,7 @@ const SupportersRowWrapper = styled.section`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: ${DesignSettings.innerWidth};
+    /* width: ${DesignSettings.innerWidth}; */
     flex-wrap: wrap;
   }
 
@@ -40,10 +40,10 @@ const SupportersRowWrapper = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2rem;
+    margin: 3rem;
     
     .item-icon {
-      max-width: 25rem;
+      max-width: 20rem;
       max-height: 17rem;
     }
   }
@@ -55,7 +55,6 @@ const SupportersRowWrapper = styled.section`
   }
 
   .title-container > h1 {
-    padding-bottom: 3rem;
     font-size: 2.8rem;
     text-transform: uppercase;
     text-align: center;
