@@ -81,11 +81,11 @@ const GoalsWrapper = styled.section`
       }
 
       .even .content-container {
-        margin-left: 5rem;
+        margin-left: 6rem;
       }
 
       .odd .content-container {
-        margin-right: 5rem;
+        margin-right: 6rem;
       }
 
       .content-container > p {
