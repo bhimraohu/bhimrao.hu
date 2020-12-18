@@ -25,7 +25,6 @@ const TextOnlyWrapper = styled.section`
 `;
 
 const TextOnly = ({ text, isLastSlice }) => {
-
   return (
     <TextOnlyWrapper isLastSlice={isLastSlice}>
       <div className="content-wrapper common-text">
