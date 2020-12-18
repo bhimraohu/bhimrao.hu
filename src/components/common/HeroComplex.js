@@ -16,8 +16,10 @@ const HeroComplexWrapper = styled.section`
   margin-bottom: 10rem;
 
   @media screen and (max-width: 1300px) {
-    padding-left: ${DesignSettings.mobilePaddingLeft};
-    padding-right: ${DesignSettings.mobilePaddingRight};
+    .hero-complex-details-container {
+      padding-left: ${DesignSettings.mobilePaddingLeft};
+      padding-right: ${DesignSettings.mobilePaddingRight};
+    }
   }
 
   @media screen and (max-width: 1000px) {
