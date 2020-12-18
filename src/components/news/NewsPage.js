@@ -5,6 +5,10 @@ import TitleOnly from '../common/TitleOnly';
 import Card from '../common/Card';
 import { DesignSettings } from "../../utils/constants";
 
+const NewsPageWrapper = styled.section`
+  margin-bottom: 10rem;
+`;
+
 const NewsRows = styled.section`
   margin: 0 auto;
   width: ${DesignSettings.innerWidth};
@@ -24,7 +28,7 @@ const NewsRows = styled.section`
 
 const NewsPage = ({ news, news_items }) => {
   return (
-    <div>
+    <NewsPageWrapper>
       <TitleOnly title={news.title} />
       <NewsRows>
         {
@@ -37,7 +41,7 @@ const NewsPage = ({ news, news_items }) => {
           })
         }
       </NewsRows>
-    </div>
+    </NewsPageWrapper>
   )
 }
 export default NewsPage;
