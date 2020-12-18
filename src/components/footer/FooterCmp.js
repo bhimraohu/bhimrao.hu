@@ -18,6 +18,7 @@ const FooterWrapper = styled.footer`
   }
 
   @media screen and (max-width: 950px) {
+    padding-top: ${DesignSettings.mobilePaddingLeft};
     width: 100%;
     flex-direction: column;
     height: initial;
@@ -62,7 +63,7 @@ const FooterContainer = styled.div`
     }
 
     .documents-links { 
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
     }
   }
 
