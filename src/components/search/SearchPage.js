@@ -36,7 +36,7 @@ const SearchWrapper = styled.section`
     padding-right: ${DesignSettings.mobilePaddingRight};
   }
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 950px) {
     width: 100%;
   }
 `;
@@ -45,7 +45,12 @@ const SearchResults = styled.div`
   margin: 5rem 0 10rem 0;
   min-height: 30rem;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1300px) {
+    padding-left: ${DesignSettings.mobilePaddingLeft};
+    padding-right: ${DesignSettings.mobilePaddingRight};
+  }
+  
+  @media screen and (max-width: 950px) {
     width: 100%;
     min-height: 20rem !important;
   }
