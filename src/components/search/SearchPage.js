@@ -31,6 +31,11 @@ const SearchWrapper = styled.section`
   justify-content: space-evenly;
   flex-wrap: wrap;
 
+  @media screen and (max-width: 1300px) {
+    padding-left: ${DesignSettings.mobilePaddingLeft};
+    padding-right: ${DesignSettings.mobilePaddingRight};
+  }
+
   @media screen and (max-width: 1000px) {
     width: 100%;
   }
