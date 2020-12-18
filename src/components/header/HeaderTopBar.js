@@ -163,10 +163,12 @@ class HeaderTopBar extends React.Component {
 
 const getSerach = (state, props, onBlurHandler, onClickHandler, mobile) => {
   if (mobile) {
-    const path = window?.location.pathname.indexOf('/en-us') === 0
-      ? `/en-us/search`
-      : `/kereses`;
-
+    let path;
+    if (typeof window === 'object') {
+      path = window?.location.pathname.indexOf('/en-us') === 0
+        ? `/en-us/search`
+        : `/kereses`;
+    }
     return (
       <Link
         className="icon-container"
