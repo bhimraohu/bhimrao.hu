@@ -131,13 +131,13 @@ html {
 
 @media screen and (max-width: 950px) {
   html {
-    font-size: 8px !important;
+    font-size: 8.5px !important;
   }
 }
 
 @media screen and (max-width: 600px) {
   html {
-    font-size: 7px !important;
+    font-size: 8px !important;
   }
 }
 
