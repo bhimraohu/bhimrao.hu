@@ -42,6 +42,7 @@ const ImageGridWrapper = styled.section`
     img {
       width: 33%;
       padding: 1%;
+      align-self: flex-start;
     }
   }
 `;
