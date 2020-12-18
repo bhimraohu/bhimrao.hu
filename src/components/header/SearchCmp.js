@@ -92,6 +92,9 @@ class Search extends React.Component {
       event.preventDefault();
     }
 
+    clearTimeout(this.timeout);
+    this.timeout = null;
+
     const searchPath = this.getPath()
     navigate(searchPath);
   }
