@@ -15,11 +15,6 @@ const ProjectsWrapper = styled.section`
     padding-right: ${DesignSettings.mobilePaddingLeft};
   }
 
-  /* @media screen and (max-width: 1300px) {
-    padding-left: ${DesignSettings.mobilePaddingLeft};
-    padding-right: ${DesignSettings.mobilePaddingRight};
-  } */
-
   @media screen and (max-width: 1050px) {
     width: 100%;
 
@@ -44,7 +39,7 @@ const ProjectsWrapper = styled.section`
     .project-image {
       width: initial !important;
       height: initial !important;
-      margin: 3rem 0;
+      margin: 3rem 0 !important;
       align-self: center !important;
     }
 
@@ -55,14 +50,20 @@ const ProjectsWrapper = styled.section`
 
     .button-container-mobile {
       display: flex !important;
-      justify-content: flex-end;
+      justify-content: flex-start;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .project-container {
+      margin: 2rem 0 !important;
     }
   }
 
   .projects-wrapper {
     display: flex;
     flex-direction: column;
-    margin-top: 4rem 0;
+    margin-top: 4rem;
 
     .project-container {
       font-size: 2rem;

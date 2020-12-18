@@ -36,6 +36,10 @@ const FullWidthImageAndTextWrapper = styled.section`
     width: 100% !important;
   }
 
+  @media screen and (max-width: 600px) {
+    height: initial !important;
+  }
+
   .content-wrapper {
     z-index: 1;
   }

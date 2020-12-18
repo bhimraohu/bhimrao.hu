@@ -45,6 +45,7 @@ query homepageQuery($lang: String) {
                 hero_subtitle
                 hero_content
                 background_image
+                background_image_mobile
               }
             }
             ... on PRISMIC_HomepageBodyIntro_text {

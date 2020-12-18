@@ -39,6 +39,14 @@ const GoalsWrapper = styled.section`
       width: inherit !important;
       height: inherit !important;
     }
+  }  
+  
+  @media screen and (max-width: 600px) {
+    .goal-container {
+      .goal-image {
+        margin-top: 3rem !important;
+      }
+    }
   }
 
   > .h1-border-bottom > h1 {

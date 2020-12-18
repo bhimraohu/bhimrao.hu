@@ -15,7 +15,7 @@ const HeroWrapper = styled.section`
   align-items: flex-end;
   margin-bottom: 10rem;
 
-  &::before {
+  &:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -44,6 +44,10 @@ const HeroWrapper = styled.section`
       max-width: 50% !important;
     }
   }
+
+@media screen and (max-width: 600px) {
+  background-image: url('${props => props.backgroundImageMobile}');
+}
 
   h1 {
     font-size: 7rem;
@@ -83,10 +87,10 @@ const HeroWrapper = styled.section`
   }
 `;
 
-const Hero = ({ content, title, subtitle, backgroundImage }) => {
+const Hero = ({ content, title, subtitle, backgroundImage, backgroundImageMobile }) => {
 
   return (
-    <HeroWrapper backgroundImage={backgroundImage}>
+    <HeroWrapper backgroundImage={backgroundImage} backgroundImageMobile={backgroundImageMobile}>
       <div className="hero-container">
         <div className="hero-text-container">
           <RichTextCustom render={title} />
