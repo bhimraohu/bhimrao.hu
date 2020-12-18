@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 import { Colors, DesignSettings } from "../../utils/constants";
 import LanguageSelector from "./LanguageSelector";
@@ -162,8 +163,17 @@ class HeaderTopBar extends React.Component {
 
 const getSerach = (state, props, onBlurHandler, onClickHandler, mobile) => {
   if (mobile) {
+    const path = window?.location.pathname.indexOf('/en-us') === 0
+      ? `/en-us/search`
+      : `/kereses`;
+
     return (
-      <Search search_placeholder={props.topbarsData.search_placeholder} onBlur={onBlurHandler} />
+      <Link
+        className="icon-container"
+        to={path}
+      >
+        <Icon icon_class={'icon-search'} color={Colors.dirtyWhite} />
+      </Link>
     )
   }
 

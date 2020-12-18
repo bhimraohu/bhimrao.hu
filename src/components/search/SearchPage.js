@@ -87,6 +87,16 @@ const SearchCmpContainer = styled.div`
       padding: 0.5rem;
       width: 40rem;
 
+      @media screen and (max-width: 950px) {
+        form {
+          width: 28rem !important;
+
+          input {
+            width: 30rem !important;
+          }
+        }
+      }
+
       > form {
         width: 38rem;
 
