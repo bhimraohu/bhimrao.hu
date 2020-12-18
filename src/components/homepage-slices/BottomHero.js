@@ -30,6 +30,27 @@ const BottomHeroWrapper = styled.section`
         rgba(0,0,0,0) 0);
   }
 
+
+  @media screen and (max-width: 600px) {
+    &:before {
+      background: rgba(0,0,0,.5) !important;
+    }
+
+    .hero-container {
+      margin-bottom: 0 !important;
+      padding: 5rem;
+    }
+
+    .hero-text-container-2ndpart {
+      display: none;
+    }
+
+    .hero-text-container {
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+    }
+  }
+
   h1 {
     font-size: 7rem;
     margin-bottom: 0;

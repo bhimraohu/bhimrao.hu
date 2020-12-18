@@ -20,6 +20,7 @@ const SliceZone = ({ body, news }) => (
                 subtitle={bodyContent.primary.hero_subtitle}
                 content={bodyContent.primary.hero_content}
                 backgroundImage={bodyContent.primary.background_image.url}
+                backgroundImageMobile={bodyContent.primary.background_image_mobile.url}
               />
             )
           case "intro_text":

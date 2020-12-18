@@ -41,7 +41,7 @@ const HeroWrapper = styled.section`
 
   @media screen and (max-width: 600px) {
     &::before {
-      background: ${props => props.color ? (props.color + '80') : '#00000080'} 
+      background: ${props => props.color ? (props.color + '80') : '#00000080'};
     }
   
     .hero-text-container {
