@@ -52,6 +52,10 @@ const ImageCollageWithTextWrapper = styled.section`
 
     .image-collage-container {
       display: flex;
+
+      img {
+        align-self: flex-start;
+      } 
       
       &.bottom {
         display: flex;
@@ -73,7 +77,8 @@ const ImageCollageWithTextWrapper = styled.section`
         flex-direction: row;
         
         > img {
-          max-width: 48%;
+          max-width: 49%;
+          align-self: flex-start;
         }
         
         .small-images {
@@ -84,7 +89,8 @@ const ImageCollageWithTextWrapper = styled.section`
           margin-left: 2%;
 
           > img {
-            height: 47%;
+            /* height: 47%; */
+            align-self: flex-start;
           }
 
           .content-wrapper {

@@ -13,6 +13,10 @@ const FullWidthImageWrapper = styled.section`
 
   .image-grid-wrapper {
     display: flex;
+
+    > img {
+      align-self: flex-start;
+    }
   }
 `;
 
