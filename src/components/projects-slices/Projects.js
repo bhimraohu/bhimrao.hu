@@ -86,6 +86,7 @@ const ProjectsWrapper = styled.section`
         height: 26rem;
         margin-top: 10rem;
         align-self: flex-start;
+        box-shadow: 0px 0px 2px 0px grey;
       }
 
       .even .content-container {

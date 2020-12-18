@@ -6,8 +6,7 @@ import RichTextCustom from '../common/RichTextCustom';
 
 const SmallDetailRowWrapper = styled.section`
   width: ${DesignSettings.textWidth};
-  margin: 8rem auto;
-  margin-top: 4rem;
+  margin: 0 auto;
 
   @media screen and (max-width: 1300px) {
     padding-left: ${DesignSettings.mobilePaddingLeft};
@@ -53,13 +52,13 @@ const SmallDetailRowWrapper = styled.section`
         font-size: 2.2rem;
         margin-top: 3rem;
         margin-bottom:1.5rem;
-        color: ${Colors.main};
+        color: ${Colors.headerColor};
       }
 
       p {
         font-size: 2rem;
-        color: ${Colors.main};
-        line-height: 140%;
+        color: ${Colors.textColor};
+        line-height: 160%;
       }
     }
   }

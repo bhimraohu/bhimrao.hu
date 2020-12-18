@@ -52,7 +52,7 @@ const ProjectStructureWrapper = styled.section`
 
     .card-container {
       display: flex;
-      margin-bottom: 3rem;
+      margin-bottom: 8rem;
     
       p {
         font-size: 2rem;

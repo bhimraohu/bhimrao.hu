@@ -67,6 +67,10 @@ const ModalWrapper = styled.div`
             cursor: pointer;
             font-weight: 600;
           }
+
+          &:focus {
+            outline: none;
+          }
         }
       }
       .modal-content {

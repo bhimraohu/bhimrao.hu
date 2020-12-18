@@ -66,6 +66,7 @@ query projectQuery($lang: String, $uid: String) {
               type
               primary {
                 text
+                is_last_slice
               }
             }
             ... on PRISMIC_ProjectBodyHighlighted_text {

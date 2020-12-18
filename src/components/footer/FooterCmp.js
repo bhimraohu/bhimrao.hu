@@ -87,6 +87,7 @@ const FooterContainer = styled.div`
     text-decoration: none;
     line-height: 2.4rem;
     font-size: 1.8rem;
+    margin-bottom: 1rem;
 
     &:hover {
       text-decoration: underline;
