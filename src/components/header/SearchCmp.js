@@ -17,8 +17,12 @@ const SearchWrapper = styled.div`
   @media screen and (max-width: 950px) {
     width: initial !important;
 
-    input {
+    form {
       width: initial !important;
+
+      input {
+        width: initial !important;
+      }
     }
   }
 
