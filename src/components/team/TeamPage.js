@@ -57,9 +57,14 @@ const MemberRows = styled.section`
   .card-container {
     margin: 3rem 0;
     cursor: pointer;
+    
+    &:focus{
+      outline: none !important;
+    }
 
     > span {
       width: 23rem !important;
+      margin-right: 0;
     }
 
     .card-content-wrapper {
