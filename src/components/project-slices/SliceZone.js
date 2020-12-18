@@ -66,6 +66,7 @@ const SliceZone = ({ body, closed }) => (
               <TextOnly
                 key={idx}
                 text={bodyContent.primary.text}
+                isLastSlice={bodyContent.primary.is_last_slice}
               />
             );
           case "image_with_description":

@@ -7,6 +7,7 @@ import { DesignSettings } from "../../utils/constants";
 const TextOnlyWrapper = styled.section`
   margin: 3rem auto;
   width: ${DesignSettings.textWidth};
+  margin-bottom: ${(props) => props.isLastSlice ? '0' : '10rem'};
 
   @media screen and (max-width: 1300px) {
     padding-left: ${DesignSettings.mobilePaddingLeft};
@@ -23,10 +24,10 @@ const TextOnlyWrapper = styled.section`
   }
 `;
 
-const TextOnly = ({ text }) => {
+const TextOnly = ({ text, isLastSlice }) => {
 
   return (
-    <TextOnlyWrapper>
+    <TextOnlyWrapper isLastSlice={isLastSlice}>
       <div className="content-wrapper common-text">
         {
           text

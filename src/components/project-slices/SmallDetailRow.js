@@ -43,7 +43,7 @@ const SmallDetailRowWrapper = styled.section`
         flex-direction: column;
         width: fit-content;
 
-        img {
+        > img {
           max-height: 10rem;
         }
       }
