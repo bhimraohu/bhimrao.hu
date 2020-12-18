@@ -25,6 +25,7 @@ const ImageCollageWrapper = styled.section`
           
           img {
             max-width: 49%;
+            align-self: flex-start;
           }
         }
       }
@@ -35,6 +36,7 @@ const ImageCollageWrapper = styled.section`
         
         > img {
           max-width: 40%;
+          align-self: flex-start;
         }
         
         .small-images {
@@ -45,7 +47,8 @@ const ImageCollageWrapper = styled.section`
           margin-left: 2%;
 
           > img:first-of-type {
-            margin-bottom: 2%
+            margin-bottom: 2%;
+            align-self: flex-start;
           }
         }
       }

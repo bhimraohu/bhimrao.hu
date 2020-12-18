@@ -62,6 +62,7 @@ const ProjectStructureWrapper = styled.section`
 
       .big-image {
         width: 45%;
+        align-self: flex-end;
       }
 
       .image-container {

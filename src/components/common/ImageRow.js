@@ -22,6 +22,7 @@ const ImageRowWrapper = styled.section`
 
     img {
       width: 33.33334%;
+      align-self: flex-start;
     }
   }
 `;

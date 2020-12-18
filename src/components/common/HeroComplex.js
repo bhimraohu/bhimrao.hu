@@ -74,6 +74,7 @@ const HeroComplexWrapper = styled.section`
     img {
       flex: 0 0 50%;
       max-width: 50%;
+      align-self: flex-start;
     }
   
     .hero-complex-content {
