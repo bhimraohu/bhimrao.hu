@@ -7,6 +7,15 @@ import HighlightedText from '../common/HighlightedText';
 import TextOnly from '../common/TextOnly';
 
 const ActivitiesWrapper = styled.section`
+  background-image: ${(props) => {
+    const image = props.cornerImage.substring(0, props.cornerImage.indexOf('?'));
+    return `url(${image})`;
+  }};
+  background-position: ${(props) => props.cornerImagePosition.replace('-', ' ')};
+  background-repeat: no-repeat;
+`;
+
+const ActivitiesContainer = styled.section`
   margin: 3rem auto;
   width: ${DesignSettings.textWidth};
   margin-bottom: 5rem;
@@ -48,28 +57,29 @@ const ActivitiesWrapper = styled.section`
   }
 `;
 
-const Activities = ({ title, content, highlighted_text, content_part_2, link, link_label }) => {
-
+const Activities = ({ title, content, highlighted_text, content_part_2, link, link_label, corner_image, corner_image_position }) => {
   return (
-    <ActivitiesWrapper>
-      <div className="h1-border-bottom">
-        <TextWithTitle
-          title={title}
-          text={content}
-        />
+    <ActivitiesWrapper cornerImage={corner_image?.url} cornerImagePosition={corner_image_position}>
+      <ActivitiesContainer>
+        <div className="h1-border-bottom">
+          <TextWithTitle
+            title={title}
+            text={content}
+          />
 
-        <HighlightedText
-          highlighted_text={highlighted_text}
-        />
+          <HighlightedText
+            highlighted_text={highlighted_text}
+          />
 
-        <TextOnly
-          text={content_part_2}
-        />
+          <TextOnly
+            text={content_part_2}
+          />
 
-        <div className="button-wrapper">
-          <a className="button" href={link.url} target="_blank" alt={link_label} rel="noreferrer">{link_label}&gt;</a>
+          <div className="button-wrapper">
+            <a className="button" href={link.url} target="_blank" alt={link_label} rel="noreferrer">{link_label}&gt;</a>
+          </div>
         </div>
-      </div>
+      </ActivitiesContainer>
     </ActivitiesWrapper>
   );
 }

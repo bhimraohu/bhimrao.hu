@@ -36,6 +36,8 @@ const SliceZone = ({ body }) => (
                 content_part_2={bodyContent.primary.content_part_2}
                 link={bodyContent.primary.link}
                 link_label={bodyContent.primary.link_label}
+                corner_image={bodyContent.primary.corner_image}
+                corner_image_position={bodyContent.primary.corner_image_position}
               />
             )
           case "statistics_row":
