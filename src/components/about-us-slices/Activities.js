@@ -8,10 +8,17 @@ import TextOnly from '../common/TextOnly';
 
 const ActivitiesWrapper = styled.section`
   background-image: ${(props) => {
-    const image = props.cornerImage.substring(0, props.cornerImage.indexOf('?'));
-    return `url(${image})`;
+    if (props.cornerImage) {
+      return `url(${props.cornerImage.substring(0, props.cornerImage.indexOf('?'))})`;
+    }
+    return '';
   }};
-  background-position: ${(props) => props.cornerImagePosition.replace('-', ' ')};
+  background-position: ${(props) => {
+    if (props.cornerImagePosition) {
+      return props.cornerImagePosition.replace('-', ' ')
+    }
+    return '';
+  }};
   background-repeat: no-repeat;
 `;
 
