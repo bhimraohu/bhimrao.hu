@@ -71,6 +71,7 @@ const StudyHallsWrapper = styled.section`
           font-weight: bold;
           font-size: 2.4rem;
           color: ${Colors.dirtyWhite};
+          text-decoration: underline;
         }
       }
     }

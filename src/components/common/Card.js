@@ -22,6 +22,10 @@ const CardWrapper = styled.span`
   .card-image-container {
     display: flex;
     justify-content: center;
+    
+    img {
+      align-self: flex-start;
+    }
   }
 
   .card-content-wrapper {

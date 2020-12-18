@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { DesignSettings } from '../../utils/constants';
+import { Colors, DesignSettings } from '../../utils/constants';
 
 import RichTextCustom from '../common/RichTextCustom';
 
 const SmallDetailRowWrapper = styled.section`
   width: ${DesignSettings.textWidth};
-  margin: 6rem auto;
+  margin: 8rem auto;
   margin-top: 4rem;
 
   @media screen and (max-width: 1300px) {
@@ -37,11 +37,15 @@ const SmallDetailRowWrapper = styled.section`
       width: 45%;
 
       .image-container {
-        min-height: 22rem;
+        min-height: 16rem;
         display: flex;
         justify-content: flex-end;
         flex-direction: column;
         width: fit-content;
+
+        > img {
+          max-height: 10rem;
+        }
       }
 
       h3 {
@@ -49,10 +53,13 @@ const SmallDetailRowWrapper = styled.section`
         font-size: 2.2rem;
         margin-top: 3rem;
         margin-bottom:1.5rem;
+        color: ${Colors.main};
       }
 
       p {
         font-size: 2rem;
+        color: ${Colors.main};
+        line-height: 140%;
       }
     }
   }

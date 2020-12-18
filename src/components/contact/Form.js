@@ -6,6 +6,7 @@ import queryString from 'query-string';
 
 import { Colors, DesignSettings } from "../../utils/constants";
 import Modal from '../common/Modal'
+import RichTextCustom from '../common/RichTextCustom';
 
 const FormWrapper = styled.section`
 
@@ -24,7 +25,7 @@ const FormWrapper = styled.section`
 const FormContainer = styled.form`
   width: ${DesignSettings.textWidth};
   margin: 2rem auto;
-  padding: 10px;
+  padding: 1.5rem;
   background: #F7F6F0;;
   font-size: 2rem;
   color: ${Colors.textColor};
@@ -67,18 +68,37 @@ const FormContainer = styled.form`
     display: flex;
     justify-content: flex-end;
   }
+
+  .checkbox-container {
+    display: flex;
+    justify-content: flex-start;
+
+    input {
+      width: 3rem;
+      margin-right: 4rem;
+      margin-top: 0;
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+
+    p {
+      align-self: center;
+      font-size: 1.5rem;
+    }
+  }
 `;
 
 const Button = styled.button`
   border: .1rem solid ${Colors.red};
   background-color: ${Colors.red};
-  color: ${Colors.dirtyWhite};
+  color: white;
   padding: 0 1.6rem;
   line-height: 4.5rem;
   font-weight: bold;
   font-size: 1.6rem;
   min-width: 17rem;
   cursor: pointer;
+  margin-top: 3rem;
 
   &:hover {
     border: .1rem solid ${Colors.red};
@@ -142,6 +162,17 @@ const Form = ({ form_fields, label, action }) => {
                     </label>
                   </div>
                 )
+              case 'checkbox':
+                return (
+                  <div key={idx} className="checkbox-container">
+                    <input
+                      name={field.field_name}
+                      type={field.field_type}
+                      required={field.required === 'true'}
+                    />
+                    <RichTextCustom render={field.field_and_link} />
+                  </div>
+                );
               default:
                 return (
                   <div></div>
@@ -175,5 +206,24 @@ const showModal = (sent) => {
       : null
   )
 }
+
+// const getCheckboxLabel = (field_name, link) => {
+//   if (field_name.indexOf('<a>') === -1) {
+//     return field_name;
+//   }
+
+//   const text1 = field_name.substring(0, field_name.indexOf('<a>'));
+//   const linkLabel = field_name.substring(field_name.indexOf('<a>') + 3, field_name.indexOf('</a>'));
+//   const text2 = field_name.substring(field_name.indexOf('</a>') + 4);
+//   console.log(link)
+
+//   return (
+//     <>
+//       <span>{text1}</span>
+//       <a href={link} className="link-label">{linkLabel}</a>
+//       <span>{text2}</span>
+//     </>
+//   );
+// }
 
 export default Form;

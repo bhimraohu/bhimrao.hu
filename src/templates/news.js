@@ -43,7 +43,7 @@ query newsQuery($lang: String) {
       }
     }
 
-    allNews_items(lang: $lang) {
+    allNews_items(sortBy: date_DESC, lang: $lang) {
       totalCount
       edges {
         node {

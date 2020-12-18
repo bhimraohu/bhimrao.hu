@@ -8,35 +8,38 @@ const GoalsWrapper = styled.section`
   margin: 3rem auto;
   width: ${DesignSettings.innerWidth};
 
-@media screen and (max-width: 1300px) {
-  padding-left: ${DesignSettings.mobilePaddingLeft};
-  padding-right: ${DesignSettings.mobilePaddingRight};
-}
-
-@media screen and (max-width: 950px) {
-  width: 100%;
-
-  .odd {
-    flex-direction: column !important;
-    height: initial !important;
+  @media screen and (max-width: 1300px) {
+    padding-left: ${DesignSettings.mobilePaddingLeft};
+    padding-right: ${DesignSettings.mobilePaddingRight};
   }
-  
-  .even {
-    flex-direction: column-reverse !important;
-    height: initial !important;
 
-    .content-container {
-      margin-left: 0 !important;
+  @media screen and (max-width: 950px) {
+    width: 100%;
+
+    .odd {
+      flex-direction: column !important;
+      height: initial !important;
+
+      .content-container {
+        margin-right: 0 !important;
+      }
+    }
+    
+    .even {
+      flex-direction: column-reverse !important;
+      height: initial !important;
+
+      .content-container {
+        margin-left: 0 !important;
+      }
+    }
+    
+    .goal-image {
+      align-self: flex-start !important;
+      width: inherit !important;
+      height: inherit !important;
     }
   }
-  
-  .goal-image {
-    align-self: flex-start !important;
-    width: inherit !important;
-    height: inherit !important;
-}
-  }
-}
 
   > .h1-border-bottom > h1 {
     font-size: 2.8rem;
@@ -55,13 +58,13 @@ const GoalsWrapper = styled.section`
 
     .goal-container {
       font-size: 2rem;
-      margin: 2rem 0;
+      margin: 4rem 0;
 
       .odd,
       .even {
         display: flex;
         flex-direction: row;
-        height: 36rem;
+        /* height: 36rem; */
       }
 
       .goal-icon {
@@ -71,13 +74,18 @@ const GoalsWrapper = styled.section`
       }
 
       .goal-image {
+        margin-top: 10rem;
         width: 41rem;
         height: 26rem;
-        align-self: flex-end;
+        align-self: flex-start;
       }
 
       .even .content-container {
-        margin-left: 3rem;
+        margin-left: 5rem;
+      }
+
+      .odd .content-container {
+        margin-right: 5rem;
       }
 
       .content-container > p {

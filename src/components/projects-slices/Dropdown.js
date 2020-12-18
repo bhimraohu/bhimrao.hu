@@ -30,6 +30,11 @@ const DropdownWrapper = styled.section`
     height: 10.4rem;
     margin-bottom: 3rem;
 
+    span i::before {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
     &:hover span i::before {
       transform: rotate(180deg);
       transition: transform .5s;

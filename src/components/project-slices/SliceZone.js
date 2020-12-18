@@ -66,6 +66,7 @@ const SliceZone = ({ body, closed }) => (
               <TextOnly
                 key={idx}
                 text={bodyContent.primary.text}
+                isLastSlice={bodyContent.primary.is_last_slice}
               />
             );
           case "image_with_description":
@@ -153,6 +154,7 @@ const SliceZone = ({ body, closed }) => (
               <FullWidthImage
                 key={idx}
                 image={bodyContent.primary.image}
+                isLastSlice={bodyContent.primary.is_last_slice}
               />
             );
           case "full_width_quote":

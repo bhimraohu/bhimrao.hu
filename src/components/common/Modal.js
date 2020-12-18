@@ -7,8 +7,8 @@ const ModalWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 10;
   display: ${(props) => { return props.visible ? 'flex' : 'none' }};
@@ -19,6 +19,20 @@ const ModalWrapper = styled.div`
       .modal-content {
         flex-direction: column !important;
       }
+  }
+
+  @media screen and (max-width: 600px) {
+    .modal-container {
+      width: 95% !important;
+      height: 95% !important;
+      align-items: flex-start !important;
+      overflow-y: scroll;
+
+      .modal-content {
+        padding-left: 3rem !important;
+        padding-right: 3rem !important;
+      }
+    }
   }
 
   .modal-container {

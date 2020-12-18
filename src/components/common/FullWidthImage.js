@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const FullWidthImageWrapper = styled.section`
   margin-top: 10rem;
-  margin-bottom: 10rem;
+  margin-bottom: ${(props) => props.isLastSlice ? '0' : '10rem'};
   width: 100%;
 
   @media screen and (max-width: 950px) {
@@ -16,9 +16,9 @@ const FullWidthImageWrapper = styled.section`
   }
 `;
 
-const FullWidthImage = ({ image }) => {
+const FullWidthImage = ({ image, isLastSlice }) => {
   return (
-    <FullWidthImageWrapper>
+    <FullWidthImageWrapper isLastSlice={isLastSlice}>
       <div className="image-grid-wrapper">
         <img src={image.url} alt={image.alt} />
       </div>

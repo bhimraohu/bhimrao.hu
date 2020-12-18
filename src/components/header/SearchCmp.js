@@ -17,8 +17,12 @@ const SearchWrapper = styled.div`
   @media screen and (max-width: 950px) {
     width: initial !important;
 
-    input {
+    form {
       width: initial !important;
+
+      input {
+        width: initial !important;
+      }
     }
   }
 
@@ -51,6 +55,8 @@ class Search extends React.Component {
     };
   }
 
+  timeout = 0;
+
   componentDidMount() {
     this.searchInput.focus();
   }
@@ -65,14 +71,30 @@ class Search extends React.Component {
 
   handleInputChange = (event) => {
     const value = event?.target?.value;
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+      this.timeout = null;
+    }
 
     this.setState({
       searchValue: value,
-    })
+    });
+
+    this.timeout = setTimeout(() => {
+      clearTimeout(this.timeout);
+      this.timeout = null;
+      this.handleSubmit();
+    }, 1500);
   }
 
   handleSubmit = (event) => {
-    event.preventDefault();
+    if (event) {
+      event.preventDefault();
+    }
+
+    clearTimeout(this.timeout);
+    this.timeout = null;
+
     const searchPath = this.getPath()
     navigate(searchPath);
   }

@@ -153,6 +153,7 @@ query projectQuery($lang: String, $uid: String) {
               type
               primary {
                 image
+                is_last_slice
               }
             }
             ... on PRISMIC_ProjectBodyImage_row {

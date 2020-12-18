@@ -31,7 +31,12 @@ const SearchWrapper = styled.section`
   justify-content: space-evenly;
   flex-wrap: wrap;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1300px) {
+    padding-left: ${DesignSettings.mobilePaddingLeft};
+    padding-right: ${DesignSettings.mobilePaddingRight};
+  }
+
+  @media screen and (max-width: 950px) {
     width: 100%;
   }
 `;
@@ -40,7 +45,12 @@ const SearchResults = styled.div`
   margin: 5rem 0 10rem 0;
   min-height: 30rem;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1300px) {
+    padding-left: ${DesignSettings.mobilePaddingLeft};
+    padding-right: ${DesignSettings.mobilePaddingRight};
+  }
+  
+  @media screen and (max-width: 950px) {
     width: 100%;
     min-height: 20rem !important;
   }
@@ -76,6 +86,16 @@ const SearchCmpContainer = styled.div`
       margin-right: 0;
       padding: 0.5rem;
       width: 40rem;
+
+      @media screen and (max-width: 950px) {
+        form {
+          width: 28rem !important;
+
+          input {
+            width: 30rem !important;
+          }
+        }
+      }
 
       > form {
         width: 38rem;

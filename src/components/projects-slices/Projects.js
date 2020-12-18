@@ -66,7 +66,7 @@ const ProjectsWrapper = styled.section`
 
     .project-container {
       font-size: 2rem;
-      margin: 2rem 0;
+      margin: 5rem 0;
 
       .h1-border-bottom > h1 {
         font-size: 3rem;
@@ -84,7 +84,8 @@ const ProjectsWrapper = styled.section`
       .project-image {
         width: 41rem;
         height: 26rem;
-        align-self: flex-end;
+        margin-top: 10rem;
+        align-self: flex-start;
       }
 
       .even .content-container {

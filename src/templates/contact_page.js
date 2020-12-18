@@ -42,6 +42,7 @@ query contactusQuery($lang: String) {
             field_name
             field_type
             required
+            field_and_link
           }
           _meta {
             uid

@@ -41,11 +41,7 @@ const HeroWrapper = styled.section`
 
   @media screen and (max-width: 600px) {
     &::before {
-      background-image: 
-        linear-gradient(
-          ${props => props.color ? (props.color + '80') : '#00000080'} 
-          calc((1140px / 1.8) + ((100vw - 1180px)/ 2)),
-          rgba(0,0,0,0) 0);
+      background: ${props => props.color ? (props.color + '80') : '#00000080'} 
     }
   
     .hero-text-container {

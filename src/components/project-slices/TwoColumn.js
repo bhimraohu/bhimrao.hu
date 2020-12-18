@@ -37,6 +37,7 @@ const TwoColumnWrapper = styled.section`
     width: ${DesignSettings.textWidth};
     margin: 0 auto;
     font-size: 2rem;
+    line-height: 160%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
