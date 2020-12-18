@@ -153,6 +153,7 @@ const SliceZone = ({ body, closed }) => (
               <FullWidthImage
                 key={idx}
                 image={bodyContent.primary.image}
+                isLastSlice={bodyContent.primary.is_last_slice}
               />
             );
           case "full_width_quote":
