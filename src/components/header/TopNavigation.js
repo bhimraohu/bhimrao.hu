@@ -125,7 +125,24 @@ const NavLink = styled.li`
     &:nth-child(3) {
       border-top: none;
     }
+    
+    /* Set the width of the menu item with submenu per language*/
+    &.projects.hu {
+      width: 100% !important;
+      height: auto !important;
+    }
+    &.projects.en-us {
+      width: 100% !important;
+      height: auto !important;
+    }
+
+    .mobile-icon {
+      width: 4rem;
+      display: flex;
+      justify-content: flex-end;
+    }
   }
+
   span i::before {
     transform: rotate(0deg);
     transition: transform .5s;
@@ -203,6 +220,16 @@ const SubNavLinks = styled.ul`
   box-shadow: 1px 2px 2px 0px ${Colors.main};
   background-color: white;
 
+  @media screen and (max-width: 950px) {
+    /* Set the width of the submenu per language*/
+    &.projects.hu {
+      width: 100% !important;
+    }
+    &.projects.en-us {
+      width: 100% !important;
+    }
+  }
+
   /* Set the width of the submenu per language*/
   &.projects.hu {
     width: 33rem;
@@ -214,9 +241,13 @@ const SubNavLinks = styled.ul`
 
 const TopNavigation = ({ navigationData }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [subMenuOpen, setSubMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  }
+  const toggleSubMenu = () => {
+    setSubMenuOpen(!subMenuOpen);
   }
 
   return (
@@ -234,14 +265,14 @@ const TopNavigation = ({ navigationData }) => {
       </div>
       {
         menuOpen
-          ? getMenu(navigationData, true)
+          ? getMenu(navigationData, true, toggleSubMenu, subMenuOpen)
           : null
       }
     </TopNavigationWrapper>
   )
 }
 
-const getMenu = (navigationData, mobile) => {
+const getMenu = (navigationData, mobile, toggleSubMenu, subMenuOpen) => {
   return (
     <NavLinks className={mobile ? 'mobile-menu' : 'desktop'}>
       {
@@ -252,7 +283,7 @@ const getMenu = (navigationData, mobile) => {
               return edge.node.parent === link.submenu;
             });
             if (subNav) {
-              return getMainAndSubNav(link, subNav);
+              return getMainAndSubNav(link, subNav, mobile, toggleSubMenu, subMenuOpen);
             }
             return getMainNav(link);
           })
@@ -274,7 +305,7 @@ const getMainNav = (link) => {
   );
 }
 
-const getMainAndSubNav = (link, subNav) => {
+const getMainAndSubNav = (link, subNav, mobile, toggleSubMenu, subMenuOpen) => {
   return (
     <NavLink key={link.link._meta.uid} className={`${link.submenu} ${link.link._meta.lang}`}>
       <Link
@@ -282,26 +313,42 @@ const getMainAndSubNav = (link, subNav) => {
         className={getSelectedClassName(link.link._meta)}
       >
         <span>{link.label}</span>
-        <Icon style={{ paddingRight: '2rem' }} icon_class={'icon-down'} color={Colors.red} />
+        <span onClick={toggleSubMenu} className="mobile-icon">
+          <Icon
+            style={{ paddingRight: '2rem' }}
+            icon_class={'icon-down'}
+            color={Colors.red}
+          />
+        </span>
       </Link>
-      <SubNavLinks className={`${link.submenu} ${link.link._meta.lang}`}>
-        {
-          subNav.node.sub_navigation_links.map(subLink => {
-            return (
-              <NavLink key={subLink.link._meta.uid}>
-                <Link
-                  to={linkResolverBase(subLink.link._meta)}
-                  className={getSelectedClassName(subLink.link._meta)}
-                >
-                  {subLink.label}
-                </Link>
-              </NavLink>
-            )
-          })
-        }
-      </SubNavLinks>
+      {
+        mobile
+          ? subMenuOpen ? getSubMenu(link, subNav) : null
+          : getSubMenu(link, subNav)
+      }
     </NavLink>
   );
+}
+
+const getSubMenu = (link, subNav) => {
+  return (
+    <SubNavLinks className={`${link.submenu} ${link.link._meta.lang}`}>
+      {
+        subNav.node.sub_navigation_links.map(subLink => {
+          return (
+            <NavLink key={subLink.link._meta.uid}>
+              <Link
+                to={linkResolverBase(subLink.link._meta)}
+                className={getSelectedClassName(subLink.link._meta)}
+              >
+                {subLink.label}
+              </Link>
+            </NavLink>
+          )
+        })
+      }
+    </SubNavLinks>
+  )
 }
 
 const getSelectedClassName = (meta) => {

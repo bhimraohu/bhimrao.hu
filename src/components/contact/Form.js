@@ -37,7 +37,7 @@ const FormContainer = styled.form`
   }
 
   label {
-    font-weight: 600;
+    font-weight: 500;
   }
 
   input,
