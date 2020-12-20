@@ -30,6 +30,14 @@ const FooterWrapper = styled.footer`
     }
   }
 
+  @media screen and (max-width: 600px) {
+    padding-bottom: 320px !important;
+
+    .eu-logo {
+      height: auto !important;
+    }
+  }
+
   .emmi-logo {
     width: 20rem;
     margin-bottom: 1.6rem;
