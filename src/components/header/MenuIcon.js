@@ -33,8 +33,9 @@ const MenuIconWrapper = styled.div`
 class MenuIcon extends React.Component {
 
   componentDidUpdate(prevProps) {
-
-    this.container.classList.toggle('change');
+    if (this.props.menuOpen !== prevProps.menuOpen) {
+      this.container.classList.toggle('change');
+    }
   }
 
   render() {
