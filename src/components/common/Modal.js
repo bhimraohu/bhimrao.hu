@@ -10,15 +10,23 @@ const ModalWrapper = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 10;
+  z-index: 1003;
   display: ${(props) => { return props.visible ? 'flex' : 'none' }};
   justify-content: center;
   align-items: center;
   
   @media screen and (max-width: 1000px) {
+    .modal-container {
+      width: 80% !important;
+      height: 90% !important;
+      align-items: flex-start !important;
+      
       .modal-content {
+        padding-left: 3rem !important;
+        padding-right: 3rem !important;
         flex-direction: column !important;
       }
+    }
   }
 
   @media screen and (max-width: 600px) {
@@ -26,7 +34,6 @@ const ModalWrapper = styled.div`
       width: 95% !important;
       height: 95% !important;
       align-items: flex-start !important;
-      overflow-y: scroll;
 
       .modal-content {
         padding-left: 3rem !important;
@@ -45,6 +52,7 @@ const ModalWrapper = styled.div`
     align-items: center;
     width: 80%;
     max-width: 100rem;
+    overflow-y: scroll;
 
     div {
       .modal-header {
@@ -88,6 +96,9 @@ const Modal = ({ children, title, content, modalCloseTimeout, setToClose }) => {
 
   const [modalOpen, setModalOpen] = useState(true);
 
+
+  document.querySelector("html").style.overflow = 'hidden';
+
   if (modalCloseTimeout) {
     const timeout = setTimeout(() => {
       clearTimeout(timeout);
@@ -105,11 +116,17 @@ const Modal = ({ children, title, content, modalCloseTimeout, setToClose }) => {
 
   const close = () => {
     setModalOpen(false);
+    document.querySelector("html").style.overflow = 'visible';
     setToClose();
   }
 
   return (
-    <ModalWrapper visible={modalOpen}>
+    <ModalWrapper visible={modalOpen}
+      onClick={onClickHandler}
+      role="button"
+      onKeyPress={onKeyPressHandler}
+      tabIndex={-1}
+    >
       <div className="modal-container">
         <div>
           <div className="modal-header">
@@ -122,7 +139,7 @@ const Modal = ({ children, title, content, modalCloseTimeout, setToClose }) => {
               tabIndex={-1}
             >
               X
-                </span>
+            </span>
           </div>
           <div className="modal-content">
             {
@@ -136,5 +153,26 @@ const Modal = ({ children, title, content, modalCloseTimeout, setToClose }) => {
     </ModalWrapper>
   );
 }
+
+// const showDialog = () => {
+//   document.getElementById('dialog').classList.add('show')
+//   const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
+//   const body = document.body;
+//   body.style.position = 'fixed';
+//   body.style.top = `-${scrollY}`;
+// };
+// const closeDialog = () => {
+//   const body = document.body;
+//   const scrollY = body.style.top;
+//   body.style.position = '';
+//   body.style.top = '';
+//   window.scrollTo(0, parseInt(scrollY || '0') * -1);
+//   document.getElementById('dialog').classList.remove('show');
+// }
+// if (typeof window === 'object') {
+//   window?.addEventListener('scroll', () => {
+//     document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
+//   });
+// }
 
 export default Modal;
