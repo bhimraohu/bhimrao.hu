@@ -1,5 +1,5 @@
 import { Link } from 'gatsby'
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components';
 
 import { linkResolverBase } from '../../utils/linkResolverBase';
@@ -137,9 +137,26 @@ const NavLink = styled.li`
     }
 
     .mobile-icon {
-      width: 4rem;
+      width: 5rem;
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
+      outline: none;
+
+      > span i::before {
+        transform: rotate(0deg) !important;
+        transition: transform .5s !important;
+      }
+    }
+
+    .mobile-icon.open {
+      > span i::before {
+        transform: rotate(180deg) !important;
+        transition: transform .5s !important;
+      }
+    }
+
+    a {
+      padding: 0 !important;
     }
   }
 
@@ -228,6 +245,10 @@ const SubNavLinks = styled.ul`
     &.projects.en-us {
       width: 100% !important;
     }
+
+    a {
+      padding-left: 2rem !important;
+    }
   }
 
   /* Set the width of the submenu per language*/
@@ -239,123 +260,159 @@ const SubNavLinks = styled.ul`
   }
 `;
 
-const TopNavigation = ({ navigationData }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [subMenuOpen, setSubMenuOpen] = useState(false);
+class TopNavigation extends React.Component {
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  }
-  const toggleSubMenu = () => {
-    setSubMenuOpen(!subMenuOpen);
+  constructor() {
+    super();
+
+    this.state = {
+      menuOpen: false,
+      subMenuOpen: false,
+    };
   }
 
-  return (
-    <TopNavigationWrapper>
-      <div className="main-container">
-        <BrandingWrapper navigationData={navigationData} />
-        {
-          getMenu(navigationData, false)
-        }
-        <div className="mobile">
-          <button className="menu-toggle-button" onClick={toggleMenu}>
-            <MenuIcon menuOpen={menuOpen} />
-          </button>
+  toggleMenu = () => {
+    this.setState({
+      ...this.state,
+      menuOpen: !this.state.menuOpen,
+    })
+  }
+
+  toggleSubMenu = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    this.setState((state) => {
+      return {
+        subMenuOpen: !state.subMenuOpen,
+      }
+    })
+  }
+
+  render() {
+    return (
+      <TopNavigationWrapper>
+        <div className="main-container">
+          <BrandingWrapper navigationData={this.props.navigationData} />
+          {
+            this.getMenu(this.props.navigationData, false)
+          }
+          <div className="mobile">
+            <button className="menu-toggle-button" onClick={this.toggleMenu}>
+              <MenuIcon menuOpen={this.state.menuOpen} />
+            </button>
+          </div>
         </div>
-      </div>
-      {
-        menuOpen
-          ? getMenu(navigationData, true, toggleSubMenu, subMenuOpen)
-          : null
-      }
-    </TopNavigationWrapper>
-  )
-}
-
-const getMenu = (navigationData, mobile, toggleSubMenu, subMenuOpen) => {
-  return (
-    <NavLinks className={mobile ? 'mobile-menu' : 'desktop'}>
-      {
-        navigationData.allHeader_navbars.navigation_links.map(
-          (link) => {
-            // check if sub nav exists here
-            const subNav = navigationData.allHeader_navigation_submenus.edges.find(edge => {
-              return edge.node.parent === link.submenu;
-            });
-            if (subNav) {
-              return getMainAndSubNav(link, subNav, mobile, toggleSubMenu, subMenuOpen);
-            }
-            return getMainNav(link);
-          })
-      }
-    </NavLinks>
-  )
-}
-
-const getMainNav = (link) => {
-  return (
-    <NavLink key={link.link._meta.uid} className={link.is_cta ? 'button-cta' : ''}>
-      <Link
-        to={linkResolverBase(link.link._meta)}
-        className={getSelectedClassName(link.link._meta)}
-      >
-        {link.label}
-      </Link>
-    </NavLink>
-  );
-}
-
-const getMainAndSubNav = (link, subNav, mobile, toggleSubMenu, subMenuOpen) => {
-  return (
-    <NavLink key={link.link._meta.uid} className={`${link.submenu} ${link.link._meta.lang}`}>
-      <Link
-        to={linkResolverBase(link.link._meta)}
-        className={getSelectedClassName(link.link._meta)}
-      >
-        <span>{link.label}</span>
-        <span onClick={toggleSubMenu} className="mobile-icon">
-          <Icon
-            style={{ paddingRight: '2rem' }}
-            icon_class={'icon-down'}
-            color={Colors.red}
-          />
-        </span>
-      </Link>
-      {
-        mobile
-          ? subMenuOpen ? getSubMenu(link, subNav) : null
-          : getSubMenu(link, subNav)
-      }
-    </NavLink>
-  );
-}
-
-const getSubMenu = (link, subNav) => {
-  return (
-    <SubNavLinks className={`${link.submenu} ${link.link._meta.lang}`}>
-      {
-        subNav.node.sub_navigation_links.map(subLink => {
-          return (
-            <NavLink key={subLink.link._meta.uid}>
-              <Link
-                to={linkResolverBase(subLink.link._meta)}
-                className={getSelectedClassName(subLink.link._meta)}
-              >
-                {subLink.label}
-              </Link>
-            </NavLink>
-          )
-        })
-      }
-    </SubNavLinks>
-  )
-}
-
-const getSelectedClassName = (meta) => {
-  if (typeof window === 'undefined') {
-    return '';
+        {
+          this.state.menuOpen
+            ? this.getMenu(this.props.navigationData, true, this.toggleSubMenu, this.state.subMenuOpen)
+            : null
+        }
+      </TopNavigationWrapper>
+    )
   }
-  return window?.location.pathname.indexOf(linkResolverBase(meta)) > -1 ? 'selected' : '';
+
+  getMenu = (navigationData, mobile, toggleSubMenu, subMenuOpen) => {
+    return (
+      <NavLinks className={mobile ? 'mobile-menu' : 'desktop'}>
+        {
+          navigationData.allHeader_navbars.navigation_links.map(
+            (link) => {
+              // check if sub nav exists here
+              const subNav = navigationData.allHeader_navigation_submenus.edges.find(edge => {
+                return edge.node.parent === link.submenu;
+              });
+              if (subNav) {
+                return this.getMainAndSubNav(link, subNav, mobile, toggleSubMenu, subMenuOpen);
+              }
+              return this.getMainNav(link);
+            })
+        }
+      </NavLinks>
+    )
+  }
+
+  getMainNav = (link) => {
+    return (
+      <NavLink key={link.link._meta.uid} className={link.is_cta ? 'button-cta' : ''}>
+        <Link
+          to={linkResolverBase(link.link._meta)}
+          className={this.getSelectedClassName(link.link._meta)}
+        >
+          {link.label}
+        </Link>
+      </NavLink>
+    );
+  }
+
+  getMainAndSubNav = (link, subNav, mobile, toggleSubMenu, subMenuOpen) => {
+    return (
+      <NavLink key={link.link._meta.uid} className={`${link.submenu} ${link.link._meta.lang}`}>
+        <Link
+          to={linkResolverBase(link.link._meta)}
+          className={this.getSelectedClassName(link.link._meta)}
+        >
+          <span>{link.label}</span>
+          <span
+            onClick={toggleSubMenu}
+            className={this.state.subMenuOpen ? "mobile-icon open" : "mobile-icon"}
+            role="button"
+            onKeyPress={this.onKeyPressHandler}
+            tabIndex={-1}
+          >
+            <Icon
+              style={{ paddingRight: '2rem' }}
+              icon_class={'icon-down'}
+              color={Colors.red}
+            />
+          </span>
+        </Link>
+        {
+          mobile
+            ? subMenuOpen ? this.getSubMenu(link, subNav) : null
+            : this.getSubMenu(link, subNav)
+        }
+      </NavLink>
+    );
+  }
+
+  getSubMenu = (link, subNav) => {
+    return (
+      <SubNavLinks className={`${link.submenu} ${link.link._meta.lang}`}>
+        {
+          subNav.node.sub_navigation_links.map(subLink => {
+            return (
+              <NavLink key={subLink.link._meta.uid}>
+                <Link
+                  to={linkResolverBase(subLink.link._meta)}
+                  className={this.getSelectedClassName(subLink.link._meta)}
+                >
+                  {subLink.label}
+                </Link>
+              </NavLink>
+            )
+          })
+        }
+      </SubNavLinks>
+    )
+  }
+
+  getSelectedClassName = (meta) => {
+    if (typeof window === 'undefined') {
+      return '';
+    }
+    console.log(`%c${linkResolverBase(meta)}`, 'background: red; color: white; padding: 5px;')
+    console.log(window?.location.pathname)
+    console.log(window?.location.pathname.indexOf(linkResolverBase(meta)))
+    console.log(window?.location.pathname.indexOf(linkResolverBase(meta)) > -1 ? 'selected' : '')
+    return window?.location.pathname.indexOf(linkResolverBase(meta)) > -1 ? 'selected' : '';
+  }
+
+  onKeyPressHandler = () => {
+    // do nothing here now
+  }
 }
 
 export default TopNavigation;
