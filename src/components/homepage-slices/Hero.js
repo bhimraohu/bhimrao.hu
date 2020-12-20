@@ -45,9 +45,22 @@ const HeroWrapper = styled.section`
     }
   }
 
-@media screen and (max-width: 600px) {
-  background-image: url('${props => props.backgroundImageMobile}');
-}
+  @media screen and (max-width: 600px) {
+    background-image: url('${props => props.backgroundImageMobile}');
+
+    &:before {
+      background: rgba(0,0,0,0.5);
+    }
+
+    .hero-text-container-2ndpart {
+      display: none;
+    }
+
+    .hero-text-container {
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+    }
+  }
 
   h1 {
     font-size: 7rem;
