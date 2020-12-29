@@ -208,7 +208,6 @@ const SearchPage = ({ node, navigationData }) => {
         lang,
       }
     }).then(response => {
-      console.log(response)
       let result = mergeResults(response.data);
       result = result.sort((a, b) => {
         if (a.type < b.type) return -1;
