@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components';
 
 import Layout from "../components/layout/LayoutCmp"
-// import SEO from "../components/seo"
 import { DesignSettings } from "../utils/constants";
 
 const NotFoundPageWrapper = styled.section`
@@ -21,6 +20,7 @@ const NotFoundPageWrapper = styled.section`
 `;
 
 const NotFoundPage = (props) => {
+
   const getNavigationData = (_props) => {
     return {
       allHeader_topbars: _props.data?.prismic?.allHeader_topbars.edges[0].node,
@@ -35,10 +35,8 @@ const NotFoundPage = (props) => {
   return (
     <Layout navigationData={navigationData}>
       <NotFoundPageWrapper>
-
-        {/* <SEO title="404: Not found" /> */}
-        <h1>404: nem található <span role="img" aria-label="Sad emoji">😕</span></h1>
-        <p>Upsz, úgy látszik, hogy nincs ilyen oldal.</p>
+        <h1>{props.data?.prismic?.allErrors.edges[0].title} <span role="img" aria-label="Sad emoji">😕</span></h1>
+        <p>{props.data?.prismic?.allErrors.edges[0].description}</p>
       </NotFoundPageWrapper>
     </Layout>
   )
@@ -49,6 +47,14 @@ export default NotFoundPage
 export const query = graphql`
 query notFoudPageQuery($lang: String) {
   prismic {
+    allErrors(lang: $lang) {
+      edges {
+        node {
+          title
+          description
+        }
+      }
+    }
 
     allHeader_topbars (lang: $lang) {
       edges {
