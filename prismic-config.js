@@ -9,4 +9,7 @@ module.exports = {
   projectPathBase: 'projekt',
   studyHallPathBase: 'projekt/tanoda',
   newsPathBase: 'hir',
+  title: `Bhimrao Egyesület honlapja`,
+  description: `"Bhim Rao" Borsod-Abaúj-Zemplén Megyei Hátrányos Helyzetű Ifjak (Magyarok,Romák) Azonos Szintű Oktatásért Szociális, Kulturális és Oktatási Egyesület honlapja`,
+  author: `Bhimrao Egyesület`,
 }

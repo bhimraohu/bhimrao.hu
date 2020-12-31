@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout/LayoutCmp"
 import NewsPage from "../components/news/NewsPage"
+import SEO from "../components/seo"
 
 class News extends React.Component {
 
@@ -17,9 +18,14 @@ class News extends React.Component {
 
   render() {
     const navigationData = this.getNavigationData(this.props);
+    const { primary } = this.props.data.prismic.allNewss.edges[0].node.body.find((item) => item.type === 'seo1');
 
     return (
       <Layout navigationData={navigationData}>
+        <SEO
+          title={primary.seo_title}
+          description={primary.seo_description}
+        />
         <NewsPage
           news={this.props.data.prismic.allNewss.edges[0].node}
           news_items={this.props.data.prismic.allNews_items.edges}
@@ -38,6 +44,15 @@ query newsQuery($lang: String) {
     allNewss (lang: $lang) {
       edges {
         node {
+          body {
+            ... on PRISMIC_NewsBodySeo1 {
+              type
+              primary {
+                seo_title
+                seo_description
+              }
+            }
+          }
           title
         }
       }

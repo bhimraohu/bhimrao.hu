@@ -1,10 +1,20 @@
-const { prismicRepo, defaultLanguage, langs, projectPathBase, studyHallPathBase, newsPathBase } = require('./prismic-config')
+const {
+  prismicRepo,
+  defaultLanguage,
+  langs,
+  projectPathBase,
+  studyHallPathBase,
+  newsPathBase,
+  title,
+  description,
+  author
+} = require('./prismic-config')
 
 module.exports = {
   siteMetadata: {
-    title: `Bhimrao`,
-    description: `Bhimrao egyesület honlapja.`,
-    author: `Bhimrao`,
+    title,
+    description,
+    author,
   },
   plugins: [
     `gatsby-plugin-styled-components`,

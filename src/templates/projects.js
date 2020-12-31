@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout/LayoutCmp"
 import SliceZone from "../components/projects-slices/SliceZone"
+import SEO from "../components/seo"
 
 class Projects extends React.Component {
 
@@ -17,9 +18,14 @@ class Projects extends React.Component {
 
   render() {
     const navigationData = this.getNavigationData(this.props);
+    const { primary } = this.props.data.prismic.allProjectss.edges[0].node.body.find((item) => item.type === 'seo1');
 
     return (
       <Layout navigationData={navigationData}>
+        <SEO
+          title={primary.seo_title}
+          description={primary.seo_description}
+        />
         <SliceZone body={this.props.data.prismic.allProjectss.edges[0].node.body} />
       </Layout >
     );
@@ -36,6 +42,13 @@ query projectsQuery($lang: String) {
       edges {
         node {
           body {
+            ... on PRISMIC_ProjectsBodySeo1 {
+              type
+              primary {
+                seo_title
+                seo_description
+              }
+            }
             ... on PRISMIC_ProjectsBodyProjects {
               type
               fields {

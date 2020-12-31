@@ -403,10 +403,6 @@ class TopNavigation extends React.Component {
     if (typeof window === 'undefined') {
       return '';
     }
-    console.log(`%c${linkResolverBase(meta)}`, 'background: red; color: white; padding: 5px;')
-    console.log(window?.location.pathname)
-    console.log(window?.location.pathname.indexOf(linkResolverBase(meta)))
-    console.log(window?.location.pathname.indexOf(linkResolverBase(meta)) > -1 ? 'selected' : '')
     return window?.location.pathname.indexOf(linkResolverBase(meta)) > -1 ? 'selected' : '';
   }
 

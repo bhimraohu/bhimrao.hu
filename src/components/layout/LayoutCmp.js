@@ -1,5 +1,4 @@
 import React from "react"
-// import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "../header/HeaderCmp"
 import Footer from "../footer/FooterCmp"
@@ -9,15 +8,6 @@ import "../../../static/styles/Glyphter.css"
 import "../../../static/styles/layout.css"
 
 const Layout = ({ children, navigationData }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
 
   return (
     <>

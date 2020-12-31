@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout/LayoutCmp"
 import SliceZone from "../components/homepage-slices/SliceZone"
+import SEO from "../components/seo"
 
 class Homepage extends React.Component {
 
@@ -17,9 +18,14 @@ class Homepage extends React.Component {
 
   render() {
     const navigationData = this.getNavigationData(this.props);
+    const { primary } = this.props.data.prismic.allHomepages.edges[0].node.body.find((item) => item.type === 'seo1');
 
     return (
       <Layout navigationData={navigationData}>
+        <SEO
+          title={primary.seo_title}
+          description={primary.seo_description}
+        />
         <SliceZone
           body={this.props.data.prismic.allHomepages.edges[0].node.body}
           news={this.props.data.prismic.allNews_items.edges}
@@ -38,6 +44,13 @@ query homepageQuery($lang: String) {
       edges {
         node {
           body {
+            ... on PRISMIC_HomepageBodySeo1 {
+              type
+              primary {
+                seo_title
+                seo_description
+              }
+            }
             ... on PRISMIC_HomepageBodyHero_image {
               type
               primary {
@@ -90,7 +103,7 @@ query homepageQuery($lang: String) {
       }
     }
 
-    allNews_items(sortBy: date_DESC, first: 3) {
+    allNews_items(lang: $lang, sortBy: date_DESC, first: 3) {
       edges {
         node {
           button_label

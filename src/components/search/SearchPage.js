@@ -15,6 +15,7 @@ import RichTextCustom from '../common/RichTextCustom';
 import TitleOnly from '../common/TitleOnly';
 import { Colors, DesignSettings } from "../../utils/constants";
 import Search from '../header/SearchCmp';
+import { currentLanguage } from '../../utils/helper';
 
 const client = new ApolloClient({
   link: PrismicLink({
@@ -199,7 +200,7 @@ const SearchPage = ({ node, navigationData }) => {
   }
 
   const runSearch = (searchterm) => {
-    const lang = window?.location.pathname.indexOf('/en-us') === 0 ? 'en-us' : 'hu';
+    const lang = currentLanguage();
 
     client.query({
       query: getSearchQuery(),
@@ -208,7 +209,6 @@ const SearchPage = ({ node, navigationData }) => {
         lang,
       }
     }).then(response => {
-      console.log(response)
       let result = mergeResults(response.data);
       result = result.sort((a, b) => {
         if (a.type < b.type) return -1;

@@ -207,23 +207,4 @@ const showModal = (sent) => {
   )
 }
 
-// const getCheckboxLabel = (field_name, link) => {
-//   if (field_name.indexOf('<a>') === -1) {
-//     return field_name;
-//   }
-
-//   const text1 = field_name.substring(0, field_name.indexOf('<a>'));
-//   const linkLabel = field_name.substring(field_name.indexOf('<a>') + 3, field_name.indexOf('</a>'));
-//   const text2 = field_name.substring(field_name.indexOf('</a>') + 4);
-//   console.log(link)
-
-//   return (
-//     <>
-//       <span>{text1}</span>
-//       <a href={link} className="link-label">{linkLabel}</a>
-//       <span>{text2}</span>
-//     </>
-//   );
-// }
-
 export default Form;

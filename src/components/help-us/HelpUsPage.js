@@ -106,7 +106,7 @@ const HelpUsPage = ({ help_fields }) => {
       {
         help_fields.map((field, idx) => {
           return (
-            <div className="helpus-wrapper">
+            <div className="helpus-wrapper" key={idx}>
               <div key={idx} className="helpus-container">
                 <div className="texts">
                   <TextWithTitle title={field.title} text={field.description} />

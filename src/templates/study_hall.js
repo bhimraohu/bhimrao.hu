@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout/LayoutCmp"
 import StudyHallPage from '../components/study-hall/StudyHallPage';
+import SEO from "../components/seo"
 
 class StudyHall extends React.Component {
 
@@ -17,9 +18,14 @@ class StudyHall extends React.Component {
 
   render() {
     const navigationData = this.getNavigationData(this.props);
+    const { primary } = this.props.data.prismic.allStudy_halls.edges[0].node.body.find((item) => item.type === 'seo1');
 
     return (
       <Layout navigationData={navigationData}>
+        <SEO
+          title={primary.seo_title}
+          description={primary.seo_description}
+        />
         <StudyHallPage items={this.props.data.prismic.allStudy_halls.edges[0].node} />
       </Layout >
     );
@@ -36,6 +42,15 @@ query studyHallQuery($lang: String, $uid: String) {
       edges {
         node {
           title
+          body {
+            ... on PRISMIC_Study_hallBodySeo1 {
+              type
+              primary {
+                seo_title
+                seo_description
+              }
+            }
+          }
           links {
             label
             selected
