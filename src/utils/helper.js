@@ -1,0 +1,1 @@
+export const currentLanguage = () => window?.location.pathname.indexOf('/en-us') === 0 ? 'en-us' : 'hu';
