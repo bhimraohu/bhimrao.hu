@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout/LayoutCmp"
 import TeamPage from "../components/team/TeamPage"
+import SEO from "../components/seo"
 
 class Team extends React.Component {
 
@@ -17,9 +18,14 @@ class Team extends React.Component {
 
   render() {
     const navigationData = this.getNavigationData(this.props);
+    const { primary } = this.props.data.prismic.allTeams.edges[0].node.body.find((item) => item.type === 'seo1');
 
     return (
       <Layout navigationData={navigationData}>
+        <SEO
+          title={primary.seo_title}
+          description={primary.seo_description}
+        />
         <TeamPage data={this.props.data.prismic.allTeams.edges[0].node} />
       </Layout >
     );
@@ -34,6 +40,15 @@ query teamQuery($lang: String) {
     allTeams(lang: $lang) {
       edges {
         node {
+          body {
+            ... on PRISMIC_TeamBodySeo1 {
+              type
+              primary {
+                seo_title
+                seo_description
+              }
+            }
+          }
           title
           team_members {
             name

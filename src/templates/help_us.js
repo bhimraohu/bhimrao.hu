@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout/LayoutCmp"
 import HelpUsPage from '../components/help-us/HelpUsPage';
+import SEO from "../components/seo"
 
 class HelpUs extends React.Component {
 
@@ -17,9 +18,14 @@ class HelpUs extends React.Component {
 
   render() {
     const navigationData = this.getNavigationData(this.props);
+    const { primary } = this.props.data.prismic.allHelp_uss.edges[0].node.body.find((item) => item.type === 'seo1');
 
     return (
       <Layout navigationData={navigationData}>
+        <SEO
+          title={primary.seo_title}
+          description={primary.seo_description}
+        />
         <HelpUsPage help_fields={this.props.data.prismic.allHelp_uss.edges[0].node.help_fields} />
       </Layout >
     );
@@ -34,6 +40,15 @@ query helpusQuery($lang: String) {
     allHelp_uss(lang: $lang) {
       edges {
         node {
+          body {
+            ... on PRISMIC_Help_usBodySeo1 {
+              type
+              primary {
+                seo_title
+                seo_description
+              }
+            }
+          }
           help_fields {
             title
             description

@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout/LayoutCmp"
 import NewsItemPage from "../components/news/NewsItemPage"
+import SEO from "../components/seo"
 
 class NewsItem extends React.Component {
 
@@ -17,11 +18,16 @@ class NewsItem extends React.Component {
 
   render() {
     const navigationData = this.getNavigationData(this.props);
+    const news_item = this.props.data.prismic.allNews_items.edges[0].node;
 
     return (
       <Layout navigationData={navigationData}>
+        <SEO
+          title={news_item.title}
+          description={news_item.description}
+        />
         <NewsItemPage
-          news_item={this.props.data.prismic.allNews_items.edges[0].node}
+          news_item={news_item}
         />
       </Layout >
     );

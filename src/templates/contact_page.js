@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout/LayoutCmp"
 import Contact from "../components/contact/Contact"
+import SEO from "../components/seo"
 
 class ContactPage extends React.Component {
 
@@ -17,9 +18,14 @@ class ContactPage extends React.Component {
 
   render() {
     const navigationData = this.getNavigationData(this.props);
+    const { primary } = this.props.data.prismic.allContact_pages.edges[0].node.body.find((item) => item.type === 'seo1');
 
     return (
       <Layout navigationData={navigationData}>
+        <SEO
+          title={primary.seo_title}
+          description={primary.seo_description}
+        />
         <Contact help_form={this.props.data.prismic.allContact_pages.edges[0].node} />
       </Layout >
     );
@@ -34,6 +40,15 @@ query contactusQuery($lang: String) {
     allContact_pages(lang: $lang) {
       edges {
         node {
+          body {
+            ... on PRISMIC_Contact_pageBodySeo1 {
+              type
+              primary {
+                seo_title
+                seo_description
+              }
+            }
+          }
           form_title
           form_description
           button_label
