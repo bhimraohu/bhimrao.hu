@@ -123,11 +123,10 @@ const Form = ({ form_fields, label, action }) => {
       <FormContainer
         name="contact-us"
         method="POST"
-        data-netlify="true"
         action={`/${action}?sent=true`}
-        netlify
         netlify-honeypot="bot-field"
-        data-netlify-recaptcha="true"
+        data-netlify="true"
+      // data-netlify-recaptcha="true"
       >
         {/* This needed for Netlify  */}
         <input type="hidden" name="form-name" value="contact-us" />
