@@ -23,7 +23,7 @@ class NewsItem extends React.Component {
     return (
       <Layout navigationData={navigationData}>
         <SEO
-          title={news_item.title}
+          title={news_item.title[0]?.text}
           description={news_item.description}
         />
         <NewsItemPage
